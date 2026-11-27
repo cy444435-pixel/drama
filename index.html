@@ -1,664 +1,599 @@
-<!doctype html>
-<html lang="zh-CN">
-<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <meta name="color-scheme" content="light"><meta name="theme-color" content="#f6f3ec">
-  <title>短剧放映厅 · 作品选集</title><meta name="description" content="三部短剧，共收录 17 集，按剧名和原集号浏览。">
-  <meta property="og:type" content="website"><meta property="og:title" content="短剧放映厅 · 作品选集"><meta property="og:description" content="三部短剧，共收录 17 集，按剧名和原集号浏览。">
-  <meta property="og:image" content="./media/palm-poster-h1.jpg">
-  <link rel="alternate" hreflang="zh-CN" href="./"><link rel="alternate" hreflang="en" href="./en/">
-  <style>:root{
-  --paper:#f6f3ec; --ink:#26261f; --muted:#5a584f; --hair:#cbc8be; --red:#9f392e;
-  --display:"STSong","Songti SC","Noto Serif CJK SC","SimSun",Georgia,serif;
-  --sans:"Inter","PingFang SC","Microsoft YaHei","Noto Sans SC",Arial,sans-serif;
-  color:var(--ink); background:var(--paper); font:16px/1.56 var(--sans); -webkit-font-smoothing:antialiased;
-}
+<!doctype html><html lang="zh-CN"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#050403"><meta name="color-scheme" content="dark">
+<title>LUMEN / 光谱放映厅</title><meta name="description" content="三部短剧，共收录 17 集，按剧名和原集号浏览。">
+<meta property="og:title" content="LUMEN / 光谱放映厅"><meta property="og:type" content="website"><meta property="og:description" content="三部短剧，共收录 17 集，按剧名和原集号浏览。">
+<meta property="og:image" content="https://cy444435-pixel.github.io/drama/media/feature-deaf-no-more.jpg">
+<link rel="alternate" hreflang="zh-CN" href="./"><link rel="alternate" hreflang="en" href="./en/">
+<link rel="preload" as="image" href="./media/feature-deaf-no-more.jpg"><style>:root{color-scheme:dark;--bg:#050403;--text:#f2eadf;--muted:#b6aea4;--line:#39352e;--accent:#c69570;--display:"Baskervville",Georgia,"Songti SC","Noto Serif CJK SC","SimSun",serif;--sans:"Inter","Microsoft YaHei","PingFang SC",Arial,sans-serif;--mono:"IBM Plex Mono",Consolas,monospace;--gutter:clamp(20px,5vw,94px)}
 *,*::before,*::after{box-sizing:border-box}
-body{margin:0}
-[hidden]{display:none!important}
-button,a{font:inherit; color:inherit; -webkit-tap-highlight-color:transparent}
-a{text-decoration:none}
-button{cursor:pointer}
-img{display:block; max-width:100%}
-button:focus-visible,a:focus-visible{outline:3px solid #ba553d; outline-offset:4px}
-.wrap{width:min(1440px,90.8%); margin-inline:auto}
-.mast{border-bottom:1px solid var(--hair)}
-.mast-inner{height:72px; display:flex; align-items:center; justify-content:space-between; gap:14px}
-.brand{display:inline-flex; align-items:center; gap:11px; font:700 25px/1.12 var(--display); letter-spacing:.045em; white-space:nowrap}
-.brand-mark{isolation:isolate; display:inline-flex; gap:3px; align-items:center; justify-content:center; transform:skew(-17deg); margin:0 3px; width:30px; height:30px; overflow:hidden}
-.brand-mark i{height:26px; width:6px; background:var(--red)}
-.brand-mark i:nth-child(2){height:21px}
-.brand-mark i:nth-child(3){height:15px}
-.mast-nav{display:flex; align-items:center; gap:25px; color:#534e45}
-.mast-nav a{font-size:13px; font-weight:550; min-height:44px; display:inline-flex; align-items:center; position:relative}
-.mast-nav a:hover{color:var(--red)}
-#language-link{border-left:1px solid var(--hair); padding-left:24px; min-height:17px; font-size:12px; font-weight:450}
-#language-link i,.position i{font-style:normal; opacity:.62; margin-inline:8px}
-#language-link b{color:var(--red); font-weight:700}
-.feature{position:relative; isolation:isolate; background:#22221d; color:#faf4e8; margin-top:29px; overflow:hidden}
-.feature-slide{position:relative; min-height:clamp(430px,35vw,525px); display:flex; align-items:center}
-.feature-art{position:absolute; top:0; bottom:0; right:0; width:68%}
-.feature-art img{width:100%; height:100%; object-fit:cover; object-position:50% 44%}
-.feature-slide[data-id="deaf-no-more"] .feature-art img{object-position:50% 20%}
-.feature-slide[data-id="marriage-partner"] .feature-art img{object-position:50% 49%}
-.feature-art::after{content:""; position:absolute; inset:0; background:linear-gradient(90deg,#22221d 0%,rgba(34,34,29,.94) 6%,rgba(34,34,29,.64) 20%,rgba(34,34,29,.15) 37%,transparent 58%),linear-gradient(0deg,rgba(12,12,9,.30),transparent 21%)}
-.feature-copy{position:relative; margin:39px 0 47px clamp(28px,4.7vw,81px); width:46%; z-index:1}
-.feature-meta{display:flex; align-items:center; gap:11px; margin:0 0 24px; font-size:12px; line-height:1.3; letter-spacing:.09em; font-weight:600; color:#e4d9c6}
-.signal{height:8px; width:8px; background:#db7355; flex:none}
-.meta-rule{height:11px; width:1px; background:#8b8577; margin:0 1px}
-.feature-title{margin:0; max-width:9.2em; font-family:var(--display); font-size:clamp(43px,4.15vw,68px); font-weight:600; line-height:1.21; letter-spacing:.015em; text-wrap:balance}
-.feature-description{font-size:clamp(13px,1vw,16px); line-height:1.85; color:#ddd8c9; margin:19px 0 0; max-width:30em}
-.hero-action{margin-top:26px; background:#f6f0de; color:#282922; display:inline-flex; align-items:center; justify-content:center; gap:11px; min-height:45px; padding:0 20px; font-size:14px; font-weight:650; border-radius:2px; transition:background .2s,transform .2s}
-.hero-action:hover{background:#fff; transform:translateY(-2px)}
-.triangle{width:0; height:0; border-left:8px solid currentColor; border-top:5px solid transparent; border-bottom:5px solid transparent}
-.feature-controls{position:absolute; bottom:22px; right:24px; display:flex; align-items:center; gap:6px; color:#fff7eb; z-index:1}
-.position{font:13px/1.4 Georgia,serif; font-variant-numeric:tabular-nums; letter-spacing:.09em; margin-right:7px; text-shadow:0 1px 3px #2b221a; padding:4px 8px; background:#1b1b1772; border-radius:1px}
-.position b{font-size:16px; font-weight:normal}
-.feature-controls button{width:36px; height:36px; padding:0; display:grid; place-items:center; border:1px solid #ffffff70; border-radius:50%; color:#fff; background:#211e19b0}
-.feature-controls button:hover{background:#eee7d9; color:#211f19}
-.arrow-icon{position:relative; width:17px; height:14px; display:inline-block; flex:none}
-.arrow-icon::before{content:""; position:absolute; top:6px; right:1px; left:1px; height:1.5px; background:currentColor}
-.arrow-icon::after{content:""; position:absolute; top:2.3px; right:2px; width:8px; height:8px; border-top:1.5px solid currentColor; border-right:1.5px solid currentColor; transform:rotate(45deg)}
-.arrow-icon.left{transform:rotate(180deg)}.arrow-icon.diagonal{transform:rotate(-45deg)}
-#films{scroll-margin-top:25px; padding:clamp(34px,3.9vw,65px) 0 70px; outline:none}
-.index-head{display:flex; align-items:baseline; justify-content:space-between; gap:15px; border-bottom:1px solid var(--hair); padding-bottom:14px; margin-bottom:23px}
-.index-head h2{font-family:var(--display); font-size:clamp(28px,2.6vw,41px); line-height:1.12; letter-spacing:.025em; margin:0; font-weight:650}
-.index-head>span{color:#57564c; font-size:13px; letter-spacing:.035em; white-space:nowrap}
-.films-grid{display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:clamp(16px,2.4vw,36px)}
-.film-card{display:block; height:100%}
-.card-image{aspect-ratio:8/11; overflow:hidden; position:relative; background:#cfcbc1}
-.card-image img{width:100%; height:100%; object-fit:cover; transition:transform .45s ease}
-.card-count{position:absolute; left:14px; top:14px; color:#fdf9f0; background:#1d1d18df; border:1px solid #ffffff3d; font-size:12px; padding:3px 9px; line-height:1.55}
-.film-card:hover img{transform:scale(1.025)}
-.card-caption{display:flex; align-items:flex-start; justify-content:space-between; gap:8px; margin-top:17px}
-.card-caption h3{margin:0 0 3px; font:650 clamp(18px,1.6vw,27px)/1.4 var(--display); letter-spacing:.01em}
-.card-caption p{margin:0; color:#625c51; font:italic 14px/1.45 Georgia,var(--display)}
-.card-open{flex:0 0 30px; height:30px; display:grid; place-items:center; margin-top:1px; border:1px solid var(--hair); border-radius:50%}
-.film-card:hover h3,.film-card:hover .card-open{color:var(--red)}
-:lang(en) .feature-title{font-family:Georgia,var(--display); font-weight:normal; font-size:clamp(42px,4.0vw,63px); max-width:10.5em; letter-spacing:-.035em; line-height:1.02}
-:lang(en) .brand{letter-spacing:-.025em}
-:lang(en) .feature-meta{text-transform:uppercase; font-size:11px}
-@media(max-width:900px){
- .wrap{width:92%}.feature-copy{width:52%; margin-left:31px}
- .feature-title{font-size:44px}.feature-description{max-width:26em}
- .feature-art{width:68%}.card-caption p{font-size:12px}
+html{background:var(--bg);color:var(--text);font-family:var(--sans);scrollbar-color:#61594f #11100f}
+body{margin:0;min-width:280px}button,select,input{font:inherit}button,a,select{touch-action:manipulation}button{cursor:pointer}a{color:inherit}button{color:inherit}button[disabled]{cursor:default}[hidden]{display:none!important}
+:focus-visible{outline:2px solid #f8dfaf;outline-offset:4px}main:focus:not(:focus-visible){outline:none}
+.lm-skip{position:fixed;left:1rem;top:-6rem;z-index:100;background:var(--text);color:var(--bg);padding:.8rem}.lm-skip:focus{top:1rem}
+.lm-header{position:relative;z-index:3;border-bottom:1px solid #ffffff1c;background:#0c0b09}
+.lm-header-in,#lobby{width:min(100%,1800px);margin:auto;padding-inline:var(--gutter)}
+.lm-header-in{height:71px;display:flex;align-items:center;justify-content:space-between}
+.lm-brand,.lm-nav a,.lm-actions a,.lm-browse{text-decoration:none}
+.lm-brand{display:inline-flex;gap:12px;align-items:center;font:600 21px/1 Georgia,serif;letter-spacing:.18em}
+.lm-prism{width:30px;height:28px;display:flex;gap:3px;align-items:center;transform:skewX(-19deg)}
+.lm-prism i{width:3px;height:50%;background:#ecdcbf}.lm-prism i:nth-child(2){height:78%}.lm-prism i:nth-child(3){height:100%}.lm-prism i:nth-child(4){height:76%}.lm-prism i:nth-child(5){height:45%}
+.lm-nav{display:flex;align-items:center;gap:clamp(17px,3vw,43px);font-size:13px;letter-spacing:.05em}.lm-nav a{padding-block:12px;color:#c7c1b7}.lm-nav [aria-current]{color:#fff2de}.lm-nav [aria-current]::before{content:"";width:5px;height:5px;border-radius:100%;background:var(--accent);display:inline-block;vertical-align:middle;margin-right:8px}
+.lm-nav .lm-lang{border-left:1px solid #514b40;padding:1px 0 1px clamp(15px,2vw,32px);font:12px var(--mono);letter-spacing:.08em}
+body[data-mode=screening] .lm-header,body[data-mode=screening] .lm-skip{display:none}
+#lobby{min-height:calc(100svh - 72px);padding-top:clamp(23px,4vh,54px);padding-bottom:24px;display:flex;flex-direction:column;justify-content:center;isolation:isolate;position:relative}
+.lm-stage{position:relative;isolation:isolate;min-height:clamp(430px,64svh,820px);display:flex;align-items:center}
+.lm-halo{position:absolute;z-index:-2;inset:0 -1% -5% 26%;background:radial-gradient(ellipse at 57% 53%,color-mix(in srgb,var(--accent) 30%,transparent),transparent 70%);filter:blur(24px);animation:lm-breath 7s ease-in-out infinite alternate;pointer-events:none}
+@keyframes lm-breath{from{opacity:.55}to{opacity:1}}
+.lm-visual{position:absolute;z-index:-1;inset:0 0 0 25%;background:#110e0b}
+.lm-visual button,.lm-visual img{display:block;width:100%;height:100%;border:0;padding:0}.lm-visual button{background:#17130e}.lm-visual img{object-fit:cover;object-position:center 34%}
+.lm-visual::after{content:"";position:absolute;inset:-1px;pointer-events:none;background:linear-gradient(90deg,var(--bg) 0%,rgba(5,4,3,.95) 6%,rgba(5,4,3,.69) 24%,rgba(5,4,3,.14) 56%,transparent 76%),linear-gradient(0deg,rgba(5,4,3,.7),transparent 26%),linear-gradient(180deg,rgba(5,4,3,.12),transparent 25%)}
+.lm-corner{position:absolute;right:10px;width:22px;height:22px;border-right:1px solid #efe1c699;pointer-events:none;z-index:1}.lm-tr{top:10px;border-top:1px solid #efe1c699}.lm-br{bottom:10px;border-bottom:1px solid #efe1c699}
+.lm-cover-copy{width:fit-content;max-width:62%;position:relative;pointer-events:none;padding:35px 0 45px}
+.lm-date{display:flex;align-items:center;gap:13px;margin:0 0 27px;color:#d8cabb;font-size:clamp(11px,1vw,14px);letter-spacing:.14em}.lm-date i{width:29px;height:1px;background:var(--accent)}
+#lobby-heading{margin:0;font-weight:400;line-height:1}.lm-latin{display:block;font:400 clamp(76px,10.1vw,170px)/.86 var(--display);letter-spacing:-.068em;margin-left:-.065em}
+.lm-cjk{display:block;margin:18px 0 0;font:400 clamp(27px,3.3vw,59px)/1.23 var(--display);letter-spacing:.11em}.lm-cjk em{font:italic 300 1.02em/1 Georgia,serif;color:var(--accent);margin-right:.12em}
+[lang=en] .lm-cjk{font-size:clamp(22px,2.4vw,44px);letter-spacing:0}
+.lm-actions{display:flex;flex-wrap:wrap;align-items:center;gap:13px;margin-top:clamp(28px,5vh,58px);pointer-events:auto;max-width:fit-content}
+.lm-primary,.lm-secondary{display:inline-flex;align-items:center;justify-content:center;min-height:47px;padding:0 22px;gap:14px;font:600 14px/1.3 var(--sans);border-radius:2px}
+.lm-primary{background:#f0e5d2;color:#211b13;border:1px solid #f0e5d2}.lm-primary:hover{background:#fff3df}.lm-arrow{font-size:19px;font-weight:400}.lm-secondary{color:var(--text);border:1px solid #8a8071;background:#0b0907b8}.lm-secondary:hover,.lm-browse:hover{border-color:var(--text)}
+.lm-play{width:0;height:0;display:inline-block;border-top:5px solid transparent;border-bottom:5px solid transparent;border-left:8px solid currentColor}
+.lm-now{position:absolute;right:29px;bottom:24px;max-width:65%;display:flex;align-items:center;gap:10px;font:500 12px/1.5 var(--sans);letter-spacing:.07em;color:#fff2e0;text-shadow:0 1px 4px #000;pointer-events:none}.lm-dot{width:6px;height:6px;border-radius:50%;background:var(--accent);box-shadow:0 0 8px var(--accent);flex:none}
+.lm-shelf{display:flex;align-items:center;gap:clamp(17px,3.5vw,62px);margin-top:clamp(24px,4.2vh,60px);padding:clamp(16px,2.4vh,30px) 0;border-top:1px solid #3f382d;border-bottom:1px solid #28251f}
+.lm-shelf-info{min-width:max-content}.lm-shelf-info h2{font:400 clamp(17px,1.5vw,26px) var(--display);letter-spacing:.13em;margin:0 0 6px}.lm-shelf-info p{font-size:11px;letter-spacing:.07em;color:var(--muted);margin:0}
+.lm-strip{display:flex;gap:8px;max-width:100%;min-width:0}.lm-frame{position:relative;isolation:isolate;padding:4px 0;border:0;border-block:1px solid #514a42;background:#201c17;width:clamp(82px,9vw,145px);height:clamp(51px,6.1vw,79px);overflow:hidden}.lm-frame img{height:100%;width:100%;object-fit:cover;object-position:center 34%;opacity:.53;transition:opacity .25s}.lm-frame:hover img,.lm-frame[aria-pressed=true] img{opacity:1}.lm-frame[aria-pressed=true]{border-color:var(--accent)}.lm-frame span{position:absolute;bottom:5px;left:3px;background:#0a0908d9;color:#f4ebd8;padding:2px 3px;font:9px var(--mono)}.lm-frame::before,.lm-frame::after{content:"";position:absolute;height:2px;inset-inline:3px;z-index:1;background:repeating-linear-gradient(90deg,#888174 0 3px,transparent 3px 13px)}.lm-frame::before{top:1px}.lm-frame::after{bottom:1px}
+.lm-browse{margin-left:auto;flex:none;width:47px;height:47px;display:grid;place-items:center;border:1px solid #50493e;border-radius:50%;font-size:25px;color:#e5d7c3}.lm-browse:hover span{transform:translateX(2px)}
+body:not([data-mode=screening])::after{content:"";pointer-events:none;position:fixed;inset:0;z-index:8;opacity:.035;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 150 150' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.86' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Cpath fill='%23fff' filter='url(%23n)' d='M0 0h150v150H0z'/%3E%3C/svg%3E")}
+@media(max-width:700px){
+.lm-header-in{height:57px}.lm-brand{font-size:17px;gap:8px}.lm-prism{transform:scale(.8) skewX(-19deg);transform-origin:left center;margin-right:-5px}.lm-nav{gap:15px;font-size:12px}.lm-nav .lm-lang{padding-left:13px}
+#lobby{min-height:calc(100svh - 58px);padding-top:18px;justify-content:flex-start}.lm-stage{min-height:clamp(410px,calc(100svh - 206px),670px);align-items:flex-end}
+.lm-visual{inset:0 calc(-1 * var(--gutter)) 0 0;background:transparent}.lm-visual img{object-position:53% 18%}.lm-visual::after{background:linear-gradient(0deg,var(--bg) 0%,rgba(5,4,3,.85) 14%,rgba(5,4,3,.4) 40%,transparent 69%),linear-gradient(90deg,rgba(5,4,3,.48),transparent 60%)}.lm-halo{inset:0 0 2% 0}.lm-tr,.lm-br{right:12px}.lm-br{display:none}
+.lm-cover-copy{max-width:100%;padding:0 0 8px}.lm-date{margin-bottom:16px;letter-spacing:.08em;font-size:11px}.lm-latin{font-size:clamp(69px,19vw,111px)}.lm-cjk{font-size:30px;margin-top:10px}.lm-actions{gap:9px;margin-top:24px}.lm-primary,.lm-secondary{min-height:44px;font-size:13px;padding-inline:17px;gap:9px}.lm-now{top:16px;bottom:auto;right:5px;max-width:85%;font-size:10px;padding:3px 7px;background:#110e0bb8;border-radius:2px}
+.lm-shelf{margin-top:18px;gap:12px;padding:13px 0}.lm-shelf-info h2{font-size:16px;margin-bottom:5px}.lm-shelf-info p{font-size:9px;letter-spacing:0}.lm-strip{gap:5px;flex:1}.lm-frame{min-width:0;width:min(19vw,95px);height:clamp(43px,11vw,60px)}.lm-browse{width:33px;height:33px;font-size:19px}[lang=en] .lm-shelf-info{min-width:0;max-width:88px}[lang=en] .lm-shelf-info h2{letter-spacing:0}
 }
-@media(max-width:650px){
- .wrap{width:calc(100% - 32px)}.mast-inner{height:59px}.brand{font-size:21px; gap:7px}.brand-mark{width:24px; height:25px; gap:2px}.brand-mark i{width:5px;height:22px}.brand-mark i:nth-child(2){height:17px}.brand-mark i:nth-child(3){height:12px}
- .mast-nav{gap:14px}.mast-nav a{font-size:12px}#language-link{padding-left:13px}
- .feature{margin-top:15px}.feature-slide{min-height:486px; align-items:end}
- .feature-art{width:100%; height:70%; bottom:auto}
- .feature-art img{object-position:center 28%}.feature-slide[data-id="deaf-no-more"] .feature-art img{object-position:50% 17%}
- .feature-art::after{background:linear-gradient(0deg,#22221d 0%,rgba(34,34,29,.84) 12%,rgba(34,34,29,.23) 35%,transparent 57%)}
- .feature-copy{margin:0; padding:0 22px 24px; width:100%}
- .feature-meta{margin-bottom:10px; font-size:10.5px; gap:8px}
- .feature-title{font-size:clamp(33px,7.9vw,44px); line-height:1.2; max-width:10.8em}
- .feature-description{font-size:12px; line-height:1.75; margin-top:10px; color:#e5dece; max-width:32em}
- .hero-action{min-height:40px; margin-top:19px; padding:0 13px; font-size:13px}
- .feature-controls{bottom:24px;right:15px;gap:5px}.feature-controls button{height:34px;width:34px}.position{font-size:11px; padding:0; margin-right:3px; background:transparent}.position b{font-size:13px}.position i{margin:0 4px}
- #films{padding:32px 0 44px}.index-head{padding-bottom:12px;margin-bottom:16px}.index-head h2{font-size:27px}.index-head>span{font-size:11px}
- .films-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:23px 12px}.card-count{left:7px;top:7px;font-size:10px;padding:2px 6px}
- .card-caption{margin-top:8px;gap:2px}.card-caption h3{font-size:17px}.card-caption p{font-size:11.5px}.card-open{display:none}
- :lang(en) .feature-title{font-size:clamp(35px,8.5vw,43px);max-width:11em}:lang(en) .feature-meta{font-size:10px}
-}
-@media(max-width:450px){html[lang^="en"] .index-head{flex-wrap:wrap;gap:4px 14px}html[lang^="en"] .index-head>span{white-space:normal}}
-@media(max-width:345px){html[lang^="en"] .feature-controls .position{display:none}html[lang^="en"] .feature-copy{padding-right:16px}}
-@media(max-width:365px){.mast-nav{gap:8px}#language-link{padding-left:7px}.feature-copy{padding-inline:15px}.feature-controls{right:9px;gap:3px}.feature-slide{min-height:477px}.feature-description{font-size:11.5px}.feature-controls button{width:31px;height:31px}}
-@media(min-width:651px) and (max-width:820px){.feature-copy{width:54%}.feature-art{width:65%}.feature-title{font-size:40px}.feature-description{font-size:13px}.feature-slide{min-height:395px}}
-.feature-art{overflow:hidden}
-.feature-outgoing{pointer-events:none}
-.feature-outgoing img{animation:none!important}
-@keyframes feature-pan{
- from{transform:scale(1.055)}to{transform:scale(1)}
-}
-@keyframes feature-copy-in{
- from{opacity:.36;transform:translate(var(--entry-offset,0px),8px)}to{opacity:1;transform:translate(0,0)}
-}
-@keyframes feature-dissolve{
- from{opacity:1}to{opacity:0}
-}
-@keyframes poster-arrival{
- from{opacity:.32;transform:translateY(19px)}to{opacity:1;transform:translateY(0)}
-}
-@keyframes tape-splice{
- 0%{opacity:0;transform:translateX(-100%)}18%{opacity:.9}75%{opacity:.7}100%{opacity:0;transform:translateX(260%)}
-}
-@media(prefers-reduced-motion:no-preference){
- .feature-slide:not([hidden])>.feature-art:not(.feature-outgoing) img{animation:feature-pan 2.6s cubic-bezier(.2,.60,.24,1)}
- .feature-slide:not([hidden])>.feature-copy{animation:feature-copy-in .52s cubic-bezier(.22,.68,.22,1)}
- .feature-outgoing.is-dissolving{animation:feature-dissolve .54s ease-in-out both}
- .feature.has-switched .feature-slide:not([hidden])::after{content:"";position:absolute;bottom:0;left:0;height:2px;width:40%;pointer-events:none;background:linear-gradient(90deg,transparent,#8ebeb0 38%,#dfae82 68%,transparent);animation:tape-splice .82s ease-out both}
- .film-entry.is-arriving{animation:poster-arrival .58s cubic-bezier(.2,.7,.2,1) var(--arrival-delay,0ms) backwards}
- .feature-controls button{transition:transform .17s,background-color .17s,color .17s}
- .feature-controls button:active{transform:scale(.94)}
- .card-open{transition:transform .25s,color .25s}
- .film-card:is(:hover,:focus-visible) .card-open{transform:translate(2px,-2px)}
-}
-@media(prefers-reduced-motion:reduce){*,*::after,*::before{scroll-behavior:auto!important;transition:none!important;animation:none!important}}
+@media(max-width:370px){.lm-nav{gap:9px}.lm-browse{display:none}.lm-actions{gap:6px}.lm-primary,.lm-secondary{padding-inline:13px}}
+@media(max-width:700px){.lm-visual::after{right:0}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important}.lm-halo,.lm-browse span,.lm-frame img{animation:none!important;transition:none!important}}
 
-#watch[hidden], #catalogue[hidden], #watch [hidden] {
-  display: none !important;
+.cu-view[hidden], .cu-view [hidden] { display:none !important; }
+.cu-view {
+  --cu-paper:#f2eadf;
+  --cu-muted:#b7afa4;
+  --cu-line:#38342f;
+  --cu-accent:#d9ae7c;
+  --cu-serif:"Iowan Old Style","Songti SC","Noto Serif CJK SC","Noto Serif SC",SimSun,"Times New Roman",serif;
+  --cu-sans:"Inter","PingFang SC","Microsoft YaHei UI","Microsoft YaHei",Arial,sans-serif;
+  --cu-mono:"IBM Plex Mono",Consolas,monospace;
+  box-sizing:border-box; color:var(--cu-paper); font-family:var(--cu-sans);
+  width:min(1512px,100%); margin-inline:auto;
+  padding:clamp(28px,4.1vw,68px) clamp(22px,4.5vw,85px) 72px;
+}
+.cu-view *, .cu-view *::before, .cu-view *::after { box-sizing:border-box; }
+.cu-view :is(h1,h2,p) { margin:0; }
+.cu-view button {
+  appearance:none; margin:0; border:0; border-radius:0; padding:0; background:none; color:inherit;
+  font:inherit; text-align:inherit; cursor:pointer; box-shadow:none;
+}
+.cu-view button:focus-visible { outline:2px solid var(--cu-paper); outline-offset:3px; }
+.cu-view button:disabled { cursor:default; }
+.cu-head { display:flex; align-items:baseline; gap:1.25rem; padding-bottom:clamp(18px,2.1vw,32px); border-bottom:1px solid var(--cu-line); }
+.cu-heading { font-family:var(--cu-serif); font-weight:500; font-size:clamp(2rem,3.6vw,3.7rem); letter-spacing:-.045em; line-height:1.14; }
+.cu-edition,.cu-kicker,.cu-rail-position { font-family:var(--cu-mono); }
+.cu-edition { font-size:.74rem; letter-spacing:.035em; color:var(--cu-muted); }
+.cu-layout { display:grid; grid-template-columns:minmax(88px,.48fr) minmax(0,2.9fr) minmax(230px,1fr); gap:clamp(18px,2.55vw,48px); align-items:start; margin-top:clamp(22px,2.8vw,40px); }
+.cu-index,.cu-info,.cu-main,.cu-reels { min-width:0; }
+.cu-view .cu-kicker { font-family:var(--cu-sans); color:var(--cu-muted); font-weight:500; font-size:.75rem; line-height:1.5; letter-spacing:.1em; }
+.cu-nodes { display:grid; padding:18px 0 0; }
+.cu-view .cu-node { position:relative; display:flex; width:100%; gap:10px; color:var(--cu-muted); padding:12px 0; align-items:baseline; }
+.cu-node-dot { position:relative; flex:none; width:8px; height:8px; border-radius:50%; background:#151411; border:1px solid #777069; z-index:1; }
+.cu-node:not(:last-child)::after { content:""; position:absolute; left:3.5px; top:22px; bottom:-16px; width:1px; background:var(--cu-line); pointer-events:none; }
+.cu-node-line { display:grid; gap:5px; }
+.cu-node-name { font-family:var(--cu-serif); font-size:.95rem; line-height:1.3; }
+.cu-node-act { font:500 .66rem/1.3 var(--cu-sans); letter-spacing:.075em; color:var(--cu-muted); }
+.cu-node-count { font-size:.64rem; color:#989187; font-variant-numeric:tabular-nums; }
+.cu-node[aria-current] .cu-node-dot { background:var(--cu-accent); border-color:var(--cu-accent); box-shadow:0 0 10px color-mix(in srgb,var(--cu-accent) 42%,transparent); }
+.cu-node[aria-current] .cu-node-name, .cu-node:hover .cu-node-name { color:var(--cu-paper); }
+.cu-node[aria-current] .cu-node-name { font-weight:bold; }
+.cu-stage {
+  position:relative; isolation:isolate; width:100%; aspect-ratio:1.67; background:#100f0d;
+  border:1px solid color-mix(in srgb,var(--cu-accent) 30%,#211e1a); border-radius:3px;
+}
+.cu-stage::before {
+  content:""; position:absolute; inset:12% 6% -1%; z-index:-1; pointer-events:none;
+  background:color-mix(in srgb,var(--cu-accent) 20%,transparent); filter:blur(34px);
+}
+.cu-stills,.cu-still,.cu-preview-video { position:absolute; inset:0; border-radius:inherit; width:100%; height:100%; }
+.cu-stills { overflow:hidden; background:#100f0d; }
+.cu-still { display:block; object-fit:cover; object-position:50% 37%; opacity:0; transition:opacity .33s ease; }
+.cu-still.cu-visible { opacity:1; }
+.cu-preview-video { display:block; background:#050403; object-fit:contain; opacity:0; pointer-events:none; transition:opacity .24s; }
+.cu-stage.cu-show-video .cu-preview-video { opacity:1; }
+.cu-view .cu-preview-toggle {
+  position:absolute; z-index:2; display:inline-flex; align-items:center; gap:9px; top:12px; left:12px; min-height:35px;
+  padding:7px 12px; border:1px solid #f2eadf64; border-radius:100px; background:#0d0c0abd; color:#fff8ef;
+  font-size:.72rem; font-weight:550; line-height:1.25; font-family:var(--cu-sans); backdrop-filter:blur(8px);
+}
+.cu-view .cu-preview-toggle:hover { background:#161411; }
+.cu-icon { display:inline-block; flex:none; position:relative; }
+.cu-icon-play,.cu-icon-card-play { width:0; height:0; border-top:4px solid transparent; border-bottom:4px solid transparent; border-left:7px solid currentColor; }
+.cu-icon-pause { width:8px; height:9px; border-inline:3px solid currentColor; }
+.cu-icon-prev,.cu-icon-next,.cu-icon-down { width:8px; height:8px; border-right:1.5px solid currentColor; border-top:1.5px solid currentColor; }
+.cu-icon-prev { transform:rotate(-135deg); } .cu-icon-next { transform:rotate(45deg); } .cu-icon-down { transform:rotate(135deg); }
+.cu-icon-info { width:13px; height:13px; border:1px solid currentColor; border-radius:100%; color:var(--cu-muted); }
+.cu-icon-info::before { content:"i"; display:grid; height:100%; place-items:center; text-transform:none; font:italic 10px/1 Georgia,serif; }
+.cu-reels { position:relative; margin-top:24px; }
+.cu-rail-heading { display:flex; align-items:center; justify-content:space-between; gap:12px; padding-bottom:8px; }
+.cu-transports { display:flex; align-items:center; gap:3px; }
+.cu-rail-position { min-width:48px; text-align:center; font-size:.66rem; font-variant-numeric:tabular-nums; letter-spacing:.05em; color:var(--cu-muted); }
+.cu-view .cu-arrow { width:32px; height:32px; display:grid; place-items:center; color:var(--cu-paper); border-radius:50%; }
+.cu-view .cu-arrow:disabled { color:#655e56; }
+.cu-view .cu-arrow:not(:disabled):hover { background:#29251f; }
+.cu-filmstrip {
+  display:flex; gap:5px; overflow-x:auto; overflow-y:hidden; padding:2px 1px 6px; position:relative;
+  scrollbar-width:thin; scrollbar-color:#49433c transparent; overscroll-behavior-x:contain;
+  touch-action:pan-x pan-y; cursor:grab;
+}
+.cu-filmstrip.cu-dragging,.cu-filmstrip.cu-dragging * { cursor:grabbing !important; }
+.cu-view .cu-card {
+  position:relative; min-width:0; flex:0 0 41%; display:grid;
+  grid-template-columns:1fr 18px; grid-template-rows:auto auto; align-content:start;
+  padding:10px 6px 7px; text-align:left; border:1px solid transparent; border-radius:2px;
+  background:#191714; cursor:grab; user-select:none; -webkit-user-select:none;
+}
+.cu-filmstrip[data-count="2"] .cu-card { flex-basis:57%; }
+.cu-filmstrip[data-count="1"] .cu-card { flex-basis:100%; }
+.cu-filmstrip[data-count="1"] .cu-card-image { aspect-ratio:3; }
+.cu-view .cu-card::before {
+  content:""; position:absolute; top:3px; right:6px; left:6px; height:3px; opacity:.85;
+  background:repeating-linear-gradient(90deg,#666159 0 5px,transparent 5px 14px); pointer-events:none;
+}
+.cu-view .cu-card[aria-current] { border-color:var(--cu-accent); background:color-mix(in srgb,var(--cu-accent) 10%,#100f0e); }
+.cu-view .cu-card:focus-visible { outline-offset:-3px; }
+.cu-card-image { display:block; grid-column:1/-1; width:100%; aspect-ratio:2.25; object-fit:cover; object-position:50% 31%; border-radius:1px; filter:saturate(.76); }
+.cu-card[aria-current] .cu-card-image,.cu-card:hover .cu-card-image { filter:none; }
+.cu-card-copy { min-width:0; align-self:center; display:block; padding:7px 1px 0; }
+.cu-card-title { display:block; font-family:var(--cu-serif); font-weight:500; font-size:clamp(.78rem,1.2vw,1rem); overflow:hidden; white-space:nowrap; text-overflow:ellipsis; line-height:1.4; }
+.cu-card-count { color:var(--cu-muted); font-size:.65rem; display:block; padding-top:2px; }
+.cu-icon-card-play { align-self:center; justify-self:center; color:var(--cu-accent); opacity:0; margin-top:7px; }
+.cu-card[aria-current] .cu-icon-card-play,.cu-card:focus-visible .cu-icon-card-play { opacity:1; }
+.cu-info { position:relative; }
+.cu-type { display:flex; align-items:center; gap:9px; color:var(--cu-accent); font-size:.7rem; font-weight:550; letter-spacing:.12em; line-height:1.4; }
+.cu-type::before { content:""; width:24px; height:1px; background:currentColor; }
+.cu-view .cu-work-title { margin:clamp(12px,1.4vw,23px) 0 6px; font:500 clamp(1.7rem,2.6vw,3rem)/1.26 var(--cu-serif); letter-spacing:-.035em; text-wrap:balance; }
+.cu-view .cu-other-title { font:italic .94rem/1.45 Georgia,"Songti SC",serif; color:var(--cu-muted); text-wrap:pretty; }
+.cu-view .cu-blurb { margin-top:clamp(15px,1.6vw,25px); font-size:.89rem; line-height:1.85; text-wrap:pretty; }
+.cu-tags { margin-top:13px; display:flex; gap:6px; flex-wrap:wrap; }
+.cu-tags:empty { display:none; }
+.cu-tag { display:inline-flex; align-items:center; padding:3px 8px; border:1px solid var(--cu-line); border-radius:50px; font-size:.65rem; color:var(--cu-muted); }
+.cu-stats { display:flex; flex-wrap:wrap; margin-top:clamp(17px,1.9vw,28px); padding:11px 0; border-block:1px solid var(--cu-line); }
+.cu-view .cu-stat { min-width:0; flex:1; display:grid; grid-template-columns:auto 1fr; align-items:center; column-gap:7px; row-gap:4px; padding:3px 0; }
+.cu-stat + .cu-stat { padding-left:12px; border-left:1px solid var(--cu-line); }
+.cu-stat-label { font-size:.66rem; color:var(--cu-muted); grid-column:1/-1; }
+.cu-stat-value { font-size:1.03rem; font-weight:500; font-variant-numeric:tabular-nums; }
+.cu-stat:hover .cu-icon-info,.cu-stat[aria-expanded="true"] .cu-icon-info { color:var(--cu-accent); }
+.cu-fact { background:#1e1b17; border:1px solid var(--cu-line); border-left:2px solid var(--cu-accent); font-size:.78rem; line-height:1.6; padding:9px 12px; margin-top:5px; }
+.cu-ctas { display:flex; align-items:stretch; gap:7px; margin-top:16px; }
+.cu-view .cu-screen,.cu-view .cu-select-ep { padding:10px 13px; min-height:44px; display:inline-flex; align-items:center; justify-content:center; gap:9px; font-size:.8rem; font-weight:600; border-radius:3px; line-height:1.35; }
+.cu-view .cu-screen { flex:1; background:var(--cu-accent); color:#17130f; }
+.cu-view .cu-screen:hover,.cu-view .cu-dock-play:hover { filter:brightness(1.12); }
+.cu-view .cu-select-ep { border:1px solid #625a4f; color:var(--cu-paper); }
+.cu-view .cu-select-ep[aria-expanded="true"] .cu-icon-down { transform:rotate(-45deg); }
+.cu-view .cu-ep-list { display:flex; gap:6px; flex-wrap:wrap; margin-top:13px; }
+.cu-view .cu-ep { border:1px solid var(--cu-line); border-radius:3px; color:var(--cu-paper); padding:8px 9px; font-size:.75rem; }
+.cu-view .cu-ep:hover,.cu-view .cu-select-ep:hover { border-color:var(--cu-accent); }
+.cu-mobile-dock { display:none; }
+.cu-status:not(:empty) { margin-top:15px; font-size:.8rem; color:var(--cu-muted); }
+@media(min-width:761px) and (max-width:1030px) {
+  .cu-view { padding-inline:clamp(18px,3vw,34px); }
+  .cu-layout { grid-template-columns:minmax(0,1.8fr) minmax(210px,1fr); gap:18px 24px; }
+  .cu-index { grid-column:1/-1; display:flex; align-items:center; gap:20px; }
+  .cu-nodes { display:flex; padding:0; gap:20px; }
+  .cu-view .cu-node { width:auto; padding:6px 0; }
+  .cu-node::after { display:none; }
+  .cu-node-line { display:flex; align-items:baseline; gap:5px; }
+}
+@media(max-width:760px) {
+  .cu-view { padding:23px clamp(16px,4.6vw,28px) calc(108px + env(safe-area-inset-bottom)); }
+  .cu-head { padding-bottom:15px; gap:13px; }
+  .cu-heading { font-size:clamp(1.9rem,8vw,2.6rem); }
+  .cu-edition { font-size:.68rem; letter-spacing:.025em; }
+  .cu-layout { display:flex; flex-direction:column; gap:18px; margin-top:10px; }
+  .cu-index { display:flex; align-items:center; width:100%; }
+  .cu-index > .cu-kicker { display:none; }
+  .cu-nodes { display:flex; flex-wrap:wrap; padding:0; gap:6px 15px; }
+  .cu-view .cu-node { width:auto; gap:6px; padding:8px 0; }
+  .cu-node::after,.cu-node-count { display:none; }
+  .cu-node-name { font-size:.83rem; }
+  .cu-node-line { display:flex; align-items:baseline; gap:4px; }
+  .cu-node-act { font-size:.61rem; letter-spacing:0; }
+  .cu-node-dot { width:6px; height:6px; }
+  .cu-main,.cu-info { width:100%; }
+  .cu-stage { aspect-ratio:1.38; }
+  .cu-view .cu-preview-toggle { top:9px; left:9px; }
+  .cu-reels { margin-top:17px; }
+  .cu-rail-heading { padding-bottom:9px; }
+  .cu-transports { display:none; }
+  .cu-filmstrip { display:grid; padding:0; gap:0; overflow:visible; touch-action:auto; cursor:auto; }
+  .cu-view .cu-card {
+    grid-template-columns:64px 1fr 22px; grid-template-rows:1fr; gap:12px; align-items:center; padding:9px 4px;
+    border:0; border-top:1px solid var(--cu-line); border-radius:0; background:none; cursor:pointer;
+  }
+  .cu-view .cu-card:last-child { border-bottom:1px solid var(--cu-line); }
+  .cu-view .cu-card[aria-current] { background:linear-gradient(90deg,color-mix(in srgb,var(--cu-accent) 10%,transparent),transparent); }
+  .cu-view .cu-card::before { display:none; }
+  .cu-card-image { grid-column:1; width:64px; height:77px; aspect-ratio:auto; object-fit:cover; object-position:50% 22%; }
+  .cu-card-copy { padding:0; }
+  .cu-card-title { white-space:normal; font-size:1.02rem; text-wrap:pretty; }
+  .cu-card-count { font-size:.72rem; padding-top:5px; }
+  .cu-card .cu-icon-card-play { opacity:.55; margin:0; }
+  .cu-card[aria-current] .cu-icon-card-play { opacity:1; }
+  .cu-info { scroll-margin-top:14px; }
+  .cu-stats { max-width:380px; }
+  .cu-view .cu-work-title { font-size:clamp(1.65rem,7.5vw,2.35rem); }
+  .cu-ctas { max-width:440px; }
+  .cu-view .cu-ep { min-height:42px; padding-inline:12px; }
+  .cu-mobile-dock {
+    display:flex; align-items:center; gap:12px; position:fixed; z-index:8; bottom:0; left:0; width:100%;
+    background:#15130ff2; border-top:1px solid #4b443b; color:var(--cu-paper); backdrop-filter:blur(12px);
+    padding:8px max(16px,env(safe-area-inset-right)) calc(8px + env(safe-area-inset-bottom)) max(16px,env(safe-area-inset-left));
+  }
+  .cu-dock-img { width:35px; height:43px; border-radius:2px; object-fit:cover; }
+  .cu-dock-info { display:grid; min-width:0; flex:1; gap:3px; }
+  .cu-dock-title { overflow:hidden; text-overflow:ellipsis; white-space:nowrap; font-family:var(--cu-serif); font-size:.9rem; font-weight:550; }
+  .cu-dock-time { font-size:.67rem; color:var(--cu-muted); font-variant-numeric:tabular-nums; }
+  .cu-view .cu-dock-play { width:42px; height:42px; display:grid; place-items:center; background:var(--cu-accent); color:#17130f; border-radius:100%; }
+}
+@media(prefers-reduced-motion:reduce) {
+  .cu-view *, .cu-view *::before,.cu-view *::after { animation:none!important; transition:none!important; scroll-behavior:auto!important; }
 }
 
-#watch {
-  --watch-ink: #24211e;
-  --watch-muted: #655e56;
-  --watch-accent: #9f392e;
-  --watch-rule: #cfc8bc;
-  box-sizing: border-box;
-  width: min(100%, 1440px);
-  margin-inline: auto;
-  padding: 26px clamp(20px, 5.2vw, 82px) clamp(48px, 8vw, 104px);
-  color: var(--watch-ink);
-}
-
-#watch *, #watch *::before, #watch *::after { box-sizing: border-box; }
-
-#watch .watch-back {
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  min-height: 38px;
-  margin-bottom: 17px;
-  font-size: 13px;
-  font-weight: 600;
-  color: var(--watch-muted);
-  text-decoration: none;
-}
-
-#watch .watch-back:hover { color: var(--watch-accent); }
-
-.watch-layout {
+.lp-root {
+  --lp-paper: #f2eadf;
+  --lp-muted: #c2b8ab;
+  --lp-highlight: var(--lp-accent, var(--accent, #dbb891));
+  position: fixed;
+  inset: 0;
+  z-index: 999;
+  isolation: isolate;
   display: grid;
-  grid-template-columns: minmax(0, 1.2fr) minmax(0, .9fr);
-  gap: clamp(30px, 5.5vw, 82px);
-  align-items: start;
-}
-
-.watch-stage { min-width: 0; }
-
-/* The cue sits below the player so a cut never masks subtitles or native controls. */
-.watch-readout {
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 12px;
-  min-height: 40px;
-  padding: 8px 14px 7px;
-  background: #272620;
-  color: #d5ccba;
-  font-size: 12px;
-  line-height: 1.45;
-}
-
-.watch-status { display: flex; align-items: center; gap: 5px; min-width: 0; }
-.watch-readout #now-playing { display: inline-block; color: #fff6e4; }
-.watch-clock { flex: none; color: #d5ccba; font-variant-numeric: tabular-nums; }
-.watch-progress { position: absolute; inset: 0 0 auto; height: 2px; overflow: hidden; background: #504b3f; }
-.watch-progress-fill, .watch-cut-sweep { position: absolute; inset: 0; pointer-events: none; }
-.watch-progress-fill { transform: scaleX(0); transform-origin: left; background: #cf9772; }
-.watch-cut-sweep { width: 33%; opacity: 0; background: linear-gradient(90deg, transparent, #e9cf9c 65%, transparent); }
-.watch-readout[data-state="external"] .watch-progress { visibility: hidden; }
-.watch-meter { display: inline-flex; align-items: flex-end; justify-content: center; gap: 2px; width: 17px; height: 12px; margin-right: 3px; }
-.watch-meter i { display: block; width: 2px; height: 100%; transform: scaleY(.23); transform-origin: bottom; background: currentColor; }
-.watch-readout[data-state="playing"] .watch-meter { color: #efba8c; }
-.watch-readout[data-state="playing"] .watch-meter i:nth-child(odd) { transform: scaleY(.78); }
-.watch-readout[data-state="playing"] .watch-meter i:nth-child(even) { transform: scaleY(.48); }
-
-@media (prefers-reduced-motion: no-preference) {
-  .watch-progress-fill { transition: transform 180ms linear; }
-  .watch-readout .episode-arrival { animation: watch-episode-arrival .55s cubic-bezier(.16,.72,.16,1); }
-  .watch-cut-sweep { animation: watch-cut-sweep .72s ease-out both; }
-  .watch-readout[data-state="playing"] .watch-meter i { animation: watch-meter-beat .86s ease-in-out alternate infinite; }
-  .watch-readout[data-state="playing"] .watch-meter i:nth-child(2) { animation-duration: .94s; animation-delay: -.39s; }
-  .watch-readout[data-state="playing"] .watch-meter i:nth-child(3) { animation-duration: .72s; animation-delay: -.48s; }
-  .watch-readout[data-state="playing"] .watch-meter i:nth-child(4) { animation-duration: 1.03s; animation-delay: -.6s; }
-}
-
-@keyframes watch-meter-beat { from { transform: scaleY(.26); } to { transform: scaleY(.95); } }
-@keyframes watch-episode-arrival { from { opacity: .45; transform: translateY(5px); } to { opacity: 1; transform: translateY(0); } }
-@keyframes watch-cut-sweep { 0% { opacity: 0; transform: translateX(-100%); } 22% { opacity: .9; } 100% { opacity: 0; transform: translateX(306%); } }
-
-.watch-screen {
-  display: grid;
-  place-items: center;
-  width: 100%;
-  height: clamp(420px, 68vh, 750px);
-  overflow: hidden;
-  background: #1c1a18;
-  box-shadow: 0 1px 3px #3b2a1c24;
-}
-
-.watch-screen video, .watch-screen iframe {
-  display: block;
+  grid-template-rows: auto minmax(0, 1fr) auto;
   width: 100%;
   height: 100%;
-  min-width: 0;
-  min-height: 0;
-  border: 0;
-}
-
-.watch-screen video { object-fit: contain; }
-.watch-screen > a { color: #fff6e8; text-underline-offset: 4px; }
-
-.watch-info {
-  min-width: 0;
-  padding-top: clamp(8px, 2.3vw, 35px);
-}
-
-#watch .watch-kicker {
-  display: flex;
-  align-items: center;
-  gap: 9px;
-  margin: 0 0 16px;
-  color: var(--watch-accent);
-  font-size: 12px;
-  font-weight: 700;
-  letter-spacing: .08em;
-}
-
-.watch-kicker::before {
-  content: "";
-  display: inline-block;
-  width: 27px;
-  border-top: 2px solid currentColor;
-}
-
-#series-name {
+  height: 100dvh;
   margin: 0;
-  font-family: "Iowan Old Style", "Songti SC", "Noto Serif CJK SC", "SimSun", Georgia, serif;
-  font-size: clamp(36px, 3.7vw, 64px);
-  font-weight: 650;
-  line-height: 1.2;
-  letter-spacing: -.045em;
-  text-wrap: balance;
-  overflow-wrap: anywhere;
-}
-
-html[lang^="en"] #series-name { line-height: 1.04; }
-#series-name:focus { outline: none; }
-
-#watch-alt {
-  margin: 10px 0 0;
-  font-family: Georgia, "Songti SC", "SimSun", serif;
-  font-style: italic;
-  font-size: clamp(16px, 1.42vw, 21px);
+  overflow: hidden;
+  color: var(--lp-paper);
+  background: #050403;
+  font-family: 'Inter', 'Segoe UI', 'PingFang SC', 'Microsoft YaHei', sans-serif;
+  font-size: 14px;
   line-height: 1.4;
-  color: var(--watch-muted);
+  overscroll-behavior: contain;
+  color-scheme: dark;
 }
-
-#watch-summary {
-  margin: 22px 0 26px;
-  max-width: 48ch;
-  color: #504a43;
-  font-size: 15px;
-  line-height: 1.85;
-}
-
-.watch-hud {
-  display: flex;
-  align-items: baseline;
-  justify-content: space-between;
-  gap: 12px;
-  margin: 0 0 14px;
-  padding-top: 19px;
-  border-top: 1px solid var(--watch-rule);
-  color: var(--watch-muted);
-  font-size: 13px;
-}
-
-.watch-hud h2 {
-  margin: 0;
-  color: var(--watch-ink);
-  font-family: Georgia, "Songti SC", "SimSun", serif;
-  font-size: 23px;
-  line-height: 1.3;
-}
-
-#now-playing { color: var(--watch-accent); font-weight: 650; }
-
-#episode-list {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(min(86px, 100%), 1fr));
-  gap: 8px;
-}
-
-#episode-list button, .watch-transport button, .watch-notice button {
-  font: inherit;
-  cursor: pointer;
-}
-
-#episode-list button {
-  display: grid;
-  place-items: center;
-  min-height: 44px;
-  padding: 8px;
-  border: 1px solid var(--watch-rule);
-  border-radius: 2px;
-  background: transparent;
-  color: var(--watch-ink);
-  font-size: 14px;
-  font-weight: 600;
-  line-height: 1.35;
-  font-variant-numeric: tabular-nums;
-}
-
-#episode-list button:hover { border-color: var(--watch-accent); color: var(--watch-accent); }
-#episode-list button[aria-current="true"] {
-  border-color: var(--watch-accent);
-  background: var(--watch-accent);
-  color: #fffaf1;
-}
-
-.watch-transport {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 18px;
-  margin-top: 15px;
-  border-top: 1px solid var(--watch-rule);
-}
-
-.watch-transport button {
-  display: inline-flex;
-  align-items: center;
-  gap: 7px;
-  min-height: 44px;
-  padding: 5px 0;
-  border: 0;
-  background: transparent;
-  color: var(--watch-ink);
-  font-size: 13px;
-  font-weight: 650;
-}
-
-.watch-transport button:disabled { opacity: .38; cursor: default; }
-.watch-transport button:hover:enabled { color: var(--watch-accent); }
-
-.watch-notice {
-  margin: 8px 0 0;
-  color: var(--watch-muted);
-  font-size: 14px;
-  line-height: 1.6;
-}
-
-.watch-notice button {
-  padding: 4px 7px;
-  border: 1px solid var(--watch-rule);
-  border-radius: 2px;
-  background: transparent;
-  color: var(--watch-accent);
-}
-
-.watch-external, #watch #classic-link {
-  display: inline-flex;
-  align-items: center;
-  min-height: 40px;
-  margin-right: 16px;
-  color: var(--watch-muted);
-  font-size: 13px;
-  text-decoration: underline;
-  text-decoration-thickness: 1px;
-  text-underline-offset: 4px;
-}
-
-#watch :is(a, button, video):focus-visible {
-  outline: 2px solid var(--watch-accent);
-  outline-offset: 3px;
-}
-
-@media (max-width: 800px) {
-  #watch { padding-top: 13px; }
-  #watch .watch-back { margin-bottom: 9px; }
-  .watch-layout { grid-template-columns: minmax(0, 1fr); gap: 23px; }
-  .watch-screen { height: clamp(280px, 50vh, 540px); height: clamp(280px, 50svh, 540px); }
-  .watch-info { padding-top: 0; }
-  #watch .watch-kicker { margin-bottom: 10px; }
-  #series-name { font-size: clamp(32px, 6vw, 48px); }
-  #watch-summary { max-width: none; margin: 15px 0 20px; }
-}
-
-@media (max-width: 420px) {
-  #watch { padding-inline: 16px; }
-  .watch-layout { gap: 19px; }
-  #episode-list { grid-template-columns: repeat(3, minmax(0, 1fr)); }
-}
-
-.tape-deck {
-  --tape-mint: #9ed4bf;
-  --tape-copper: #d6a27a;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 16px;
-  min-height: 42px;
-  padding: 0 12px;
-  border-bottom: 1px solid #4e4d41;
-  color: #eee8d9;
-  background: #292a24;
-}
-.tape-cassette {
-  display: inline-flex;
-  align-items: center;
-  justify-content: space-between;
-  isolation: isolate;
-  position: relative;
-  width: 92px;
-  height: 27px;
-  padding: 0 8px;
-  border: 1px solid #56594d;
-  border-radius: 14px 14px 9px 9px;
-  background: linear-gradient(#1b201b, #34342b);
-  box-shadow: inset 0 1px 2px #1117;
-}
-.tape-reel {
-  display: grid;
-  place-items: center;
-  position: relative;
-  width: 21px;
-  height: 21px;
-  border-radius: 50%;
-  border: 1px solid #6c7b69;
-  background: repeating-radial-gradient(circle, #544c3b 0 1px, #7b7053 1px 2px);
-}
-.tape-reel i {
-  position: relative;
-  width: 15px;
-  height: 15px;
-  border-radius: 50%;
-  background: repeating-conic-gradient(from 5deg, #333a32 0deg 41deg, var(--tape-mint) 42deg 70deg, #596b59 71deg 90deg);
-  box-shadow: inset 0 0 0 1px #bccab26b;
-}
-.tape-reel:last-child i {
-  background: repeating-conic-gradient(from 40deg, #44382c 0deg 41deg, var(--tape-copper) 42deg 70deg, #7c654b 71deg 90deg);
-}
-.tape-reel i::after {
-  content: "";
+.lp-root:fullscreen { width: 100vw; height: 100vh; height: 100dvh; }
+.lp-root[hidden], .lp-root [hidden] { display: none !important; }
+html.lp-open, html.lp-open body { overflow: hidden; }
+.lp-root *, .lp-root *::before, .lp-root *::after { box-sizing: border-box; }
+.lp-root::before {
+  content: '';
   position: absolute;
-  inset: 5px;
-  border-radius: 50%;
-  border: 1px solid #d1ceb6;
-  background: #2a3029;
+  inset: -6%;
+  z-index: -2;
+  pointer-events: none;
+  background: var(--lp-poster, none) center 30% / cover;
+  filter: blur(75px) saturate(.65);
+  opacity: .13;
 }
-.tape-band {
+.lp-root::after {
+  content: '';
   position: absolute;
   z-index: -1;
-  left: 17px;
-  right: 17px;
-  top: 6px;
-  height: 13px;
-  border-top: 1px solid #ad8b62;
-  border-bottom: 2px solid #a38662;
-  background: repeating-linear-gradient(95deg, transparent 0 6px, #bea579 6px 9px, transparent 9px 12px) left bottom/12px 1px repeat-x;
+  inset: 0;
+  pointer-events: none;
+  background: radial-gradient(ellipse at 50% 43%, transparent, rgba(5,4,3,.35) 67%, #050403);
 }
-.tape-toggle {
-  display: inline-flex;
-  align-items: center;
-  justify-content: end;
-  gap: 8px;
-  min-height: 42px;
-  margin-left: auto;
-  padding: 0 2px;
+.lp-root :is(button, select, input) { font: inherit; }
+.lp-root button { cursor: pointer; }
+.lp-root :is(button,input,select):focus-visible { outline: 2px solid var(--lp-highlight); outline-offset: 3px; }
+.lp-root button:disabled, .lp-root select:disabled { cursor: default; opacity: .42; }
+.lp-root .lp-header, .lp-root .lp-console {
+  position: relative;
+  inset: auto;
+  z-index: 2;
+  margin: 0;
+  box-shadow: none;
   border: 0;
   background: transparent;
-  color: inherit;
-  font-size: 12px;
-  font-weight: 650;
-  letter-spacing: .035em;
+  backdrop-filter: none;
+  transition: opacity .24s ease;
 }
-.tape-switch {
-  display: inline-grid;
+.lp-root .lp-header {
+  display: grid;
+  grid-template-columns: 1fr minmax(0, auto) 1fr;
   align-items: center;
-  width: 25px;
-  height: 14px;
-  padding: 1px 2px;
-  border: 1px solid #8c8d7c;
-  border-radius: 9px;
-  background: #33362d;
+  width: 100%;
+  gap: 18px;
+  padding: max(14px, env(safe-area-inset-top)) max(4.2vw, env(safe-area-inset-right)) 13px max(4.2vw, env(safe-area-inset-left));
 }
-.tape-switch::after {
-  content: "";
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  background: #c1c3af;
+.lp-root .lp-header > .lp-button:first-child { justify-self: start; }
+.lp-root .lp-header > .lp-button:last-child { justify-self: end; }
+.lp-heading {
+  display: flex;
+  justify-content: center;
+  align-items: baseline;
+  gap: 13px;
+  min-width: 0;
+  white-space: nowrap;
 }
-.tape-toggle[aria-pressed="true"] .tape-switch { border-color: #9fc4a9; background: #385547; }
-.tape-toggle[aria-pressed="true"] .tape-switch::after { justify-self: end; background: #d0edd6; }
-.watch-stage .watch-screen { position: relative; }
-.tape-plane {
-  display: none;
+.lp-heading strong {
+  overflow: hidden;
+  font-family: 'Baskervville', 'Noto Serif SC', 'Songti SC', 'SimSun', Georgia, serif;
+  font-weight: 500;
+  font-size: clamp(17px, 2vw, 25px);
+  line-height: 1.3;
+  color: var(--lp-paper);
+  text-overflow: ellipsis;
+}
+.lp-heading span { flex-shrink: 0; font-size: 12px; color: var(--lp-muted); }
+.lp-root .lp-button, .lp-root .lp-center {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  flex: 0 0 auto;
+  min-width: 42px;
+  min-height: 42px;
+  padding: 0 8px;
+  border: 0;
+  border-radius: 6px;
+  background: transparent;
+  box-shadow: none;
+  color: var(--lp-paper);
+  white-space: nowrap;
+  font-size: 13px;
+  line-height: 1.2;
+  letter-spacing: .015em;
+  touch-action: manipulation;
+}
+.lp-root .lp-button svg, .lp-root .lp-center svg { display: block; width: 21px; height: 21px; flex: 0 0 auto; }
+.lp-root .lp-button:hover:not(:disabled), .lp-root .lp-button[aria-expanded=true] {
+  color: var(--lp-highlight);
+  background: rgba(245,235,221,.075);
+}
+.lp-root .lp-stage {
+  position: relative;
+  display: grid;
+  place-items: center;
+  min-width: 0;
+  min-height: 0;
+  overflow: hidden;
+  touch-action: none;
+  user-select: none;
+  -webkit-user-select: none;
+  transition: margin .24s ease;
+}
+.lp-root #lp-video {
+  display: block;
   position: absolute;
-  z-index: 1;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  max-height: none;
+  border: 0;
+  border-radius: 0;
+  object-fit: contain;
+  object-position: center;
+  background: transparent;
   pointer-events: none;
-  overflow: hidden;
 }
-.watch-stage[data-tape="on"][data-tape-running="true"] .tape-plane { display: block; }
-.watch-stage[data-tape="off"] .tape-cassette { visibility: hidden; }
-.tape-surface {
+.lp-root video::cue { color: #fff; background: rgba(0,0,0,.78); }
+.lp-root .lp-center {
+  z-index: 1;
+  width: 68px;
+  height: 68px;
+  border: 1px solid rgba(242,234,223,.62);
+  border-radius: 50%;
+  color: #fff;
+  background: rgba(12,10,8,.52);
+  backdrop-filter: blur(8px);
+}
+.lp-root .lp-center svg { width: 27px; height: 27px; transform: translateX(1px); }
+.lp-root .lp-loading {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  border: 2px solid rgba(255,255,255,.25);
+  border-top-color: var(--lp-highlight);
+  animation: lp-loading 1s linear infinite;
+}
+@keyframes lp-loading { to { transform: rotate(360deg); } }
+.lp-root .lp-console {
+  width: min(100%, 1220px);
+  justify-self: center;
+  padding: 4px max(4.2vw, env(safe-area-inset-right)) max(14px, env(safe-area-inset-bottom)) max(4.2vw, env(safe-area-inset-left));
+}
+.lp-controls { display: flex; align-items: center; gap: 3px; }
+.lp-time {
+  font-size: 12px;
+  font-variant-numeric: tabular-nums;
+  color: var(--lp-muted);
+  margin-inline: 9px;
+  white-space: nowrap;
+}
+.lp-time b { font-weight: 600; color: var(--lp-paper); }
+.lp-spacer { flex: 1; }
+.lp-volume { display: flex; align-items: center; margin-right: 12px; }
+.lp-root .lp-range {
+  --lp-fill: 0%;
+  display: block;
+  height: 24px;
+  padding: 0;
+  margin: 0;
+  background: transparent;
+  border: 0;
+  border-radius: 0;
+  vertical-align: middle;
+  cursor: pointer;
+  -webkit-appearance: none;
+  appearance: none;
+}
+.lp-root .lp-range::-webkit-slider-runnable-track {
+  height: 3px;
+  border-radius: 3px;
+  background: linear-gradient(to right,var(--lp-highlight) var(--lp-fill),rgba(238,228,212,.28) var(--lp-fill));
+}
+.lp-root .lp-range::-moz-range-track { height: 3px; background: rgba(238,228,212,.28); border-radius: 3px; }
+.lp-root .lp-range::-moz-range-progress { height: 3px; background: var(--lp-highlight); }
+.lp-root .lp-range::-webkit-slider-thumb {
+  width: 10px; height: 10px; margin-top: -3.5px; border: 0; border-radius: 50%; background: var(--lp-paper);
+  appearance: none; -webkit-appearance: none;
+}
+.lp-root .lp-range::-moz-range-thumb { width: 10px; height: 10px; border: 0; border-radius: 50%; background: var(--lp-paper); }
+.lp-root .lp-progress { width: 100%; }
+.lp-root #lp-volume { width: 65px; }
+.lp-root.lp-idle { cursor: none; }
+.lp-root.lp-idle .lp-stage { margin-top: calc(0px - var(--lp-head-height, 0px)); margin-bottom: calc(0px - var(--lp-foot-height, 0px)); }
+.lp-root.lp-idle .lp-header, .lp-root.lp-idle .lp-console { opacity: 0; pointer-events: none; }
+.lp-root .lp-toast, .lp-root .lp-error {
   position: absolute;
-  inset: 0 0 34%;
-  overflow: hidden;
-  background: repeating-linear-gradient(0deg, rgba(20,42,34,.13) 0 1px, transparent 1px 4px);
-  -webkit-mask-image: linear-gradient(#0009, #000b 42%, transparent);
-  mask-image: linear-gradient(#0009, #000b 42%, transparent);
+  z-index: 2;
+  border: 1px solid rgba(242,234,223,.25);
+  background: rgba(14,12,10,.95);
+  border-radius: 5px;
+  padding: 9px 15px;
+  color: #fff;
+  font-size: 14px;
+  text-align: center;
 }
-.tape-tracking, .tape-lock { position: absolute; inset: 0; pointer-events: none; }
-.tape-tracking {
-  background:
-    linear-gradient(90deg,transparent 2%,#a3dbca99 12%,transparent 42%) 0 16%/100% 1px no-repeat,
-    linear-gradient(90deg,transparent 24%,#d99a6d9c 47%,transparent 79%) 0 18%/100% 1px no-repeat,
-    linear-gradient(90deg,transparent 8%,#a8dcc847 35%,transparent 75%) 0 22%/100% 3px no-repeat;
+.lp-root .lp-toast { top: 12%; pointer-events: none; opacity: 0; transition: opacity .15s; }
+.lp-root .lp-toast.lp-visible { opacity: 1; }
+.lp-root .lp-error { display: grid; gap: 12px; max-width: 90%; }
+.lp-error button, .lp-import {
+  justify-self: center;
+  padding: 9px 14px;
+  border: 1px solid rgba(242,234,223,.35);
+  color: var(--lp-paper);
+  border-radius: 4px;
+  background: transparent;
 }
-.tape-lock { opacity: 0; }
-@media (prefers-reduced-motion: no-preference) {
-  .watch-stage[data-tape-running="true"] .tape-reel i { animation: tape-spool-spin 3.8s linear infinite; }
-  .watch-stage[data-tape-running="true"] .tape-reel:last-child i { animation-duration: 4.6s; }
-  .watch-stage[data-tape-running="true"] .tape-band { animation: tape-travel 1.7s linear infinite; }
-  .watch-stage[data-tape-running="true"] .tape-tracking { animation: tape-tracking-drift 6.6s ease-in-out infinite; }
-  .watch-stage[data-tape-running="true"] .tape-lock {
-    background: linear-gradient(180deg, transparent 18%, #8ecab431 19%, transparent 21%, #e2a97b7a 22%, transparent 22.7%) top/100% 70% no-repeat;
-    animation: tape-lock-in .64s cubic-bezier(.2,.65,.35,1) both;
-  }
+.lp-root .lp-panel {
+  position: absolute;
+  z-index: 4;
+  right: max(4.2vw, env(safe-area-inset-right));
+  bottom: max(94px, calc(env(safe-area-inset-bottom) + 82px));
+  width: min(350px, calc(100% - 32px));
+  max-height: 72%;
+  padding: 13px 18px 17px;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  color: var(--lp-paper);
+  background: #191714;
+  border: 1px solid #514a41;
+  border-radius: 10px;
+  box-shadow: 0 16px 48px #0008;
 }
-@keyframes tape-spool-spin { to { transform: rotate(360deg); } }
-@keyframes tape-travel { to { background-position-x: 12px; } }
-@keyframes tape-tracking-drift {
-  0% { transform: translateY(-8%); opacity: .35; }
-  45% { transform: translateY(15%); opacity: .8; }
-  88%, 100% { transform: translateY(34%); opacity: 0; }
+.lp-panel-title { display: flex; align-items: center; justify-content: space-between; gap: 14px; margin: 0 0 8px; }
+.lp-panel-title strong { font-size: 17px; font-weight: 550; }
+.lp-root .lp-panel-title .lp-button { min-height: 32px; min-width: 32px; }
+.lp-root .lp-panel label {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin: 0;
+  min-height: 46px;
+  padding-block: 5px;
+  color: var(--lp-muted);
+  border-top: 1px solid #ffffff14;
 }
-@keyframes tape-lock-in {
-  0% { transform: translateY(-15%); opacity: 0; }
-  20% { opacity: .9; }
-  100% { transform: translateY(64%); opacity: 0; }
+.lp-root .lp-panel select, .lp-root #lp-link {
+  max-width: 70%;
+  padding: 6px 7px;
+  border: 1px solid #62594d;
+  border-radius: 4px;
+  color: var(--lp-paper);
+  background: #1f1b17;
 }
-
-.projection-fullscreen {
-  display:inline-flex; align-items:center; justify-content:center; gap:7px; flex:none;
-  min-height:40px; padding:0 0 0 12px; border:0; border-left:1px solid #535446;
-  background:transparent; color:#e6e0d0; font:600 12px/1.15 var(--sans);
+.lp-root #lp-link { width: 100%; }
+.lp-root .lp-import { margin-top: 11px; min-height: 36px; font-size: 12px; }
+.lp-root .lp-episodes { width: min(555px, calc(100% - 32px)); }
+.lp-root .lp-rail {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 5px 1px 9px;
+  overflow-x: auto;
+  overscroll-behavior-inline: contain;
+  scroll-snap-type: x proximity;
+  scrollbar-width: thin;
+  scrollbar-color: #746451 #201d19;
 }
-.projection-fullscreen::before {
-  content:""; width:15px; height:13px; display:inline-block;
-  background:
-    linear-gradient(currentColor,currentColor) top left / 5px 1.5px,
-    linear-gradient(currentColor,currentColor) top left / 1.5px 5px,
-    linear-gradient(currentColor,currentColor) top right / 5px 1.5px,
-    linear-gradient(currentColor,currentColor) top right / 1.5px 5px,
-    linear-gradient(currentColor,currentColor) bottom left / 5px 1.5px,
-    linear-gradient(currentColor,currentColor) bottom left / 1.5px 5px,
-    linear-gradient(currentColor,currentColor) bottom right / 5px 1.5px,
-    linear-gradient(currentColor,currentColor) bottom right / 1.5px 5px;
-  background-repeat:no-repeat;
+.lp-root .lp-rail button {
+  min-width: 51px;
+  min-height: 45px;
+  flex: none;
+  border: 1px solid #514b42;
+  border-radius: 5px;
+  color: var(--lp-paper);
+  background: transparent;
+  font-size: 16px;
+  font-variant-numeric: tabular-nums;
+  scroll-snap-align: center;
 }
-.projection-fullscreen:hover,.projection-fullscreen:focus-visible{color:#b1dbc7}
-.watch-stage.is-expanded {
-  position:fixed; inset:0; z-index:1000; box-sizing:border-box;
-  width:100%; height:100%; height:100dvh; max-width:none; max-height:none;
-  display:grid; grid-template-rows:auto minmax(0,1fr) auto; align-content:stretch;
-  padding:env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left);
-  background:#141410;
+.lp-root .lp-rail button[aria-current=true] {
+  background: var(--lp-highlight);
+  border-color: var(--lp-highlight);
+  color: #16130f;
 }
-.watch-stage.is-expanded .watch-screen{height:100%; min-height:0; background:#141410}
-.watch-stage.is-expanded::backdrop{background:#141410}
-html.projection-expanded,html.projection-expanded body{overflow:hidden}
-@media(max-width:490px){
-  .tape-deck{gap:10px}
-  .projection-fullscreen{padding:0 3px;min-width:36px;border-left:0}
-  .projection-fullscreen span{display:none}
+.lp-root .lp-sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); }
+@media (max-width: 680px) {
+  .lp-root .lp-header { gap: 6px; grid-template-columns: 42px minmax(0,1fr) 42px; padding-inline: max(9px, env(safe-area-inset-left)) max(9px, env(safe-area-inset-right)); }
+  .lp-root .lp-header > .lp-button span { display: none; }
+  .lp-heading { display: grid; justify-items: center; gap: 2px; }
+  .lp-heading strong { max-width: 100%; font-size: 17px; }
+  .lp-heading span { font-size: 11px; }
+  .lp-root .lp-console { padding-inline: max(12px, env(safe-area-inset-left)) max(12px, env(safe-area-inset-right)); }
+  .lp-root .lp-controls { gap: 0; }
+  .lp-root .lp-button { min-width: 37px; min-height: 44px; padding: 0 6px; }
+  .lp-root .lp-controls .lp-button span { display: none; }
+  .lp-root .lp-time { margin-inline: 5px; font-size: 11px; }
+  .lp-root .lp-volume { margin-right: 0; }
+  .lp-root #lp-volume { display: none; }
+  .lp-root .lp-panel { right: max(12px, env(safe-area-inset-right)); bottom: max(86px, calc(env(safe-area-inset-bottom) + 75px)); }
 }
-</style></head><body>
-  <header class="mast"><div class="mast-inner wrap">
-    <a id="home-link" class="brand" href="./"><span class="brand-mark" aria-hidden="true"><i></i><i></i><i></i></span><span>短剧放映厅</span></a>
-    <nav class="mast-nav"><a href="#films" class="index-jump">作品目录</a><a id="language-link" href="./en/" aria-label="切换至英文"><b>中</b><i>/</i>EN</a></nav>
-  </div></header>
-  <main><section id="catalogue" class="wrap">
-    <section class="feature" aria-label="焦点放映" aria-roledescription="轮播">
-      <article class="feature-slide" data-id="deaf-no-more">
-      <div class="feature-art"><img src="./media/feature-deaf-no-more.jpg" alt="" fetchpriority="high"></div>
-      <div class="feature-copy"><p class="feature-meta"><span class="signal"></span>焦点放映<span class="meta-rule"></span>9 集选映</p>
-        <h1 class="feature-title">他在掌心写爱，<wbr>我在耳边听谎</h1>
-        <p class="feature-description">结婚纪念日那晚，刚恢复听力的伊莲娜看着丈夫用手语说爱她，却听见他压低声音，问起了另一个女人。</p>
-        <a class="hero-action" href="#deaf-no-more" aria-label="进入选集 · 他在掌心写爱，我在耳边听谎"><span class="triangle" aria-hidden="true"></span>进入选集</a>
-      </div></article><article class="feature-slide" data-id="marriage-partner" hidden>
-      <div class="feature-art"><img data-src="./media/feature-marriage-partner.jpg" alt="" ></div>
-      <div class="feature-copy"><p class="feature-meta"><span class="signal"></span>焦点放映<span class="meta-rule"></span>5 集选映</p>
-        <h1 class="feature-title">我的老公不讨厌我</h1>
-        <p class="feature-description">为了搅黄和死对头格兰特的婚事，她故意在两家人面前出糗。准新郎却站了起来，为她鼓掌。</p>
-        <a class="hero-action" href="#marriage-partner" aria-label="进入选集 · 我的老公不讨厌我"><span class="triangle" aria-hidden="true"></span>进入选集</a>
-      </div></article><article class="feature-slide" data-id="serpent-king" hidden>
-      <div class="feature-art"><img data-src="./media/feature-serpent-king.jpg" alt="" ></div>
-      <div class="feature-copy"><p class="feature-meta"><span class="signal"></span>焦点放映<span class="meta-rule"></span>3 集选映</p>
-        <h1 class="feature-title">重生为蛇王的禁忌伴侣</h1>
-        <p class="feature-description">被妹妹毒害后，西耶娜重回择偶大典。这一次，妹妹抢先救下了西耶娜前世的伴侣凤凰领主，而西耶娜遇见了蛇王。</p>
-        <a class="hero-action" href="#serpent-king" aria-label="进入选集 · 重生为蛇王的禁忌伴侣"><span class="triangle" aria-hidden="true"></span>进入选集</a>
-      </div></article>
-      <div class="feature-controls"><span class="position" aria-live="polite" aria-atomic="true"><b id="feature-index">01</b><i>/</i>03</span><button id="feature-prev" type="button" aria-label="上一部焦点作品"><span aria-hidden="true" class="arrow-icon left"></span></button><button id="feature-next" type="button" aria-label="下一部焦点作品"><span aria-hidden="true" class="arrow-icon right"></span></button></div>
-    </section>
-    <section id="films" tabindex="-1" aria-labelledby="films-title"><header class="index-head"><h2 id="films-title">全部剧目</h2><span>3 部短剧 · 17 集选映</span></header>
-      <div class="films-grid"><article class="film-entry"><a class="film-card" data-series="deaf-no-more" href="#deaf-no-more">
-    <div class="card-image"><img src="./media/gallery-deaf-no-more.jpg" width="600" height="825" loading="lazy" decoding="async" alt=""><span class="card-count">9 集选映</span></div>
-    <div class="card-caption"><div><h3>他在掌心写爱，我在耳边听谎</h3><p lang="en">Deaf No More, She Uncovers His Lies</p></div><span class="card-open" aria-hidden="true"><span aria-hidden="true" class="arrow-icon diagonal"></span></span></div>
-    </a></article><article class="film-entry"><a class="film-card" data-series="marriage-partner" href="#marriage-partner">
-    <div class="card-image"><img src="./media/gallery-marriage-partner.jpg" width="600" height="825" loading="lazy" decoding="async" alt=""><span class="card-count">5 集选映</span></div>
-    <div class="card-caption"><div><h3>我的老公不讨厌我</h3><p lang="en">My Marriage Partner Sucks at Pretending to Hate Me</p></div><span class="card-open" aria-hidden="true"><span aria-hidden="true" class="arrow-icon diagonal"></span></span></div>
-    </a></article><article class="film-entry"><a class="film-card" data-series="serpent-king" href="#serpent-king">
-    <div class="card-image"><img src="./media/gallery-serpent-king.jpg" width="600" height="825" loading="lazy" decoding="async" alt=""><span class="card-count">3 集选映</span></div>
-    <div class="card-caption"><div><h3>重生为蛇王的禁忌伴侣</h3><p lang="en">Reborn as the Serpent King’s Forbidden Mate</p></div><span class="card-open" aria-hidden="true"><span aria-hidden="true" class="arrow-icon diagonal"></span></span></div>
-    </a></article></div>
-    </section>
-    <noscript><h2>他在掌心写爱，我在耳边听谎</h2><a href="./media/palm-ep02.mp4">第 2 集</a> · <a href="./media/palm-ep03.mp4">第 3 集</a> · <a href="./media/palm-ep04.mp4">第 4 集</a> · <a href="./media/palm-ep08.mp4">第 8 集</a> · <a href="./media/palm-ep15.mp4">第 15 集</a> · <a href="./media/palm-ep16.mp4">第 16 集</a> · <a href="./media/palm-ep17.mp4">第 17 集</a> · <a href="./media/palm-ep18.mp4">第 18 集</a> · <a href="./media/palm-ep19.mp4">第 19 集</a><h2>我的老公不讨厌我</h2><a href="./media/partner-ep01.mp4">第 1 集</a> · <a href="./media/partner-ep02.mp4">第 2 集</a> · <a href="./media/partner-ep05.mp4">第 5 集</a> · <a href="./media/partner-ep06.mp4">第 6 集</a> · <a href="./media/partner-ep07.mp4">第 7 集</a><h2>重生为蛇王的禁忌伴侣</h2><a href="./media/serpent-ep01.mp4">第 1 集</a> · <a href="./media/serpent-ep03.mp4">第 3 集</a> · <a href="./media/serpent-ep04.mp4">第 4 集</a></noscript>
-  </section>
-  <section id="watch" aria-labelledby="series-name" hidden><a class="watch-back" href="./"><span aria-hidden="true" class="arrow-icon left"></span>返回片库</a>
-    <div class="watch-layout"><div class="watch-screen"><video id="video" controls playsinline preload="metadata" aria-label="视频播放器"></video></div>
-    <div class="watch-info"><p class="watch-kicker"></p><h1 id="series-name" tabindex="-1"></h1><p id="watch-alt" lang="en"></p><p id="watch-summary"></p>
-      <div class="watch-hud"><h2>选集</h2><span aria-live="polite">正在播放 · <strong id="now-playing"></strong></span></div>
-      <div id="episode-list" role="group" aria-label="选集"></div>
-      <div class="watch-transport"><button id="previous" type="button"><span aria-hidden="true" class="arrow-icon left"></span>上一集</button><button id="next" type="button">下一集<span aria-hidden="true" class="arrow-icon right"></span></button></div>
-      <a id="classic-link" href="./classic.html">用放映机观看本集 ↗</a></div></div></section></main>
-  <script id="library-data" type="application/json">{"lang":"zh","base":"./","series":[{"id":"deaf-no-more","title":"他在掌心写爱，我在耳边听谎","otherTitle":"Deaf No More, She Uncovers His Lies","description":"结婚纪念日那晚，刚恢复听力的伊莲娜看着丈夫用手语说爱她，却听见他压低声音，问起了另一个女人。","poster":"media/palm-poster-v2.jpg","feature":"media/feature-deaf-no-more.jpg","gallery":"media/gallery-deaf-no-more.jpg","episodes":[{"id":"palm-ep02","title":"第 2 集","cover":"media/palm-poster-v2.jpg","source":{"kind":"video","provider":"file","src":"media/palm-ep02.mp4"}},{"id":"palm-ep03","title":"第 3 集","cover":"media/palm-still-03.jpg","source":{"kind":"video","provider":"file","src":"media/palm-ep03.mp4"}},{"id":"palm-ep04","title":"第 4 集","cover":"media/palm-still-04.jpg","source":{"kind":"video","provider":"file","src":"media/palm-ep04.mp4"}},{"id":"palm-ep08","title":"第 8 集","cover":"media/palm-still-08.jpg","source":{"kind":"video","provider":"file","src":"media/palm-ep08.mp4"}},{"id":"palm-ep15","title":"第 15 集","cover":"media/palm-still-15.jpg","source":{"kind":"video","provider":"file","src":"media/palm-ep15.mp4"}},{"id":"palm-ep16","title":"第 16 集","cover":"media/palm-still-16.jpg","source":{"kind":"video","provider":"file","src":"media/palm-ep16.mp4"}},{"id":"palm-ep17","title":"第 17 集","cover":"media/palm-still-17.jpg","source":{"kind":"video","provider":"file","src":"media/palm-ep17.mp4"}},{"id":"palm-ep18","title":"第 18 集","cover":"media/palm-still-18.jpg","source":{"kind":"video","provider":"file","src":"media/palm-ep18.mp4"}},{"id":"palm-ep19","title":"第 19 集","cover":"media/palm-still-19.jpg","source":{"kind":"video","provider":"file","src":"media/palm-ep19.mp4"}}]},{"id":"marriage-partner","title":"我的老公不讨厌我","otherTitle":"My Marriage Partner Sucks at Pretending to Hate Me","description":"为了搅黄和死对头格兰特的婚事，她故意在两家人面前出糗。准新郎却站了起来，为她鼓掌。","poster":"media/partner-poster.png","feature":"media/feature-marriage-partner.jpg","gallery":"media/gallery-marriage-partner.jpg","episodes":[{"id":"partner-ep01","title":"第 1 集","cover":"media/partner-poster-screen.jpg","source":{"kind":"video","provider":"file","src":"media/partner-ep01.mp4"}},{"id":"partner-ep02","title":"第 2 集","cover":"media/partner-still-02.jpg","source":{"kind":"video","provider":"file","src":"media/partner-ep02.mp4"}},{"id":"partner-ep05","title":"第 5 集","cover":"media/partner-still-05.jpg","source":{"kind":"video","provider":"file","src":"media/partner-ep05.mp4"}},{"id":"partner-ep06","title":"第 6 集","cover":"media/partner-still-06.jpg","source":{"kind":"video","provider":"file","src":"media/partner-ep06.mp4"}},{"id":"partner-ep07","title":"第 7 集","cover":"media/partner-still-07.jpg","source":{"kind":"video","provider":"file","src":"media/partner-ep07.mp4"}}]},{"id":"serpent-king","title":"重生为蛇王的禁忌伴侣","otherTitle":"Reborn as the Serpent King’s Forbidden Mate","description":"被妹妹毒害后，西耶娜重回择偶大典。这一次，妹妹抢先救下了西耶娜前世的伴侣凤凰领主，而西耶娜遇见了蛇王。","poster":"media/serpent-poster.jpg","feature":"media/feature-serpent-king.jpg","gallery":"media/gallery-serpent-king.jpg","episodes":[{"id":"serpent-ep01","title":"第 1 集","cover":"media/serpent-poster.jpg","source":{"kind":"video","provider":"file","src":"media/serpent-ep01.mp4"}},{"id":"serpent-ep03","title":"第 3 集","cover":"media/serpent-still-03.jpg","source":{"kind":"video","provider":"file","src":"media/serpent-ep03.mp4"}},{"id":"serpent-ep04","title":"第 4 集","cover":"media/serpent-still-04.jpg","source":{"kind":"video","provider":"file","src":"media/serpent-ep04.mp4"}}]}],"labels":{"library":"短剧作品集","collection":"回到放映厅","libraryCount":"{s} 部剧集 · {n} 集","kind":"短剧","booth":"放映厅","programme":"作品简介","watchSeries":"放映此剧","project":"放映","previousWork":"上一部剧","nextWork":"下一部剧","introJump":"下滑看作品简介","dragHint":"横向拖动胶片换剧","episodeCount":"收录 {n} 集","episodeList":"选集","watch":"观看","progress":"正在播放","prev":"上一集","next":"下一集","finished":"已播完本剧收录的最后一集。","open":"在原平台观看","unavailable":"视频未能加载。","retry":"重新加载","classic":"用放映机观看本集","playSeries":"放映《{title}》"},"siteTitle":"短剧放映厅"}</script>
-  <script type="module" src="./assets/library-MARKVL7P.js"></script></body></html>
+@media (orientation: landscape) and (max-height: 550px) {
+  .lp-root .lp-header { padding-top: max(2px, env(safe-area-inset-top)); padding-bottom: 0; }
+  .lp-root .lp-console { padding-top: 0; padding-bottom: max(2px, env(safe-area-inset-bottom)); }
+  .lp-root .lp-header .lp-button, .lp-root .lp-controls .lp-button { min-height: 32px; }
+  .lp-root .lp-panel { bottom: 61px; }
+  .lp-root .lp-progress { height: 17px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .lp-root .lp-header, .lp-root .lp-console, .lp-root .lp-toast, .lp-root .lp-stage { transition: none; }
+  .lp-root .lp-loading { animation: none; }
+  .lp-root .lp-rail { scroll-behavior: auto; }
+}
+</style>
+</head><body data-mode="home"><a class="lm-skip" href="#lm-main">跳至内容</a>
+<header class="lm-header"><div class="lm-header-in">
+<a class="lm-brand" href="#home" aria-label="LUMEN / 光谱放映厅"><span class="lm-prism" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></span><span>LUMEN</span></a>
+<nav class="lm-nav" aria-label="主导航"><a href="#home" data-nav="home">放映厅</a><a href="#curation" data-nav="curation">策展目录</a>
+<a class="lm-lang" id="language-link" href="./en/" aria-label="Switch to English" lang="en">EN</a></nav>
+</div></header>
+<main id="lm-main" tabindex="-1"><section id="lobby" aria-labelledby="lobby-heading">
+<div class="lm-stage">
+<div class="lm-halo" aria-hidden="true"></div>
+<div class="lm-visual"><button id="hero-image" type="button" aria-label="直接放映 · 他在掌心写爱，我在耳边听谎"><img src="./media/feature-deaf-no-more.jpg" alt="" fetchpriority="high" width="1080" height="771"></button><span class="lm-corner lm-tr" aria-hidden="true"></span><span class="lm-corner lm-br" aria-hidden="true"></span></div>
+<div class="lm-cover-copy"><p class="lm-date"><i aria-hidden="true"></i>影像作品集 · 2021—2025</p>
+<h1 id="lobby-heading"><span class="lm-latin">LUMEN</span><span class="lm-cjk"><em aria-hidden="true">/</em> 光谱放映厅</span></h1>
+<div class="lm-actions"><a class="lm-primary" href="#curation">进入策展模式<span class="lm-arrow" aria-hidden="true">↗</span></a><button class="lm-secondary" id="direct-screen" type="button"><i class="lm-play" aria-hidden="true"></i>直接放映</button></div></div>
+<div class="lm-now"><span class="lm-dot" aria-hidden="true"></span><span id="hero-title">他在掌心写爱，我在耳边听谎</span></div></div>
+<div class="lm-shelf"><div class="lm-shelf-info"><h2>本期片单</h2><p>3 部作品 · 17 集选映</p></div>
+<div class="lm-strip" aria-label="选择放映封面"><button class="lm-frame" data-hero="deaf-no-more" type="button" aria-pressed="true" aria-label="他在掌心写爱，我在耳边听谎" title="他在掌心写爱，我在耳边听谎"><img src="./media/feature-deaf-no-more.jpg" alt=""><span aria-hidden="true">01</span></button><button class="lm-frame" data-hero="marriage-partner" type="button" aria-pressed="false" aria-label="我的老公不讨厌我" title="我的老公不讨厌我"><img src="./media/feature-marriage-partner.jpg" alt=""><span aria-hidden="true">02</span></button><button class="lm-frame" data-hero="serpent-king" type="button" aria-pressed="false" aria-label="重生为蛇王的禁忌伴侣" title="重生为蛇王的禁忌伴侣"><img src="./media/feature-serpent-king.jpg" alt=""><span aria-hidden="true">03</span></button></div>
+<a class="lm-browse" href="#curation" aria-label="进入策展模式"><span aria-hidden="true">⟷</span></a></div></section>
+<section id="curation" hidden class="lumen-wrap" aria-label="策展模式"></section><section id="screening" hidden aria-label="沉浸放映"></section>
+<noscript><h2>他在掌心写爱，我在耳边听谎</h2><a href="./media/palm-ep02.mp4">第 2 集</a> · <a href="./media/palm-ep03.mp4">第 3 集</a> · <a href="./media/palm-ep04.mp4">第 4 集</a> · <a href="./media/palm-ep08.mp4">第 8 集</a> · <a href="./media/palm-ep15.mp4">第 15 集</a> · <a href="./media/palm-ep16.mp4">第 16 集</a> · <a href="./media/palm-ep17.mp4">第 17 集</a> · <a href="./media/palm-ep18.mp4">第 18 集</a> · <a href="./media/palm-ep19.mp4">第 19 集</a><h2>我的老公不讨厌我</h2><a href="./media/partner-ep01.mp4">第 1 集</a> · <a href="./media/partner-ep02.mp4">第 2 集</a> · <a href="./media/partner-ep05.mp4">第 5 集</a> · <a href="./media/partner-ep06.mp4">第 6 集</a> · <a href="./media/partner-ep07.mp4">第 7 集</a><h2>重生为蛇王的禁忌伴侣</h2><a href="./media/serpent-ep01.mp4">第 1 集</a> · <a href="./media/serpent-ep03.mp4">第 3 集</a> · <a href="./media/serpent-ep04.mp4">第 4 集</a></noscript>
+</main><script id="library-data" type="application/json">{"lang":"zh","base":"./","series":[{"id":"deaf-no-more","title":"他在掌心写爱，我在耳边听谎","otherTitle":"Deaf No More, She Uncovers His Lies","description":"结婚纪念日那晚，刚恢复听力的伊莲娜看着丈夫用手语说爱她，却听见他压低声音，问起了另一个女人。","poster":"media/palm-poster-v2.jpg","feature":"media/feature-deaf-no-more.jpg","gallery":"media/gallery-deaf-no-more.jpg","group":"intimacy","groupLabel":"亲密关系","accent":"#cd9a7e","tags":["婚姻悬疑","手语","秘密"],"episodes":[{"id":"palm-ep02","title":"第 2 集","cover":"media/palm-poster-v2.jpg","source":{"kind":"video","provider":"file","src":"media/palm-ep02.mp4"},"number":2,"duration":69.404444,"width":720,"height":1280,"burnedIn":true,"captions":[],"qualities":{"480":"media/palm-ep02-480.mp4"}},{"id":"palm-ep03","title":"第 3 集","cover":"media/palm-still-03.jpg","source":{"kind":"video","provider":"file","src":"media/palm-ep03.mp4"},"number":3,"duration":96.060952,"width":720,"height":1280,"burnedIn":true,"captions":[],"qualities":{"480":"media/palm-ep03-480.mp4"}},{"id":"palm-ep04","title":"第 4 集","cover":"media/palm-still-04.jpg","source":{"kind":"video","provider":"file","src":"media/palm-ep04.mp4"},"number":4,"duration":68.243447,"width":720,"height":1280,"burnedIn":true,"captions":[],"qualities":{"480":"media/palm-ep04-480.mp4"}},{"id":"palm-ep08","title":"第 8 集","cover":"media/palm-still-08.jpg","source":{"kind":"video","provider":"file","src":"media/palm-ep08.mp4"},"number":8,"duration":72.469002,"width":720,"height":1282,"burnedIn":true,"captions":[],"qualities":{"480":"media/palm-ep08-480.mp4"}},{"id":"palm-ep15","title":"第 15 集","cover":"media/palm-still-15.jpg","source":{"kind":"video","provider":"file","src":"media/palm-ep15.mp4"},"number":15,"duration":56.169002,"width":720,"height":1280,"burnedIn":true,"captions":[],"qualities":{"480":"media/palm-ep15-480.mp4"}},{"id":"palm-ep16","title":"第 16 集","cover":"media/palm-still-16.jpg","source":{"kind":"video","provider":"file","src":"media/palm-ep16.mp4"},"number":16,"duration":83.406077,"width":720,"height":1282,"burnedIn":true,"captions":[],"qualities":{"480":"media/palm-ep16-480.mp4"}},{"id":"palm-ep17","title":"第 17 集","cover":"media/palm-still-17.jpg","source":{"kind":"video","provider":"file","src":"media/palm-ep17.mp4"},"number":17,"duration":54.52,"width":720,"height":1282,"burnedIn":true,"captions":[],"qualities":{"480":"media/palm-ep17-480.mp4"}},{"id":"palm-ep18","title":"第 18 集","cover":"media/palm-still-18.jpg","source":{"kind":"video","provider":"file","src":"media/palm-ep18.mp4"},"number":18,"duration":68.243447,"width":720,"height":1280,"burnedIn":true,"captions":[],"qualities":{"480":"media/palm-ep18-480.mp4"}},{"id":"palm-ep19","title":"第 19 集","cover":"media/palm-still-19.jpg","source":{"kind":"video","provider":"file","src":"media/palm-ep19.mp4"},"number":19,"duration":62.879637,"width":720,"height":1282,"burnedIn":true,"captions":[],"qualities":{"480":"media/palm-ep19-480.mp4"}}]},{"id":"marriage-partner","title":"我的老公不讨厌我","otherTitle":"My Marriage Partner Sucks at Pretending to Hate Me","description":"为了搅黄和死对头格兰特的婚事，她故意在两家人面前出糗。准新郎却站了起来，为她鼓掌。","poster":"media/partner-poster.png","feature":"media/feature-marriage-partner.jpg","gallery":"media/gallery-marriage-partner.jpg","group":"intimacy","groupLabel":"亲密关系","accent":"#d07c9a","tags":["爱情喜剧","婚约","欢喜冤家"],"episodes":[{"id":"partner-ep01","title":"第 1 集","cover":"media/partner-poster-screen.jpg","source":{"kind":"video","provider":"file","src":"media/partner-ep01.mp4"},"number":1,"duration":106.046,"width":720,"height":1280,"burnedIn":true,"captions":[],"qualities":{"480":"media/partner-ep01-480.mp4"}},{"id":"partner-ep02","title":"第 2 集","cover":"media/partner-still-02.jpg","source":{"kind":"video","provider":"file","src":"media/partner-ep02.mp4"},"number":2,"duration":74.883991,"width":720,"height":1282,"burnedIn":true,"captions":[],"qualities":{"480":"media/partner-ep02-480.mp4"}},{"id":"partner-ep05","title":"第 5 集","cover":"media/partner-still-05.jpg","source":{"kind":"video","provider":"file","src":"media/partner-ep05.mp4"},"number":5,"duration":97.47737,"width":720,"height":1282,"burnedIn":true,"captions":[],"qualities":{"480":"media/partner-ep05-480.mp4"}},{"id":"partner-ep06","title":"第 6 集","cover":"media/partner-still-06.jpg","source":{"kind":"video","provider":"file","src":"media/partner-ep06.mp4"},"number":6,"duration":72.005011,"width":720,"height":1282,"burnedIn":true,"captions":[],"qualities":{"480":"media/partner-ep06-480.mp4"}},{"id":"partner-ep07","title":"第 7 集","cover":"media/partner-still-07.jpg","source":{"kind":"video","provider":"file","src":"media/partner-ep07.mp4"},"number":7,"duration":87.910998,"width":720,"height":1282,"burnedIn":true,"captions":[],"qualities":{"480":"media/partner-ep07-480.mp4"}}]},{"id":"serpent-king","title":"重生为蛇王的禁忌伴侣","otherTitle":"Reborn as the Serpent King’s Forbidden Mate","description":"被妹妹毒害后，西耶娜重回择偶大典。这一次，妹妹抢先救下了西耶娜前世的伴侣凤凰领主，而西耶娜遇见了蛇王。","poster":"media/serpent-poster.jpg","feature":"media/feature-serpent-king.jpg","gallery":"media/gallery-serpent-king.jpg","group":"fantasy","groupLabel":"异世界","accent":"#d9bf95","tags":["奇幻爱情","重生","兽族"],"episodes":[{"id":"serpent-ep01","title":"第 1 集","cover":"media/serpent-poster.jpg","source":{"kind":"video","provider":"file","src":"media/serpent-ep01.mp4"},"number":1,"duration":76.309333,"width":720,"height":1280,"burnedIn":true,"captions":[],"qualities":{"480":"media/serpent-ep01-480.mp4"}},{"id":"serpent-ep03","title":"第 3 集","cover":"media/serpent-still-03.jpg","source":{"kind":"video","provider":"file","src":"media/serpent-ep03.mp4"},"number":3,"duration":101.504,"width":720,"height":1282,"burnedIn":true,"captions":[],"qualities":{"480":"media/serpent-ep03-480.mp4"}},{"id":"serpent-ep04","title":"第 4 集","cover":"media/serpent-still-04.jpg","source":{"kind":"video","provider":"file","src":"media/serpent-ep04.mp4"},"number":4,"duration":79.04,"width":720,"height":1282,"burnedIn":true,"captions":[],"qualities":{"480":"media/serpent-ep04-480.mp4"}}]}],"groups":[{"id":"intimacy","label":"亲密关系"},{"id":"fantasy","label":"异世界"}],"siteTitle":"LUMEN / 光谱放映厅"}</script>
+<script type="module" src="./assets/library-GPUFBMRP.js"></script></body></html>
