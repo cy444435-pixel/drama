@@ -1,413 +1,404 @@
 <!doctype html>
 <html lang="zh-CN">
-<head>
-  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-  <meta name="color-scheme" content="dark"><meta name="theme-color" content="#151311">
-  <title>短剧作品集 · 短剧放映厅</title>
-  <meta name="description" content="三部短剧，共收录 17 集，按剧名和原集号浏览。">
-  <meta property="og:type" content="website"><meta property="og:title" content="短剧作品集 · 短剧放映厅">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="color-scheme" content="light"><meta name="theme-color" content="#f6f3ec">
+  <title>短剧放映厅 · 作品选集</title><meta name="description" content="三部短剧，共收录 17 集，按剧名和原集号浏览。">
+  <meta property="og:type" content="website"><meta property="og:title" content="短剧放映厅 · 作品选集"><meta property="og:description" content="三部短剧，共收录 17 集，按剧名和原集号浏览。">
   <meta property="og:image" content="./media/palm-poster-h1.jpg">
-  <link rel="alternate" hreflang="zh-CN" href="./">
-  <link rel="alternate" hreflang="en" href="./en/">
-  <style>:root {
-  color-scheme: dark;
-  --ink: #f1eadd;
-  --muted: #b2a99d;
-  --brass: #dfba80;
-  --line: #393630;
-  --page: #151412;
-  --serif: "Songti SC", "STSong", "Noto Serif SC", "Source Han Serif SC", "SimSun", Georgia, serif;
-  --sans: "Inter", "PingFang SC", "Microsoft YaHei", system-ui, sans-serif;
+  <link rel="alternate" hreflang="zh-CN" href="./"><link rel="alternate" hreflang="en" href="./en/">
+  <style>:root{
+  --paper:#f6f3ec; --ink:#26261f; --muted:#5a584f; --hair:#cbc8be; --red:#9f392e;
+  --display:"STSong","Songti SC","Noto Serif CJK SC","SimSun",Georgia,serif;
+  --sans:"Inter","PingFang SC","Microsoft YaHei","Noto Sans SC",Arial,sans-serif;
+  color:var(--ink); background:var(--paper); font:16px/1.56 var(--sans); -webkit-font-smoothing:antialiased;
+}
+*,*::before,*::after{box-sizing:border-box}
+body{margin:0}
+[hidden]{display:none!important}
+button,a{font:inherit; color:inherit; -webkit-tap-highlight-color:transparent}
+a{text-decoration:none}
+button{cursor:pointer}
+img{display:block; max-width:100%}
+button:focus-visible,a:focus-visible{outline:3px solid #ba553d; outline-offset:4px}
+.wrap{width:min(1440px,90.8%); margin-inline:auto}
+.mast{border-bottom:1px solid var(--hair)}
+.mast-inner{height:72px; display:flex; align-items:center; justify-content:space-between; gap:14px}
+.brand{display:inline-flex; align-items:center; gap:11px; font:700 25px/1.12 var(--display); letter-spacing:.045em; white-space:nowrap}
+.brand-mark{isolation:isolate; display:inline-flex; gap:3px; align-items:center; justify-content:center; transform:skew(-17deg); margin:0 3px; width:30px; height:30px; overflow:hidden}
+.brand-mark i{height:26px; width:6px; background:var(--red)}
+.brand-mark i:nth-child(2){height:21px}
+.brand-mark i:nth-child(3){height:15px}
+.mast-nav{display:flex; align-items:center; gap:25px; color:#534e45}
+.mast-nav a{font-size:13px; font-weight:550; min-height:44px; display:inline-flex; align-items:center; position:relative}
+.mast-nav a:hover{color:var(--red)}
+#language-link{border-left:1px solid var(--hair); padding-left:24px; min-height:17px; font-size:12px; font-weight:450}
+#language-link i,.position i{font-style:normal; opacity:.62; margin-inline:8px}
+#language-link b{color:var(--red); font-weight:700}
+.feature{position:relative; isolation:isolate; background:#22221d; color:#faf4e8; margin-top:29px; overflow:hidden}
+.feature-slide{position:relative; min-height:clamp(430px,35vw,525px); display:flex; align-items:center}
+.feature-art{position:absolute; top:0; bottom:0; right:0; width:68%}
+.feature-art img{width:100%; height:100%; object-fit:cover; object-position:50% 44%}
+.feature-slide[data-id="deaf-no-more"] .feature-art img{object-position:50% 20%}
+.feature-slide[data-id="marriage-partner"] .feature-art img{object-position:50% 49%}
+.feature-art::after{content:""; position:absolute; inset:0; background:linear-gradient(90deg,#22221d 0%,rgba(34,34,29,.94) 6%,rgba(34,34,29,.64) 20%,rgba(34,34,29,.15) 37%,transparent 58%),linear-gradient(0deg,rgba(12,12,9,.30),transparent 21%)}
+.feature-copy{position:relative; margin:39px 0 47px clamp(28px,4.7vw,81px); width:46%; z-index:1}
+.feature-meta{display:flex; align-items:center; gap:11px; margin:0 0 24px; font-size:12px; line-height:1.3; letter-spacing:.09em; font-weight:600; color:#e4d9c6}
+.signal{height:8px; width:8px; background:#db7355; flex:none}
+.meta-rule{height:11px; width:1px; background:#8b8577; margin:0 1px}
+.feature-title{margin:0; max-width:9.2em; font-family:var(--display); font-size:clamp(43px,4.15vw,68px); font-weight:600; line-height:1.21; letter-spacing:.015em; text-wrap:balance}
+.feature-description{font-size:clamp(13px,1vw,16px); line-height:1.85; color:#ddd8c9; margin:19px 0 0; max-width:30em}
+.hero-action{margin-top:26px; background:#f6f0de; color:#282922; display:inline-flex; align-items:center; justify-content:center; gap:11px; min-height:45px; padding:0 20px; font-size:14px; font-weight:650; border-radius:2px; transition:background .2s,transform .2s}
+.hero-action:hover{background:#fff; transform:translateY(-2px)}
+.triangle{width:0; height:0; border-left:8px solid currentColor; border-top:5px solid transparent; border-bottom:5px solid transparent}
+.feature-controls{position:absolute; bottom:22px; right:24px; display:flex; align-items:center; gap:6px; color:#fff7eb; z-index:1}
+.position{font:13px/1.4 Georgia,serif; font-variant-numeric:tabular-nums; letter-spacing:.09em; margin-right:7px; text-shadow:0 1px 3px #2b221a; padding:4px 8px; background:#1b1b1772; border-radius:1px}
+.position b{font-size:16px; font-weight:normal}
+.feature-controls button{width:36px; height:36px; padding:0; display:grid; place-items:center; border:1px solid #ffffff70; border-radius:50%; color:#fff; background:#211e19b0}
+.feature-controls button:hover{background:#eee7d9; color:#211f19}
+.arrow-icon{position:relative; width:17px; height:14px; display:inline-block; flex:none}
+.arrow-icon::before{content:""; position:absolute; top:6px; right:1px; left:1px; height:1.5px; background:currentColor}
+.arrow-icon::after{content:""; position:absolute; top:2.3px; right:2px; width:8px; height:8px; border-top:1.5px solid currentColor; border-right:1.5px solid currentColor; transform:rotate(45deg)}
+.arrow-icon.left{transform:rotate(180deg)}.arrow-icon.diagonal{transform:rotate(-45deg)}
+#films{scroll-margin-top:25px; padding:clamp(34px,3.9vw,65px) 0 70px; outline:none}
+.index-head{display:flex; align-items:baseline; justify-content:space-between; gap:15px; border-bottom:1px solid var(--hair); padding-bottom:14px; margin-bottom:23px}
+.index-head h2{font-family:var(--display); font-size:clamp(28px,2.6vw,41px); line-height:1.12; letter-spacing:.025em; margin:0; font-weight:650}
+.index-head>span{color:#57564c; font-size:13px; letter-spacing:.035em; white-space:nowrap}
+.films-grid{display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:clamp(16px,2.4vw,36px)}
+.film-card{display:block; height:100%}
+.card-image{aspect-ratio:8/11; overflow:hidden; position:relative; background:#cfcbc1}
+.card-image img{width:100%; height:100%; object-fit:cover; transition:transform .45s ease}
+.card-count{position:absolute; left:14px; top:14px; color:#fdf9f0; background:#1d1d18df; border:1px solid #ffffff3d; font-size:12px; padding:3px 9px; line-height:1.55}
+.film-card:hover img{transform:scale(1.025)}
+.card-caption{display:flex; align-items:flex-start; justify-content:space-between; gap:8px; margin-top:17px}
+.card-caption h3{margin:0 0 3px; font:650 clamp(18px,1.6vw,27px)/1.4 var(--display); letter-spacing:.01em}
+.card-caption p{margin:0; color:#625c51; font:italic 14px/1.45 Georgia,var(--display)}
+.card-open{flex:0 0 30px; height:30px; display:grid; place-items:center; margin-top:1px; border:1px solid var(--hair); border-radius:50%}
+.film-card:hover h3,.film-card:hover .card-open{color:var(--red)}
+:lang(en) .feature-title{font-family:Georgia,var(--display); font-weight:normal; font-size:clamp(42px,4.0vw,63px); max-width:10.5em; letter-spacing:-.035em; line-height:1.02}
+:lang(en) .brand{letter-spacing:-.025em}
+:lang(en) .feature-meta{text-transform:uppercase; font-size:11px}
+@media(max-width:900px){
+ .wrap{width:92%}.feature-copy{width:52%; margin-left:31px}
+ .feature-title{font-size:44px}.feature-description{max-width:26em}
+ .feature-art{width:68%}.card-caption p{font-size:12px}
+}
+@media(max-width:650px){
+ .wrap{width:calc(100% - 32px)}.mast-inner{height:59px}.brand{font-size:21px; gap:7px}.brand-mark{width:24px; height:25px; gap:2px}.brand-mark i{width:5px;height:22px}.brand-mark i:nth-child(2){height:17px}.brand-mark i:nth-child(3){height:12px}
+ .mast-nav{gap:14px}.mast-nav a{font-size:12px}#language-link{padding-left:13px}
+ .feature{margin-top:15px}.feature-slide{min-height:486px; align-items:end}
+ .feature-art{width:100%; height:70%; bottom:auto}
+ .feature-art img{object-position:center 28%}.feature-slide[data-id="deaf-no-more"] .feature-art img{object-position:50% 17%}
+ .feature-art::after{background:linear-gradient(0deg,#22221d 0%,rgba(34,34,29,.84) 12%,rgba(34,34,29,.23) 35%,transparent 57%)}
+ .feature-copy{margin:0; padding:0 22px 24px; width:100%}
+ .feature-meta{margin-bottom:10px; font-size:10.5px; gap:8px}
+ .feature-title{font-size:clamp(33px,7.9vw,44px); line-height:1.2; max-width:10.8em}
+ .feature-description{font-size:12px; line-height:1.75; margin-top:10px; color:#e5dece; max-width:32em}
+ .hero-action{min-height:40px; margin-top:19px; padding:0 13px; font-size:13px}
+ .feature-controls{bottom:24px;right:15px;gap:5px}.feature-controls button{height:34px;width:34px}.position{font-size:11px; padding:0; margin-right:3px; background:transparent}.position b{font-size:13px}.position i{margin:0 4px}
+ #films{padding:32px 0 44px}.index-head{padding-bottom:12px;margin-bottom:16px}.index-head h2{font-size:27px}.index-head>span{font-size:11px}
+ .films-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:23px 12px}.card-count{left:7px;top:7px;font-size:10px;padding:2px 6px}
+ .card-caption{margin-top:8px;gap:2px}.card-caption h3{font-size:17px}.card-caption p{font-size:11.5px}.card-open{display:none}
+ :lang(en) .feature-title{font-size:clamp(35px,8.5vw,43px);max-width:11em}:lang(en) .feature-meta{font-size:10px}
+}
+@media(max-width:450px){html[lang^="en"] .index-head{flex-wrap:wrap;gap:4px 14px}html[lang^="en"] .index-head>span{white-space:normal}}
+@media(max-width:345px){html[lang^="en"] .feature-controls .position{display:none}html[lang^="en"] .feature-copy{padding-right:16px}}
+@media(max-width:365px){.mast-nav{gap:8px}#language-link{padding-left:7px}.feature-copy{padding-inline:15px}.feature-controls{right:9px;gap:3px}.feature-slide{min-height:477px}.feature-description{font-size:11.5px}.feature-controls button{width:31px;height:31px}}
+@media(min-width:651px) and (max-width:820px){.feature-copy{width:54%}.feature-art{width:65%}.feature-title{font-size:40px}.feature-description{font-size:13px}.feature-slide{min-height:395px}}
+@media(prefers-reduced-motion:reduce){*,*::after,*::before{scroll-behavior:auto!important;transition:none!important;animation:none!important}}
+
+
+#watch[hidden], #catalogue[hidden], #watch [hidden] {
+  display: none !important;
 }
 
-* { box-sizing: border-box; }
-[hidden] { display: none !important; }
-html { min-height: 100%; background: var(--page); }
-body {
-  margin: 0;
-  min-height: 100vh;
-  background: radial-gradient(ellipse at 50% 18%, #221e19 0%, #171614 49%, #131311 100%);
-  color: var(--ink);
-  font: 15px/1.55 var(--sans);
-  -webkit-font-smoothing: antialiased;
+#watch {
+  --watch-ink: #24211e;
+  --watch-muted: #655e56;
+  --watch-accent: #9f392e;
+  --watch-rule: #cfc8bc;
+  box-sizing: border-box;
+  width: min(100%, 1440px);
+  margin-inline: auto;
+  padding: 26px clamp(20px, 5.2vw, 82px) clamp(48px, 8vw, 104px);
+  color: var(--watch-ink);
 }
-h1, h2, p { margin: 0; }
-a { color: inherit; text-decoration: none; }
-button { color: inherit; font: inherit; cursor: pointer; }
-svg { display: block; flex-shrink: 0; }
-:focus-visible { outline: 2px solid var(--brass); outline-offset: 4px; }
 
-.masthead { position: relative; z-index: 8; background: #171614; border-bottom: 1px solid var(--line); }
-body:has(#collection:not([hidden])) .masthead { position: absolute; inset: 0 0 auto; background: transparent; border: 0; }
-.mast-inner, #watch { width: min(calc(100% - 56px), 1136px); margin-inline: auto; }
-body:has(#collection:not([hidden])) .mast-inner { width: auto; margin-inline: var(--booth-gutter); }
-.mast-inner { display: flex; align-items: center; justify-content: space-between; gap: 16px; min-height: 66px; }
-.brand, .mast-nav, .language { display: inline-flex; align-items: center; }
-.brand { min-height: 44px; gap: 9px; }
-.brand-mark { display: inline-grid; place-items: center; color: var(--brass); }
-.brand-mark svg, svg.brand-mark { width: 25px; height: 25px; }
-.brand-name { font: 600 18px/1.2 var(--serif); letter-spacing: .04em; }
-.brand-sub { color: #c8bcaa; font-size: 13px; letter-spacing: .05em; }
-.mast-nav { gap: 16px; }
-.language { min-height: 44px; color: #e2d8c8; font-size: 13px; letter-spacing: .04em; }
-.language svg { width: 16px; height: 16px; }
-.category-chip { display: inline-flex; align-items: center; gap: 7px; padding: 6px 13px; border-radius: 20px; color: #20170b; background: #ebbc69; font-size: 13px; white-space: nowrap; }
-.category-chip small { font-size: 11px; }
+#watch *, #watch *::before, #watch *::after { box-sizing: border-box; }
 
-:root {
-  --booth-gutter: clamp(18px, 3vw, 44px);
-  --film-w: clamp(94px, 9vw, 140px);
-  --film-h: calc(var(--film-w) * .72);
-  --rail: 17px;
+#watch .watch-back {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  min-height: 38px;
+  margin-bottom: 17px;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--watch-muted);
+  text-decoration: none;
 }
-.booth-stage {
-  position: relative;
-  isolation: isolate;
-  height: 100vh;
-  height: 100svh;
-  min-height: 535px;
-  overflow: hidden;
-  background: #090605;
-}
-.booth-scene, .booth-fallback, .booth-vignette { position: absolute; inset: 0; }
-.booth-scene { z-index: 1; opacity: 0; pointer-events: none; touch-action: pan-y; }
-.booth-scene canvas { display: block; width: 100%; height: 100%; }
-.has-scene .booth-scene { opacity: 1; pointer-events: auto; }
-.has-scene .booth-fallback { visibility: hidden; }
-.booth-vignette {
-  z-index: 2; pointer-events: none;
-  background:
-    linear-gradient(0deg, #070504f2 0, #08060480 18%, transparent 44%, transparent 85%, #0906048a),
-    linear-gradient(90deg, #05030288, transparent 50%);
-}
-.booth-fallback {
-  overflow: hidden;
-  background:
-    linear-gradient(90deg, transparent 0 9%, #090706fa 23% 63%, transparent 84%),
-    linear-gradient(180deg, #0805034d 0%, transparent 34%, #130805 80%, #090706 100%),
-    repeating-linear-gradient(90deg, #110804 0, #31110d 15px, #130707 35px, #070505 57px, #180908 75px);
-}
-.booth-fallback::before {
-  content: ""; position: absolute; inset: 0 0 0 26%; pointer-events: none;
-  background: linear-gradient(82deg, #ffe0a84d, #ffeacd0f 40%, #fff0bd81 70%, transparent 88%);
-  clip-path: polygon(4% 17%, 74% 58%, 74% 61%, 4% 64%);
-}
-.booth-fallback::after {
-  content: ""; position: absolute; pointer-events: none; inset: 70% -1% -2%;
-  border-top: 3px solid #745130;
-  background:
-    linear-gradient(180deg, transparent, #0c0809cf 90%),
-    radial-gradient(ellipse 85px 80% at 50% 95%, #571b20 13%, #3d1017 53%, #1a0e11 56%, transparent 61%) 50% 0 / 116px 100% repeat-x;
-}
-#booth-screen {
-  position: absolute; top: 13%; left: 20%; width: 31%; height: 43%;
-  padding: 0; border: 0; background: transparent;
-  filter: drop-shadow(0 0 28px #e9bd7c1f);
-}
-#booth-poster { display: block; width: 100%; height: 100%; object-fit: contain; }
-.fallback-projector {
-  position: absolute; z-index: 1; right: 11%; top: 48%; width: 20%; height: 25%;
-  border: 1px solid #8f765c; border-radius: 12% 16% 10% 8%; transform: skewY(4deg);
-  background:
-    linear-gradient(90deg, #40372b 0 12%, transparent 13%),
-    repeating-linear-gradient(0deg, #211b15 0 12px, #784b2e 13px 17px, #211a14 19px 25px) 18% 57% / 35% 50% no-repeat,
-    linear-gradient(125deg, #655645, #29241e 35%, #171613 80%, #3c3326);
-  box-shadow: inset 6px 3px 10px #e4bd8425, 12px 20px 20px #08050490;
-}
-.fallback-projector::before, .fallback-projector::after {
-  content: ""; position: absolute; bottom: 92%; width: 64%; aspect-ratio: .86;
-  border: 2px solid #8b7662; border-radius: 50%;
-  background:
-    radial-gradient(ellipse at 50% 50%, #b99f77 0 3%, #513c2b 4% 7%, transparent 8%),
-    radial-gradient(ellipse at 50% 22%, #100c0a 0 10%, transparent 11%),
-    radial-gradient(ellipse at 23% 47%, #100d0c 0 10%, transparent 11%),
-    radial-gradient(ellipse at 80% 47%, #0e0c0a 0 10%, transparent 11%),
-    radial-gradient(ellipse at 36% 74%, #110e0b 0 10%, transparent 11%),
-    radial-gradient(ellipse at 68% 75%, #100d0b 0 10%, transparent 11%),
-    linear-gradient(120deg, #463e35, #897760 32%, #342d27 62%, #685a49);
-  box-shadow: inset 3px 1px 8px #eed4a94f, 4px 2px #29211b;
-}
-.fallback-projector::before { left: -7%; }
-.fallback-projector::after { right: -8%; bottom: 94%; width: 66%; }
-.booth-hud {
-  position: absolute; z-index: 3; left: var(--booth-gutter);
-  bottom: calc(var(--film-h) + 2 * var(--rail) + 74px + env(safe-area-inset-bottom));
-  width: min(560px, 46vw); text-shadow: 0 2px 24px #000c;
-  pointer-events: none;
-}
-.booth-hud a { pointer-events: auto; }
-.booth-counter { color: #dfba80; font: 600 12px/1.3 ui-monospace, Consolas, monospace; letter-spacing: .13em; }
-#booth-name { margin: 7px 0 0; color: #fcf4e7; font: 650 clamp(32px, 4.2vw, 62px)/1.13 var(--serif); letter-spacing: .025em; text-wrap: balance; }
-html[lang="en"] #booth-name { font-size: clamp(29px, 3.5vw, 52px); }
-#booth-meta { margin-top: 10px; color: #edc27c; font-size: 14px; letter-spacing: .06em; }
-#booth-play, .programme-play {
-  display: inline-flex; align-items: center; justify-content: center; gap: 7px;
-  min-height: 42px; width: fit-content; padding: 9px 18px; border: 1px solid #c29b65;
-  border-radius: 999px; color: #ffecd0; background: #372716bf; font-size: 14px; letter-spacing: .04em;
-}
-#booth-play { margin-top: 17px; }
-#booth-play svg, .programme-play svg { width: 15px; height: 15px; }
-.booth-controls { position: absolute; z-index: 4; bottom: 0; inset-inline: 0; padding-bottom: max(7px, env(safe-area-inset-bottom)); }
-.film-navigation { position: relative; display: flex; justify-content: center; align-items: center; min-height: calc(var(--film-h) + 2 * var(--rail)); }
-.film-window { max-width: calc(100% - 122px); overflow-x: auto; overflow-y: hidden; scrollbar-width: none; overscroll-behavior-x: contain; scroll-snap-type: x proximity; touch-action: pan-y; }
-.film-window::-webkit-scrollbar { display: none; }
-#booth-frames {
-  position: relative; display: flex; align-items: center; gap: 8px; margin: 0; width: max-content;
-  padding: var(--rail) 10px; list-style: none; background: #211a12e8;
-  border-block: 1px solid #534739;
-}
-#booth-frames::before, #booth-frames::after, .programme-art::before, .programme-art::after {
-  content: ""; position: absolute; z-index: 1; left: 5px; right: 5px; height: 5px; pointer-events: none;
-  background: repeating-linear-gradient(90deg, #a79c8a99 0 8px, transparent 8px 21px);
-}
-#booth-frames::before, .programme-art::before { top: 4px; }
-#booth-frames::after, .programme-art::after { bottom: 4px; }
-#booth-frames li { flex: none; scroll-snap-align: center; }
-.booth-frame {
-  display: block; position: relative; width: var(--film-w); height: var(--film-h); padding: 0;
-  border: 1px solid #423326; border-radius: 2px; background: #100e0c; color: #fff6e6;
-}
-.booth-frame img { width: 100%; height: 100%; display: block; object-fit: cover; object-position: center 26%; opacity: .67; }
-.booth-frame[aria-current="true"], .booth-frame[aria-pressed="true"] { border-color: #edbb67; box-shadow: 0 0 0 2px #c193475c, 0 0 15px #dfac5b48; }
-.booth-frame:is([aria-current="true"], [aria-pressed="true"], :hover) img { opacity: 1; }
-.frame-count { position: absolute; inset: auto auto 3px 4px; padding: 1px 3px; border-radius: 2px; background: #0b0907ad; color: #f0cc8e; font: 10px/1.2 ui-monospace, Consolas, monospace; }
-#booth-prev, #booth-next {
-  position: absolute; display: grid; place-items: center; width: 40px; height: 40px;
-  border: 1px solid #baab944f; border-radius: 50%; background: #17120dd9; color: #f2e5cd;
-}
-#booth-prev { left: var(--booth-gutter); }
-#booth-next { right: var(--booth-gutter); }
-#booth-prev:disabled, #booth-next:disabled { opacity: .4; cursor: default; }
-#booth-prev svg, #booth-next svg { width: 17px; height: 17px; }
-.booth-hint { display: flex; justify-content: center; align-items: center; gap: 12px; min-height: 34px; color: #c2b6a7; font-size: 12px; text-align: center; }
-#read-intro { display: inline-flex; align-items: center; gap: 5px; min-height: 34px; color: #ecc88c; }
-#read-intro svg { width: 14px; height: 14px; }
 
-.programme { color: var(--ink); background: radial-gradient(ellipse at 13% 10%, #292016, transparent 56%), #12110f; }
-.programme-inner { max-width: 1192px; margin: 0 auto; padding: clamp(44px, 6vw, 90px) 40px clamp(48px, 6vw, 90px); }
-.programme-head { display: flex; justify-content: space-between; align-items: center; gap: 18px; padding-bottom: clamp(22px, 3.4vw, 48px); }
-.programme-head h2 { scroll-margin-top: 24px; font: 500 clamp(32px, 4.1vw, 61px)/1.17 var(--serif); }
-#back-to-booth { display: inline-flex; align-items: center; gap: 6px; color: var(--brass); font-size: 13px; min-height: 40px; border-bottom: 1px solid #7e674b; }
-#back-to-booth svg { width: 16px; height: 16px; }
-.programme-entry {
-  display: grid; grid-template-columns: minmax(0, 1.29fr) minmax(0, 1fr); align-items: center;
-  gap: clamp(32px, 6.5vw, 92px); padding: clamp(30px, 4.5vw, 65px) 0; border-top: 1px solid #514639;
-}
-.programme-art {
-  position: relative; display: block; min-width: 0; aspect-ratio: 1.64; padding-block: 14px;
-  overflow: hidden; border: 1px solid #514638; background: #090806;
-}
-.programme-art img { display: block; width: 100%; height: 100%; object-fit: contain; }
-.programme-art::before, .programme-art::after { height: 4px; }
-.programme-copy { min-width: 0; }
-.programme-kind { color: #dfb67a; font-size: 13px; letter-spacing: .08em; }
-.programme-copy h3 { margin: 11px 0 0; font: 600 clamp(27px, 3vw, 47px)/1.2 var(--serif); text-wrap: balance; }
-.programme-title-en { margin-top: 8px; font: italic 16px/1.45 Georgia, var(--serif); color: #c4b7a0; }
-.programme-description { margin-top: 18px; font-size: 16px; color: #ded5c8; }
-.programme-play { margin-top: 20px; min-height: 40px; background: #2c2419; }
+#watch .watch-back:hover { color: var(--watch-accent); }
 
-#watch { padding-bottom: 34px; }
-.back-row { display: flex; align-items: center; min-height: 64px; }
-#return-link, .classic-link { display: inline-flex; align-items: center; gap: 8px; min-height: 44px; color: var(--muted); font-size: 14px; }
-#return-link svg, .classic-link svg { width: 16px; height: 16px; }
-.watch-grid {
+.watch-layout {
   display: grid;
-  grid-template-columns: minmax(0, 1.42fr) minmax(270px, 1fr);
-  gap: clamp(28px, 4.4vw, 64px);
+  grid-template-columns: minmax(0, 1.2fr) minmax(0, .9fr);
+  gap: clamp(30px, 5.5vw, 82px);
   align-items: start;
 }
-.stage {
+
+.watch-screen {
   display: grid;
   place-items: center;
   width: 100%;
-  height: clamp(400px, calc(100vh - 164px), 760px);
-  height: clamp(400px, calc(100svh - 164px), 760px);
+  height: clamp(420px, 68vh, 750px);
   overflow: hidden;
-  border: 1px solid #38342e;
-  border-radius: 6px;
-  background: #070707;
-  box-shadow: 0 14px 44px #0003;
+  background: #1c1a18;
+  box-shadow: 0 1px 3px #3b2a1c24;
 }
-.stage video, .stage iframe { display: block; width: 100%; height: 100%; min-height: 0; border: 0; }
-.stage video { object-fit: contain; }
-#external { padding: 12px 22px; border: 1px solid var(--brass); border-radius: 4px; color: var(--brass); }
-.stage:has(iframe:not([hidden])) { grid-template-rows: minmax(0, 1fr) auto; }
-.stage iframe:not([hidden]) ~ #external { margin: 8px; padding-block: 6px; }
-.watch-details { min-width: 0; padding-top: clamp(10px, 3.8vh, 40px); }
-.alt-title { color: var(--brass); font: italic 16px/1.45 Georgia, var(--serif); }
-#series-name { margin: 10px 0; font: 600 clamp(29px, 3.2vw, 45px)/1.24 var(--serif); text-wrap: balance; }
-#series-name:focus:not(:focus-visible) { outline: 0; }
-.detail-meta { margin-top: 10px; color: var(--muted); font-size: 13px; }
-.episodes-block { margin-top: clamp(24px, 5vh, 48px); padding-top: 22px; border-top: 1px solid var(--line); }
-.episodes-block h2 { margin-bottom: 14px; font-size: 17px; line-height: 1.4; font-weight: 600; }
-.episodes {
+
+.watch-screen video, .watch-screen iframe {
+  display: block;
+  width: 100%;
+  height: 100%;
+  min-width: 0;
+  min-height: 0;
+  border: 0;
+}
+
+.watch-screen video { object-fit: contain; }
+.watch-screen > a { color: #fff6e8; text-underline-offset: 4px; }
+
+.watch-info {
+  min-width: 0;
+  padding-top: clamp(8px, 2.3vw, 35px);
+}
+
+#watch .watch-kicker {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  margin: 0 0 16px;
+  color: var(--watch-accent);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: .08em;
+}
+
+.watch-kicker::before {
+  content: "";
+  display: inline-block;
+  width: 27px;
+  border-top: 2px solid currentColor;
+}
+
+#series-name {
+  margin: 0;
+  font-family: "Iowan Old Style", "Songti SC", "Noto Serif CJK SC", "SimSun", Georgia, serif;
+  font-size: clamp(36px, 3.7vw, 64px);
+  font-weight: 650;
+  line-height: 1.2;
+  letter-spacing: -.045em;
+  text-wrap: balance;
+  overflow-wrap: anywhere;
+}
+
+html[lang^="en"] #series-name { line-height: 1.04; }
+#series-name:focus { outline: none; }
+
+#watch-alt {
+  margin: 10px 0 0;
+  font-family: Georgia, "Songti SC", "SimSun", serif;
+  font-style: italic;
+  font-size: clamp(16px, 1.42vw, 21px);
+  line-height: 1.4;
+  color: var(--watch-muted);
+}
+
+#watch-summary {
+  margin: 22px 0 26px;
+  max-width: 48ch;
+  color: #504a43;
+  font-size: 15px;
+  line-height: 1.85;
+}
+
+.watch-hud {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+  margin: 0 0 14px;
+  padding-top: 19px;
+  border-top: 1px solid var(--watch-rule);
+  color: var(--watch-muted);
+  font-size: 13px;
+}
+
+.watch-hud h2 {
+  margin: 0;
+  color: var(--watch-ink);
+  font-family: Georgia, "Songti SC", "SimSun", serif;
+  font-size: 23px;
+  line-height: 1.3;
+}
+
+#now-playing { color: var(--watch-accent); font-weight: 650; }
+
+#episode-list {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(70px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(86px, 100%), 1fr));
   gap: 8px;
 }
-.episodes :is(a, button), .transport button {
-  display: inline-flex;
-  justify-content: center;
-  align-items: center;
-  gap: 6px;
+
+#episode-list button, .watch-transport button, .watch-notice button {
+  font: inherit;
+  cursor: pointer;
+}
+
+#episode-list button {
+  display: grid;
+  place-items: center;
   min-height: 44px;
-  padding: 7px 8px;
-  border: 1px solid #454039;
-  border-radius: 4px;
-  color: #e7dfd3;
-  background: #25231f;
-  font: 500 13px/1.4 var(--sans);
-  text-align: center;
+  padding: 8px;
+  border: 1px solid var(--watch-rule);
+  border-radius: 2px;
+  background: transparent;
+  color: var(--watch-ink);
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.35;
   font-variant-numeric: tabular-nums;
 }
-.episodes [aria-current]:not([aria-current="false"]) { border-color: var(--brass); background: #e3c18e; color: #211a11; }
-.playing-line { margin-top: 24px; color: var(--muted); font-size: 14px; }
-#now-playing { color: var(--ink); }
-.transport { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 10px; }
-.transport button { min-width: 88px; padding-inline: 16px; background: transparent; }
-.transport button:disabled { opacity: .38; cursor: default; }
-.transport button svg { width: 14px; height: 14px; }
-#notice { margin-top: 14px; color: var(--brass); font-size: 14px; }
-.classic-link { margin-top: 12px; width: fit-content; text-underline-offset: 3px; }
 
-@media (hover: hover) {
-  :is(.brand, .language, #return-link, .classic-link, #back-to-booth, #read-intro):hover { color: #ffe0a4; }
-  :is(#booth-play, .programme-play):hover { background: #e9bb72; color: #20170c; }
-  .programme-art:hover, .booth-frame:hover, .episodes :is(a, button):hover, .transport button:enabled:hover { border-color: var(--brass); }
+#episode-list button:hover { border-color: var(--watch-accent); color: var(--watch-accent); }
+#episode-list button[aria-current="true"] {
+  border-color: var(--watch-accent);
+  background: var(--watch-accent);
+  color: #fffaf1;
 }
-@media (prefers-reduced-motion: no-preference) {
-  .booth-scene { transition: opacity .45s ease; }
-  .booth-frame img, #booth-play, .programme-play { transition: opacity .18s ease, color .18s ease, background .18s ease; }
+
+.watch-transport {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  margin-top: 15px;
+  border-top: 1px solid var(--watch-rule);
 }
-@media (max-width: 700px) {
-  :root { --film-w: clamp(76px, 22vw, 111px); --rail: 12px; }
-  .mast-inner, #watch { width: calc(100% - 36px); }
-  .mast-inner { min-height: 58px; }
-  .mast-nav { gap: 12px; }
-  .brand-name { font-size: 17px; }
-  .brand-sub { display: none; }
-  .category-chip { padding: 4px 10px; font-size: 12px; }
-  .booth-stage { min-height: 520px; }
-  .booth-hud { bottom: calc(var(--film-h) + 2 * var(--rail) + 66px + env(safe-area-inset-bottom)); width: min(78vw, 390px); }
-  #booth-name, html[lang="en"] #booth-name { font-size: clamp(27px, 6.8vw, 40px); }
-  #booth-meta { margin-top: 7px; font-size: 13px; }
-  #booth-play { margin-top: 13px; }
-  #booth-screen { top: 16%; left: 9%; width: 48%; height: 35%; }
-  .fallback-projector { top: 45%; right: 4%; width: 26%; height: 18%; }
-  #booth-prev, #booth-next { width: 36px; height: 36px; }
-  .booth-hint { gap: 8px; font-size: 11px; }
-  .programme-inner { padding-inline: 20px; }
-  .programme-entry { grid-template-columns: minmax(0, 1fr); gap: 22px; }
-  .programme-copy h3 { margin-top: 9px; }
-  .programme-description { margin-top: 12px; }
-  .back-row { min-height: 50px; }
-  .watch-grid { grid-template-columns: minmax(0, 1fr); gap: 20px; }
-  .stage { height: min(60vh, 560px); height: min(60svh, 560px); }
-  .watch-details { padding: 0; }
-  #series-name { margin: 5px 0; font-size: 28px; }
-  .alt-title { font-size: 14px; }
-  .detail-meta { margin-top: 6px; }
-  .episodes-block { margin-top: 18px; padding-top: 16px; }
-  .playing-line { margin-top: 16px; }
+
+.watch-transport button {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  min-height: 44px;
+  padding: 5px 0;
+  border: 0;
+  background: transparent;
+  color: var(--watch-ink);
+  font-size: 13px;
+  font-weight: 650;
 }
-@media (max-height: 560px) and (min-width: 701px) {
-  :root { --film-w: 86px; --rail: 10px; }
-  .booth-stage { min-height: 400px; }
-  #booth-name, html[lang="en"] #booth-name { font-size: 31px; }
-  .booth-hud { bottom: calc(var(--film-h) + 2 * var(--rail) + 52px); }
+
+.watch-transport button:disabled { opacity: .38; cursor: default; }
+.watch-transport button:hover:enabled { color: var(--watch-accent); }
+
+.watch-notice {
+  margin: 8px 0 0;
+  color: var(--watch-muted);
+  font-size: 14px;
+  line-height: 1.6;
 }
-@media (max-width: 340px) {
-  .mast-inner, #watch { width: calc(100% - 28px); }
-  .mast-nav { gap: 8px; }
-  .brand-mark { display: none; }
+
+.watch-notice button {
+  padding: 4px 7px;
+  border: 1px solid var(--watch-rule);
+  border-radius: 2px;
+  background: transparent;
+  color: var(--watch-accent);
 }
-</style>
-</head>
-<body>
-  <header class="masthead"><div class="mast-inner">
-    <a id="home-link" class="brand" href="./"><span class="brand-name">短剧放映厅</span><span class="brand-sub">作品选集</span></a>
-    <nav class="mast-nav"><span class="category-chip">短剧 <small>3</small></span>
-      <a id="language-link" class="language" href="./en/" lang="en" aria-label="Switch to English">EN</a></nav>
+
+.watch-external, #watch #classic-link {
+  display: inline-flex;
+  align-items: center;
+  min-height: 40px;
+  margin-right: 16px;
+  color: var(--watch-muted);
+  font-size: 13px;
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 4px;
+}
+
+#watch :is(a, button, video):focus-visible {
+  outline: 2px solid var(--watch-accent);
+  outline-offset: 3px;
+}
+
+@media (max-width: 800px) {
+  #watch { padding-top: 13px; }
+  #watch .watch-back { margin-bottom: 9px; }
+  .watch-layout { grid-template-columns: minmax(0, 1fr); gap: 23px; }
+  .watch-screen { height: clamp(280px, 50vh, 540px); height: clamp(280px, 50svh, 540px); }
+  .watch-info { padding-top: 0; }
+  #watch .watch-kicker { margin-bottom: 10px; }
+  #series-name { font-size: clamp(32px, 6vw, 48px); }
+  #watch-summary { max-width: none; margin: 15px 0 20px; }
+}
+
+@media (max-width: 420px) {
+  #watch { padding-inline: 16px; }
+  .watch-layout { gap: 19px; }
+  #episode-list { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+}
+
+</style></head><body>
+  <header class="mast"><div class="mast-inner wrap">
+    <a id="home-link" class="brand" href="./"><span class="brand-mark" aria-hidden="true"><i></i><i></i><i></i></span><span>短剧放映厅</span></a>
+    <nav class="mast-nav"><a href="#films" class="index-jump">作品目录</a><a id="language-link" href="./en/" aria-label="切换至英文"><b>中</b><i>/</i>EN</a></nav>
   </div></header>
-  <main class="shell">
-    <section id="collection" aria-label="短剧作品集">
-      <section id="booth-stage" class="booth-stage" aria-label="放映厅" tabindex="-1">
-        <div id="booth-scene" class="booth-scene" aria-hidden="true"></div>
-        <div class="booth-fallback">
-          <button id="booth-screen" type="button" aria-label="放映《他在掌心写爱，我在耳边听谎》"><img src="./media/palm-poster-v2.jpg" alt="" width="800" height="1100" decoding="async" id="booth-poster" fetchpriority="high"></button>
-          <button class="fallback-projector" id="booth-select" type="button" aria-label="放映《他在掌心写爱，我在耳边听谎》"></button>
-        </div><div class="booth-vignette" aria-hidden="true"></div>
-        <div class="booth-hud">
-          <p class="booth-counter" id="booth-count">01 / 03</p>
-          <h1 id="booth-name">他在掌心写爱，我在耳边听谎</h1><p id="booth-meta">收录 9 集</p>
-          <a id="booth-play" class="series-card" href="#deaf-no-more" aria-label="放映《他在掌心写爱，我在耳边听谎》"><svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="m8 5 11 7-11 7z" fill="currentColor" stroke="none"/></svg>放映</a>
-        </div>
-        <div class="booth-controls">
-          <nav class="film-navigation" aria-label="短剧作品集">
-            <button id="booth-prev" type="button" aria-label="上一部剧" disabled><svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 12H5m6-6-6 6 6 6"/></svg></button>
-            <div class="film-window"><ol id="booth-frames"><li>
-    <button class="booth-frame" type="button" data-series="deaf-no-more" aria-label="放映《他在掌心写爱，我在耳边听谎》" aria-current="true">
-      <img src="./media/palm-poster-v2.jpg" alt="" width="800" height="1100" decoding="async" ><span class="frame-count" aria-hidden="true">01</span>
-    </button></li><li>
-    <button class="booth-frame" type="button" data-series="marriage-partner" aria-label="放映《我的老公不讨厌我》">
-      <img src="./media/partner-poster.png" alt="" width="800" height="1100" decoding="async" ><span class="frame-count" aria-hidden="true">02</span>
-    </button></li><li>
-    <button class="booth-frame" type="button" data-series="serpent-king" aria-label="放映《重生为蛇王的禁忌伴侣》">
-      <img src="./media/serpent-poster.jpg" alt="" width="800" height="1100" decoding="async" ><span class="frame-count" aria-hidden="true">03</span>
-    </button></li></ol></div>
-            <button id="booth-next" type="button" aria-label="下一部剧"><svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h15m-6-6 6 6-6 6"/></svg></button>
-          </nav>
-          <div class="booth-hint"><span>横向拖动胶片换剧</span><a href="#programme-title" id="read-intro">下滑看作品简介 <span aria-hidden="true">⌄</span></a></div>
-        </div>
-      </section>
-      <section class="programme" aria-labelledby="programme-title"><div class="programme-inner">
-        <header class="programme-head"><h2 id="programme-title" tabindex="-1">作品简介</h2><a id="back-to-booth" href="#booth-stage">回到放映厅</a></header>
-        <div class="programme-list"><article class="programme-entry">
-    <a class="programme-art series-card" href="#deaf-no-more" aria-label="放映《他在掌心写爱，我在耳边听谎》"><img src="./media/palm-poster-v2.jpg" alt="" width="800" height="1100" decoding="async" loading="lazy"></a>
-    <div class="programme-copy"><p class="programme-kind">短剧 · 收录 9 集</p>
-      <h3>他在掌心写爱，我在耳边听谎</h3>
-      <p class="programme-title-en" lang="en">Deaf No More, She Uncovers His Lies</p>
-      <p class="programme-description">结婚纪念日那晚，刚恢复听力的伊莲娜看着丈夫用手语说爱她，却听见他压低声音，问起了另一个女人。</p>
-      <a class="series-card programme-play" href="#deaf-no-more" aria-label="放映《他在掌心写爱，我在耳边听谎》"><svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="m8 5 11 7-11 7z" fill="currentColor" stroke="none"/></svg>放映此剧</a>
-    </div></article><article class="programme-entry">
-    <a class="programme-art series-card" href="#marriage-partner" aria-label="放映《我的老公不讨厌我》"><img src="./media/partner-poster.png" alt="" width="800" height="1100" decoding="async" loading="lazy"></a>
-    <div class="programme-copy"><p class="programme-kind">短剧 · 收录 5 集</p>
-      <h3>我的老公不讨厌我</h3>
-      <p class="programme-title-en" lang="en">My Marriage Partner Sucks at Pretending to Hate Me</p>
-      <p class="programme-description">为了搅黄和死对头格兰特的婚事，她故意在两家人面前出糗。准新郎却站了起来，为她鼓掌。</p>
-      <a class="series-card programme-play" href="#marriage-partner" aria-label="放映《我的老公不讨厌我》"><svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="m8 5 11 7-11 7z" fill="currentColor" stroke="none"/></svg>放映此剧</a>
-    </div></article><article class="programme-entry">
-    <a class="programme-art series-card" href="#serpent-king" aria-label="放映《重生为蛇王的禁忌伴侣》"><img src="./media/serpent-poster.jpg" alt="" width="800" height="1100" decoding="async" loading="lazy"></a>
-    <div class="programme-copy"><p class="programme-kind">短剧 · 收录 3 集</p>
-      <h3>重生为蛇王的禁忌伴侣</h3>
-      <p class="programme-title-en" lang="en">Reborn as the Serpent King’s Forbidden Mate</p>
-      <p class="programme-description">被妹妹毒害后，西耶娜重回择偶大典。这一次，妹妹抢先救下了西耶娜前世的伴侣凤凰领主，而西耶娜遇见了蛇王。</p>
-      <a class="series-card programme-play" href="#serpent-king" aria-label="放映《重生为蛇王的禁忌伴侣》"><svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="m8 5 11 7-11 7z" fill="currentColor" stroke="none"/></svg>放映此剧</a>
-    </div></article></div>
-      </div></section>
-      <noscript><h2>他在掌心写爱，我在耳边听谎</h2><ul><li><a href="./media/palm-ep02.mp4">第 2 集</a></li><li><a href="./media/palm-ep03.mp4">第 3 集</a></li><li><a href="./media/palm-ep04.mp4">第 4 集</a></li><li><a href="./media/palm-ep08.mp4">第 8 集</a></li><li><a href="./media/palm-ep15.mp4">第 15 集</a></li><li><a href="./media/palm-ep16.mp4">第 16 集</a></li><li><a href="./media/palm-ep17.mp4">第 17 集</a></li><li><a href="./media/palm-ep18.mp4">第 18 集</a></li><li><a href="./media/palm-ep19.mp4">第 19 集</a></li></ul><h2>我的老公不讨厌我</h2><ul><li><a href="./media/partner-ep01.mp4">第 1 集</a></li><li><a href="./media/partner-ep02.mp4">第 2 集</a></li><li><a href="./media/partner-ep05.mp4">第 5 集</a></li><li><a href="./media/partner-ep06.mp4">第 6 集</a></li><li><a href="./media/partner-ep07.mp4">第 7 集</a></li></ul><h2>重生为蛇王的禁忌伴侣</h2><ul><li><a href="./media/serpent-ep01.mp4">第 1 集</a></li><li><a href="./media/serpent-ep03.mp4">第 3 集</a></li><li><a href="./media/serpent-ep04.mp4">第 4 集</a></li></ul></noscript>
+  <main><section id="catalogue" class="wrap">
+    <section class="feature" aria-label="焦点放映" aria-roledescription="轮播">
+      <article class="feature-slide" data-id="deaf-no-more">
+      <div class="feature-art"><img src="./media/feature-deaf-no-more.jpg" alt="" fetchpriority="high"></div>
+      <div class="feature-copy"><p class="feature-meta"><span class="signal"></span>焦点放映<span class="meta-rule"></span>9 集选映</p>
+        <h1 class="feature-title">他在掌心写爱，<wbr>我在耳边听谎</h1>
+        <p class="feature-description">结婚纪念日那晚，刚恢复听力的伊莲娜看着丈夫用手语说爱她，却听见他压低声音，问起了另一个女人。</p>
+        <a class="hero-action" href="#deaf-no-more" aria-label="进入选集 · 他在掌心写爱，我在耳边听谎"><span class="triangle" aria-hidden="true"></span>进入选集</a>
+      </div></article><article class="feature-slide" data-id="marriage-partner" hidden>
+      <div class="feature-art"><img data-src="./media/feature-marriage-partner.jpg" alt="" ></div>
+      <div class="feature-copy"><p class="feature-meta"><span class="signal"></span>焦点放映<span class="meta-rule"></span>5 集选映</p>
+        <h1 class="feature-title">我的老公不讨厌我</h1>
+        <p class="feature-description">为了搅黄和死对头格兰特的婚事，她故意在两家人面前出糗。准新郎却站了起来，为她鼓掌。</p>
+        <a class="hero-action" href="#marriage-partner" aria-label="进入选集 · 我的老公不讨厌我"><span class="triangle" aria-hidden="true"></span>进入选集</a>
+      </div></article><article class="feature-slide" data-id="serpent-king" hidden>
+      <div class="feature-art"><img data-src="./media/feature-serpent-king.jpg" alt="" ></div>
+      <div class="feature-copy"><p class="feature-meta"><span class="signal"></span>焦点放映<span class="meta-rule"></span>3 集选映</p>
+        <h1 class="feature-title">重生为蛇王的禁忌伴侣</h1>
+        <p class="feature-description">被妹妹毒害后，西耶娜重回择偶大典。这一次，妹妹抢先救下了西耶娜前世的伴侣凤凰领主，而西耶娜遇见了蛇王。</p>
+        <a class="hero-action" href="#serpent-king" aria-label="进入选集 · 重生为蛇王的禁忌伴侣"><span class="triangle" aria-hidden="true"></span>进入选集</a>
+      </div></article>
+      <div class="feature-controls"><span class="position" aria-live="polite" aria-atomic="true"><b id="feature-index">01</b><i>/</i>03</span><button id="feature-prev" type="button" aria-label="上一部焦点作品"><span aria-hidden="true" class="arrow-icon left"></span></button><button id="feature-next" type="button" aria-label="下一部焦点作品"><span aria-hidden="true" class="arrow-icon right"></span></button></div>
     </section>
-    <section id="watch" aria-labelledby="series-name" hidden>
-      <div class="back-row"><a id="return-link" href="./"><svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 12H5m6-6-6 6 6 6"/></svg>回到放映厅</a></div>
-      <div class="watch-grid"><div class="stage">
-        <video id="video" controls playsinline preload="metadata" aria-label="视频播放器" hidden></video>
-        <iframe id="embed" title="视频播放器" allow="autoplay; fullscreen; picture-in-picture; encrypted-media" allowfullscreen hidden></iframe>
-        <a id="external" target="_blank" rel="noopener" hidden>在原平台观看</a>
-      </div><div class="watch-details">
-        <p id="other-name" class="alt-title" lang="en"></p>
-        <h1 id="series-name" tabindex="-1"></h1><p id="episode-count" class="detail-meta"></p>
-        <div class="episodes-block"><h2 id="episode-heading">选集</h2>
-          <div id="episode-list" class="episodes" role="group" aria-labelledby="episode-heading"></div>
-        </div>
-        <p class="playing-line" aria-live="polite">正在播放 · <span id="now-playing"></span></p>
-        <div class="transport"><button id="previous" type="button"><svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 12H5m6-6-6 6 6 6"/></svg>上一集</button>
-          <button id="next" type="button">下一集<svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h15m-6-6 6 6-6 6"/></svg></button></div>
-        <p id="notice" role="status" hidden></p>
-        <a id="classic-link" class="classic-link" href="./classic.html"><svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="2.5" y="4.5" width="19" height="13" rx="2"/><path d="M7 21h10m-5-3v3"/></svg>用放映机观看本集</a>
-      </div></div>
+    <section id="films" tabindex="-1" aria-labelledby="films-title"><header class="index-head"><h2 id="films-title">全部剧目</h2><span>3 部短剧 · 17 集选映</span></header>
+      <div class="films-grid"><article class="film-entry"><a class="film-card" data-series="deaf-no-more" href="#deaf-no-more">
+    <div class="card-image"><img src="./media/gallery-deaf-no-more.jpg" width="600" height="825" loading="lazy" decoding="async" alt=""><span class="card-count">9 集选映</span></div>
+    <div class="card-caption"><div><h3>他在掌心写爱，我在耳边听谎</h3><p lang="en">Deaf No More, She Uncovers His Lies</p></div><span class="card-open" aria-hidden="true"><span aria-hidden="true" class="arrow-icon diagonal"></span></span></div>
+    </a></article><article class="film-entry"><a class="film-card" data-series="marriage-partner" href="#marriage-partner">
+    <div class="card-image"><img src="./media/gallery-marriage-partner.jpg" width="600" height="825" loading="lazy" decoding="async" alt=""><span class="card-count">5 集选映</span></div>
+    <div class="card-caption"><div><h3>我的老公不讨厌我</h3><p lang="en">My Marriage Partner Sucks at Pretending to Hate Me</p></div><span class="card-open" aria-hidden="true"><span aria-hidden="true" class="arrow-icon diagonal"></span></span></div>
+    </a></article><article class="film-entry"><a class="film-card" data-series="serpent-king" href="#serpent-king">
+    <div class="card-image"><img src="./media/gallery-serpent-king.jpg" width="600" height="825" loading="lazy" decoding="async" alt=""><span class="card-count">3 集选映</span></div>
+    <div class="card-caption"><div><h3>重生为蛇王的禁忌伴侣</h3><p lang="en">Reborn as the Serpent King’s Forbidden Mate</p></div><span class="card-open" aria-hidden="true"><span aria-hidden="true" class="arrow-icon diagonal"></span></span></div>
+    </a></article></div>
     </section>
-  </main>
-  <script id="library-data" type="application/json">{"lang":"zh","base":"./","series":[{"id":"deaf-no-more","title":"他在掌心写爱，我在耳边听谎","otherTitle":"Deaf No More, She Uncovers His Lies","description":"结婚纪念日那晚，刚恢复听力的伊莲娜看着丈夫用手语说爱她，却听见他压低声音，问起了另一个女人。","poster":"media/palm-poster-v2.jpg","episodes":[{"id":"palm-ep02","title":"第 2 集","cover":"media/palm-poster-v2.jpg","source":{"kind":"video","provider":"file","src":"media/palm-ep02.mp4"}},{"id":"palm-ep03","title":"第 3 集","cover":"media/palm-still-03.jpg","source":{"kind":"video","provider":"file","src":"media/palm-ep03.mp4"}},{"id":"palm-ep04","title":"第 4 集","cover":"media/palm-still-04.jpg","source":{"kind":"video","provider":"file","src":"media/palm-ep04.mp4"}},{"id":"palm-ep08","title":"第 8 集","cover":"media/palm-still-08.jpg","source":{"kind":"video","provider":"file","src":"media/palm-ep08.mp4"}},{"id":"palm-ep15","title":"第 15 集","cover":"media/palm-still-15.jpg","source":{"kind":"video","provider":"file","src":"media/palm-ep15.mp4"}},{"id":"palm-ep16","title":"第 16 集","cover":"media/palm-still-16.jpg","source":{"kind":"video","provider":"file","src":"media/palm-ep16.mp4"}},{"id":"palm-ep17","title":"第 17 集","cover":"media/palm-still-17.jpg","source":{"kind":"video","provider":"file","src":"media/palm-ep17.mp4"}},{"id":"palm-ep18","title":"第 18 集","cover":"media/palm-still-18.jpg","source":{"kind":"video","provider":"file","src":"media/palm-ep18.mp4"}},{"id":"palm-ep19","title":"第 19 集","cover":"media/palm-still-19.jpg","source":{"kind":"video","provider":"file","src":"media/palm-ep19.mp4"}}]},{"id":"marriage-partner","title":"我的老公不讨厌我","otherTitle":"My Marriage Partner Sucks at Pretending to Hate Me","description":"为了搅黄和死对头格兰特的婚事，她故意在两家人面前出糗。准新郎却站了起来，为她鼓掌。","poster":"media/partner-poster.png","episodes":[{"id":"partner-ep01","title":"第 1 集","cover":"media/partner-poster-screen.jpg","source":{"kind":"video","provider":"file","src":"media/partner-ep01.mp4"}},{"id":"partner-ep02","title":"第 2 集","cover":"media/partner-still-02.jpg","source":{"kind":"video","provider":"file","src":"media/partner-ep02.mp4"}},{"id":"partner-ep05","title":"第 5 集","cover":"media/partner-still-05.jpg","source":{"kind":"video","provider":"file","src":"media/partner-ep05.mp4"}},{"id":"partner-ep06","title":"第 6 集","cover":"media/partner-still-06.jpg","source":{"kind":"video","provider":"file","src":"media/partner-ep06.mp4"}},{"id":"partner-ep07","title":"第 7 集","cover":"media/partner-still-07.jpg","source":{"kind":"video","provider":"file","src":"media/partner-ep07.mp4"}}]},{"id":"serpent-king","title":"重生为蛇王的禁忌伴侣","otherTitle":"Reborn as the Serpent King’s Forbidden Mate","description":"被妹妹毒害后，西耶娜重回择偶大典。这一次，妹妹抢先救下了西耶娜前世的伴侣凤凰领主，而西耶娜遇见了蛇王。","poster":"media/serpent-poster.jpg","episodes":[{"id":"serpent-ep01","title":"第 1 集","cover":"media/serpent-poster.jpg","source":{"kind":"video","provider":"file","src":"media/serpent-ep01.mp4"}},{"id":"serpent-ep03","title":"第 3 集","cover":"media/serpent-still-03.jpg","source":{"kind":"video","provider":"file","src":"media/serpent-ep03.mp4"}},{"id":"serpent-ep04","title":"第 4 集","cover":"media/serpent-still-04.jpg","source":{"kind":"video","provider":"file","src":"media/serpent-ep04.mp4"}}]}],"labels":{"library":"短剧作品集","collection":"回到放映厅","libraryCount":"{s} 部剧集 · {n} 集","kind":"短剧","booth":"放映厅","programme":"作品简介","watchSeries":"放映此剧","project":"放映","previousWork":"上一部剧","nextWork":"下一部剧","introJump":"下滑看作品简介","dragHint":"横向拖动胶片换剧","episodeCount":"收录 {n} 集","episodeList":"选集","watch":"观看","progress":"正在播放","prev":"上一集","next":"下一集","finished":"已播完本剧收录的最后一集。","open":"在原平台观看","unavailable":"视频未能加载。","retry":"重新加载","classic":"用放映机观看本集","playSeries":"放映《{title}》"},"siteTitle":"短剧放映厅"}</script>
-  <script type="module" src="./assets/library-J622DN67.js"></script>
-</body>
-</html>
+    <noscript><h2>他在掌心写爱，我在耳边听谎</h2><a href="./media/palm-ep02.mp4">第 2 集</a> · <a href="./media/palm-ep03.mp4">第 3 集</a> · <a href="./media/palm-ep04.mp4">第 4 集</a> · <a href="./media/palm-ep08.mp4">第 8 集</a> · <a href="./media/palm-ep15.mp4">第 15 集</a> · <a href="./media/palm-ep16.mp4">第 16 集</a> · <a href="./media/palm-ep17.mp4">第 17 集</a> · <a href="./media/palm-ep18.mp4">第 18 集</a> · <a href="./media/palm-ep19.mp4">第 19 集</a><h2>我的老公不讨厌我</h2><a href="./media/partner-ep01.mp4">第 1 集</a> · <a href="./media/partner-ep02.mp4">第 2 集</a> · <a href="./media/partner-ep05.mp4">第 5 集</a> · <a href="./media/partner-ep06.mp4">第 6 集</a> · <a href="./media/partner-ep07.mp4">第 7 集</a><h2>重生为蛇王的禁忌伴侣</h2><a href="./media/serpent-ep01.mp4">第 1 集</a> · <a href="./media/serpent-ep03.mp4">第 3 集</a> · <a href="./media/serpent-ep04.mp4">第 4 集</a></noscript>
+  </section>
+  <section id="watch" aria-labelledby="series-name" hidden><a class="watch-back" href="./"><span aria-hidden="true" class="arrow-icon left"></span>返回片库</a>
+    <div class="watch-layout"><div class="watch-screen"><video id="video" controls playsinline preload="metadata" aria-label="视频播放器"></video></div>
+    <div class="watch-info"><p class="watch-kicker"></p><h1 id="series-name" tabindex="-1"></h1><p id="watch-alt" lang="en"></p><p id="watch-summary"></p>
+      <div class="watch-hud"><h2>选集</h2><span aria-live="polite">正在播放 · <strong id="now-playing"></strong></span></div>
+      <div id="episode-list" role="group" aria-label="选集"></div>
+      <div class="watch-transport"><button id="previous" type="button"><span aria-hidden="true" class="arrow-icon left"></span>上一集</button><button id="next" type="button">下一集<span aria-hidden="true" class="arrow-icon right"></span></button></div>
+      <a id="classic-link" href="./classic.html">用放映机观看本集 ↗</a></div></div></section></main>
+  <script id="library-data" type="application/json">{"lang":"zh","base":"./","series":[{"id":"deaf-no-more","title":"他在掌心写爱，我在耳边听谎","otherTitle":"Deaf No More, She Uncovers His Lies","description":"结婚纪念日那晚，刚恢复听力的伊莲娜看着丈夫用手语说爱她，却听见他压低声音，问起了另一个女人。","poster":"media/palm-poster-v2.jpg","feature":"media/feature-deaf-no-more.jpg","gallery":"media/gallery-deaf-no-more.jpg","episodes":[{"id":"palm-ep02","title":"第 2 集","cover":"media/palm-poster-v2.jpg","source":{"kind":"video","provider":"file","src":"media/palm-ep02.mp4"}},{"id":"palm-ep03","title":"第 3 集","cover":"media/palm-still-03.jpg","source":{"kind":"video","provider":"file","src":"media/palm-ep03.mp4"}},{"id":"palm-ep04","title":"第 4 集","cover":"media/palm-still-04.jpg","source":{"kind":"video","provider":"file","src":"media/palm-ep04.mp4"}},{"id":"palm-ep08","title":"第 8 集","cover":"media/palm-still-08.jpg","source":{"kind":"video","provider":"file","src":"media/palm-ep08.mp4"}},{"id":"palm-ep15","title":"第 15 集","cover":"media/palm-still-15.jpg","source":{"kind":"video","provider":"file","src":"media/palm-ep15.mp4"}},{"id":"palm-ep16","title":"第 16 集","cover":"media/palm-still-16.jpg","source":{"kind":"video","provider":"file","src":"media/palm-ep16.mp4"}},{"id":"palm-ep17","title":"第 17 集","cover":"media/palm-still-17.jpg","source":{"kind":"video","provider":"file","src":"media/palm-ep17.mp4"}},{"id":"palm-ep18","title":"第 18 集","cover":"media/palm-still-18.jpg","source":{"kind":"video","provider":"file","src":"media/palm-ep18.mp4"}},{"id":"palm-ep19","title":"第 19 集","cover":"media/palm-still-19.jpg","source":{"kind":"video","provider":"file","src":"media/palm-ep19.mp4"}}]},{"id":"marriage-partner","title":"我的老公不讨厌我","otherTitle":"My Marriage Partner Sucks at Pretending to Hate Me","description":"为了搅黄和死对头格兰特的婚事，她故意在两家人面前出糗。准新郎却站了起来，为她鼓掌。","poster":"media/partner-poster.png","feature":"media/feature-marriage-partner.jpg","gallery":"media/gallery-marriage-partner.jpg","episodes":[{"id":"partner-ep01","title":"第 1 集","cover":"media/partner-poster-screen.jpg","source":{"kind":"video","provider":"file","src":"media/partner-ep01.mp4"}},{"id":"partner-ep02","title":"第 2 集","cover":"media/partner-still-02.jpg","source":{"kind":"video","provider":"file","src":"media/partner-ep02.mp4"}},{"id":"partner-ep05","title":"第 5 集","cover":"media/partner-still-05.jpg","source":{"kind":"video","provider":"file","src":"media/partner-ep05.mp4"}},{"id":"partner-ep06","title":"第 6 集","cover":"media/partner-still-06.jpg","source":{"kind":"video","provider":"file","src":"media/partner-ep06.mp4"}},{"id":"partner-ep07","title":"第 7 集","cover":"media/partner-still-07.jpg","source":{"kind":"video","provider":"file","src":"media/partner-ep07.mp4"}}]},{"id":"serpent-king","title":"重生为蛇王的禁忌伴侣","otherTitle":"Reborn as the Serpent King’s Forbidden Mate","description":"被妹妹毒害后，西耶娜重回择偶大典。这一次，妹妹抢先救下了西耶娜前世的伴侣凤凰领主，而西耶娜遇见了蛇王。","poster":"media/serpent-poster.jpg","feature":"media/feature-serpent-king.jpg","gallery":"media/gallery-serpent-king.jpg","episodes":[{"id":"serpent-ep01","title":"第 1 集","cover":"media/serpent-poster.jpg","source":{"kind":"video","provider":"file","src":"media/serpent-ep01.mp4"}},{"id":"serpent-ep03","title":"第 3 集","cover":"media/serpent-still-03.jpg","source":{"kind":"video","provider":"file","src":"media/serpent-ep03.mp4"}},{"id":"serpent-ep04","title":"第 4 集","cover":"media/serpent-still-04.jpg","source":{"kind":"video","provider":"file","src":"media/serpent-ep04.mp4"}}]}],"labels":{"library":"短剧作品集","collection":"回到放映厅","libraryCount":"{s} 部剧集 · {n} 集","kind":"短剧","booth":"放映厅","programme":"作品简介","watchSeries":"放映此剧","project":"放映","previousWork":"上一部剧","nextWork":"下一部剧","introJump":"下滑看作品简介","dragHint":"横向拖动胶片换剧","episodeCount":"收录 {n} 集","episodeList":"选集","watch":"观看","progress":"正在播放","prev":"上一集","next":"下一集","finished":"已播完本剧收录的最后一集。","open":"在原平台观看","unavailable":"视频未能加载。","retry":"重新加载","classic":"用放映机观看本集","playSeries":"放映《{title}》"},"siteTitle":"短剧放映厅"}</script>
+  <script type="module" src="./assets/library-HHSDQLYN.js"></script></body></html>
