@@ -1,8 +1,6 @@
 <!doctype html>
 <html lang="zh-CN">
 <head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <link rel="modulepreload" href="./assets/library-CJR2PNLH.js">
-  <script>(()=>{if(location.hash)return;try{if(sessionStorage.getItem("screening-room.unwrapped.v1")==="1")return}catch{}document.documentElement.classList.add("gift-pending");setTimeout(()=>document.documentElement.classList.remove("gift-pending"),1800)})();</script>
   <meta name="color-scheme" content="light"><meta name="theme-color" content="#f6f3ec">
   <title>短剧放映厅 · 作品选集</title><meta name="description" content="三部短剧，共收录 17 集，按剧名和原集号浏览。">
   <meta property="og:type" content="website"><meta property="og:title" content="短剧放映厅 · 作品选集"><meta property="og:description" content="三部短剧，共收录 17 集，按剧名和原集号浏览。">
@@ -33,17 +31,6 @@ button:focus-visible,a:focus-visible{outline:3px solid #ba553d; outline-offset:4
 .mast-nav{display:flex; align-items:center; gap:25px; color:#534e45}
 .mast-nav a{font-size:13px; font-weight:550; min-height:44px; display:inline-flex; align-items:center; position:relative}
 .mast-nav a:hover{color:var(--red)}
-html.gift-pending{background:#241419}
-html.gift-pending body>.mast,html.gift-pending body>main{visibility:hidden}
-.gift-replay{display:inline-flex;align-items:center;gap:8px;padding:0;min-height:40px;border:0;background:transparent;color:inherit;font-size:12px}
-.gift-replay:hover{color:var(--red)}
-.gift-symbol{position:relative;display:inline-block;width:15px;height:12px;margin-top:4px;border:1px solid currentColor;border-radius:1px;background:linear-gradient(currentColor,currentColor) center/1px 100% no-repeat,linear-gradient(currentColor,currentColor) 0 3px/100% 1px no-repeat}
-.gift-symbol::before,.gift-symbol::after{content:"";position:absolute;top:-6px;height:5px;width:7px;border:1px solid currentColor}
-.gift-symbol::before{right:50%;border-radius:85% 90% 0 85%;transform:rotate(13deg)}
-.gift-symbol::after{left:50%;border-radius:90% 85% 85% 0;transform:rotate(-13deg)}
-body:has(#catalogue[hidden]) .gift-replay{display:none}
-@media(max-width:720px){.gift-replay-text{display:none}.gift-replay{min-width:26px;justify-content:center}}
-@media(max-width:370px){.mast-nav:has(.gift-replay){gap:6px}}
 #language-link{border-left:1px solid var(--hair); padding-left:24px; min-height:17px; font-size:12px; font-weight:450}
 #language-link i,.position i{font-style:normal; opacity:.62; margin-inline:8px}
 #language-link b{color:var(--red); font-weight:700}
@@ -116,15 +103,6 @@ body:has(#catalogue[hidden]) .gift-replay{display:none}
 @media(max-width:450px){html[lang^="en"] .index-head{flex-wrap:wrap;gap:4px 14px}html[lang^="en"] .index-head>span{white-space:normal}}
 @media(max-width:345px){html[lang^="en"] .feature-controls .position{display:none}html[lang^="en"] .feature-copy{padding-right:16px}}
 @media(max-width:365px){.mast-nav{gap:8px}#language-link{padding-left:7px}.feature-copy{padding-inline:15px}.feature-controls{right:9px;gap:3px}.feature-slide{min-height:477px}.feature-description{font-size:11.5px}.feature-controls button{width:31px;height:31px}}
-@media(max-width:400px){
- html[lang^="en"] .mast-nav .index-jump{font-size:0;width:24px;justify-content:center}
- html[lang^="en"] .index-jump::before{content:"";width:12px;height:12px;background:linear-gradient(currentColor,currentColor) top left/5px 5px,linear-gradient(currentColor,currentColor) top right/5px 5px,linear-gradient(currentColor,currentColor) bottom left/5px 5px,linear-gradient(currentColor,currentColor) bottom right/5px 5px;background-repeat:no-repeat}
-}
-@media(max-width:350px){
- html[lang^="en"] .brand{font-size:17px;gap:3px}
- html[lang^="en"] .mast-inner{gap:4px}
- html[lang^="en"] #language-link i{margin-inline:4px}
-}
 @media(min-width:651px) and (max-width:820px){.feature-copy{width:54%}.feature-art{width:65%}.feature-title{font-size:40px}.feature-description{font-size:13px}.feature-slide{min-height:395px}}
 .feature-art{overflow:hidden}
 .feature-outgoing{pointer-events:none}
@@ -217,8 +195,9 @@ body:has(#catalogue[hidden]) .gift-replay{display:none}
 .watch-readout #now-playing { display: inline-block; color: #fff6e4; }
 .watch-clock { flex: none; color: #d5ccba; font-variant-numeric: tabular-nums; }
 .watch-progress { position: absolute; inset: 0 0 auto; height: 2px; overflow: hidden; background: #504b3f; }
-.watch-progress-fill { position: absolute; inset: 0; pointer-events: none; }
+.watch-progress-fill, .watch-cut-sweep { position: absolute; inset: 0; pointer-events: none; }
 .watch-progress-fill { transform: scaleX(0); transform-origin: left; background: #cf9772; }
+.watch-cut-sweep { width: 33%; opacity: 0; background: linear-gradient(90deg, transparent, #e9cf9c 65%, transparent); }
 .watch-readout[data-state="external"] .watch-progress { visibility: hidden; }
 .watch-meter { display: inline-flex; align-items: flex-end; justify-content: center; gap: 2px; width: 17px; height: 12px; margin-right: 3px; }
 .watch-meter i { display: block; width: 2px; height: 100%; transform: scaleY(.23); transform-origin: bottom; background: currentColor; }
@@ -229,6 +208,7 @@ body:has(#catalogue[hidden]) .gift-replay{display:none}
 @media (prefers-reduced-motion: no-preference) {
   .watch-progress-fill { transition: transform 180ms linear; }
   .watch-readout .episode-arrival { animation: watch-episode-arrival .55s cubic-bezier(.16,.72,.16,1); }
+  .watch-cut-sweep { animation: watch-cut-sweep .72s ease-out both; }
   .watch-readout[data-state="playing"] .watch-meter i { animation: watch-meter-beat .86s ease-in-out alternate infinite; }
   .watch-readout[data-state="playing"] .watch-meter i:nth-child(2) { animation-duration: .94s; animation-delay: -.39s; }
   .watch-readout[data-state="playing"] .watch-meter i:nth-child(3) { animation-duration: .72s; animation-delay: -.48s; }
@@ -237,6 +217,7 @@ body:has(#catalogue[hidden]) .gift-replay{display:none}
 
 @keyframes watch-meter-beat { from { transform: scaleY(.26); } to { transform: scaleY(.95); } }
 @keyframes watch-episode-arrival { from { opacity: .45; transform: translateY(5px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes watch-cut-sweep { 0% { opacity: 0; transform: translateX(-100%); } 22% { opacity: .9; } 100% { opacity: 0; transform: translateX(306%); } }
 
 .watch-screen {
   display: grid;
@@ -544,15 +525,57 @@ html[lang^="en"] #series-name { line-height: 1.04; }
 }
 .tape-toggle[aria-pressed="true"] .tape-switch { border-color: #9fc4a9; background: #385547; }
 .tape-toggle[aria-pressed="true"] .tape-switch::after { justify-self: end; background: #d0edd6; }
+.watch-stage .watch-screen { position: relative; }
+.tape-plane {
+  display: none;
+  position: absolute;
+  z-index: 1;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  overflow: hidden;
+}
+.watch-stage[data-tape="on"][data-tape-running="true"] .tape-plane { display: block; }
 .watch-stage[data-tape="off"] .tape-cassette { visibility: hidden; }
+.tape-surface {
+  position: absolute;
+  inset: 0 0 34%;
+  overflow: hidden;
+  background: repeating-linear-gradient(0deg, rgba(20,42,34,.13) 0 1px, transparent 1px 4px);
+  -webkit-mask-image: linear-gradient(#0009, #000b 42%, transparent);
+  mask-image: linear-gradient(#0009, #000b 42%, transparent);
+}
+.tape-tracking, .tape-lock { position: absolute; inset: 0; pointer-events: none; }
+.tape-tracking {
+  background:
+    linear-gradient(90deg,transparent 2%,#a3dbca99 12%,transparent 42%) 0 16%/100% 1px no-repeat,
+    linear-gradient(90deg,transparent 24%,#d99a6d9c 47%,transparent 79%) 0 18%/100% 1px no-repeat,
+    linear-gradient(90deg,transparent 8%,#a8dcc847 35%,transparent 75%) 0 22%/100% 3px no-repeat;
+}
+.tape-lock { opacity: 0; }
 @media (prefers-reduced-motion: no-preference) {
-  .tape-reel i { animation: tape-spool-spin 3.8s linear infinite paused; }
-  .tape-reel:last-child i { animation-duration: 4.6s; }
-  .tape-band { animation: tape-travel 1.7s linear infinite paused; }
-  .watch-stage[data-tape-running="true"] :is(.tape-reel i, .tape-band) { animation-play-state: running; }
+  .watch-stage[data-tape-running="true"] .tape-reel i { animation: tape-spool-spin 3.8s linear infinite; }
+  .watch-stage[data-tape-running="true"] .tape-reel:last-child i { animation-duration: 4.6s; }
+  .watch-stage[data-tape-running="true"] .tape-band { animation: tape-travel 1.7s linear infinite; }
+  .watch-stage[data-tape-running="true"] .tape-tracking { animation: tape-tracking-drift 6.6s ease-in-out infinite; }
+  .watch-stage[data-tape-running="true"] .tape-lock {
+    background: linear-gradient(180deg, transparent 18%, #8ecab431 19%, transparent 21%, #e2a97b7a 22%, transparent 22.7%) top/100% 70% no-repeat;
+    animation: tape-lock-in .64s cubic-bezier(.2,.65,.35,1) both;
+  }
 }
 @keyframes tape-spool-spin { to { transform: rotate(360deg); } }
 @keyframes tape-travel { to { background-position-x: 12px; } }
+@keyframes tape-tracking-drift {
+  0% { transform: translateY(-8%); opacity: .35; }
+  45% { transform: translateY(15%); opacity: .8; }
+  88%, 100% { transform: translateY(34%); opacity: 0; }
+}
+@keyframes tape-lock-in {
+  0% { transform: translateY(-15%); opacity: 0; }
+  20% { opacity: .9; }
+  100% { transform: translateY(64%); opacity: 0; }
+}
 
 .projection-fullscreen {
   display:inline-flex; align-items:center; justify-content:center; gap:7px; flex:none;
@@ -588,305 +611,10 @@ html.projection-expanded,html.projection-expanded body{overflow:hidden}
   .projection-fullscreen{padding:0 3px;min-width:36px;border-left:0}
   .projection-fullscreen span{display:none}
 }
-
-/* The band scrolls behind a fixed brass index and two knurled end rollers. */
-.wheel-hint {
-  color:var(--watch-muted);
-  font-size:12px;
-  font-weight:500;
-  line-height:1.45;
-  text-align:end;
-}
-.episode-wheel {
-  --wheel-pitch:clamp(72px,6.5vw,91px);
-  position:relative;
-  isolation:isolate;
-  overflow:hidden;
-  min-width:0;
-  border:1px solid #4a4132;
-  border-radius:8px;
-  background:linear-gradient(180deg,#514635 0,#2e3027 5%,#20261e 17%,#262b22 52%,#20251d 84%,#141912 92%,#5e503a 97%,#302b20);
-  box-shadow:0 2px 4px #28271b24, inset 0 1px #ba9a65;
-}
-.episode-wheel::before,.episode-wheel::after {
-  content:"";
-  position:absolute;
-  z-index:3;
-  top:14px;
-  bottom:14px;
-  width:9px;
-  pointer-events:none;
-  border:1px solid #332e23;
-  border-radius:3px;
-  background:
-    repeating-linear-gradient(0deg,#d5b98780 0 1px,transparent 1px 4px),
-    linear-gradient(90deg,#4b422d,#b19c70 45%,#746349 74%,#4d4431);
-  box-shadow:0 0 0 2px #1c2119,1px 0 5px #000b;
-}
-.episode-wheel::before { left:6px; }
-.episode-wheel::after { right:6px; }
-#episode-list.episode-track {
-  position:relative;
-  display:flex;
-  align-items:stretch;
-  gap:0;
-  padding:0;
-  margin:0;
-  width:100%;
-  min-height:86px;
-  overflow-x:auto;
-  overflow-y:hidden;
-  scroll-snap-type:x mandatory;
-  scrollbar-width:none;
-  overscroll-behavior-x:contain;
-  cursor:grab;
-  user-select:none;
-  -webkit-user-select:none;
-  -webkit-tap-highlight-color:transparent;
-  mask-image:linear-gradient(to right,transparent 7px,#000 26px,#000 calc(100% - 26px),transparent calc(100% - 7px));
-}
-#episode-list.episode-track::-webkit-scrollbar { display:none; }
-#episode-list.episode-track::before,#episode-list.episode-track::after {
-  content:"";
-  flex:0 0 calc(50% - var(--wheel-pitch) / 2);
-  background:repeating-linear-gradient(90deg,#676b59 0 1px,transparent 1px calc(var(--wheel-pitch) / 8)) right bottom 8px/100% 5px no-repeat;
-}
-.episode-wheel.is-scrubbing #episode-list.episode-track {
-  scroll-snap-type:none;
-  cursor:grabbing;
-}
-#episode-list.episode-track button {
-  position:relative;
-  display:block;
-  flex:0 0 var(--wheel-pitch);
-  min-width:0;
-  height:84px;
-  padding:0;
-  outline-offset:-4px;
-  border:0;
-  border-radius:0;
-  background:transparent;
-  color:#ccc8b6;
-  font-size:0;
-  scroll-snap-align:center;
-  cursor:inherit;
-}
-#episode-list.episode-track button::before {
-  content:attr(data-dial-value);
-  display:block;
-  font-family:Georgia,"Times New Roman",serif;
-  font-size:clamp(26px,2.4vw,34px);
-  font-weight:normal;
-  line-height:1;
-  font-variant-numeric:tabular-nums lining-nums;
-  transform:translateY(-2px);
-  transition:color 140ms ease,transform 180ms ease;
-}
-#episode-list.episode-track button.wheel-long-title::before {
-  font:600 12px/1.3 var(--sans);
-  white-space:normal;
-  overflow-wrap:anywhere;
-}
-#episode-list.episode-track button::after {
-  content:"";
-  position:absolute;
-  inset:auto 0 8px;
-  height:12px;
-  background:
-    linear-gradient(#d5bd91,#d5bd91) center bottom/1px 11px no-repeat,
-    repeating-linear-gradient(90deg,#8b8c77 0 1px,transparent 1px calc(var(--wheel-pitch) / 8)) center bottom/100% 5px no-repeat;
-  opacity:.8;
-}
-#episode-list.episode-track button[aria-current=true] { color:#f3cc88; }
-#episode-list.episode-track button[data-at-pointer]::before { color:#f6d69e; transform:translateY(-2px) scale(1.15); }
-.episode-wheel.is-interacting #episode-list.episode-track button[aria-current=true]:not([data-at-pointer]) { color:#ccc8b6; }
-#episode-list.episode-track button:hover::before { color:#fff1d7; }
-#episode-list.episode-track button:focus-visible { outline:1px solid #e3b87a; outline-offset:-7px; }
-.wheel-pointer {
-  position:absolute;
-  z-index:2;
-  pointer-events:none;
-  inset:0 auto 0 50%;
-  width:var(--wheel-pitch);
-  transform:translateX(-50%);
-  border-inline:1px solid #ba9e6935;
-  background:linear-gradient(90deg,#d9c09705,#d4b47812 50%,#d9c09705);
-}
-.wheel-pointer::before,.wheel-pointer::after {
-  content:"";
-  position:absolute;
-  left:50%;
-  transform:translateX(-50%);
-}
-.wheel-pointer::before {
-  top:2px;
-  height:10px;
-  width:13px;
-  background:linear-gradient(90deg,#a78f61,#f3db9f 52%,#b29561);
-  clip-path:polygon(0 0,100% 0,50% 100%);
-}
-.wheel-pointer::after {
-  bottom:0;
-  width:2px;
-  height:8px;
-  background:#d3aa6e;
-}
-@media(max-width:520px) {
-  .episode-wheel { --wheel-pitch:73px; }
-  #episode-list.episode-track { min-height:78px; }
-  #episode-list.episode-track button { height:76px; }
-}
-@media(prefers-reduced-motion:reduce) {
-  #episode-list.episode-track button::before { transition:none; }
-}
-
-html.gift-is-open{overflow:hidden}
-#gift-entrance{
-  --gift-w:min(490px,78vw,79vh);
-  --gift-foil:#edd3a6;
-  position:fixed;inset:0;z-index:1010;width:100%;height:100%;height:100dvh;
-  max-width:none;max-height:none;margin:0;border:0;padding:0;overflow:hidden;
-  color:#f9e9d5;background:transparent;
-  font-family:var(--sans,system-ui,sans-serif);isolation:isolate;
-}
-#gift-entrance::backdrop{background:transparent}
-#gift-entrance button{color:inherit;font:inherit;-webkit-tap-highlight-color:transparent}
-.gift-environment{
-  position:absolute;inset:0;pointer-events:none;
-  background:
-    radial-gradient(ellipse at 41% 36%,#bd8b6024 0,transparent 45%),
-    radial-gradient(ellipse at 62% 67%,#6e1c2f45 0,transparent 48%),
-    linear-gradient(141deg,#241820 -4%,#4a2b2e 20%,#5c3933 42%,#3a2228 64%,#261921 80%,#17131a 100%);
-}
-.gift-environment::before,.gift-environment::after{content:"";position:absolute;inset:0}
-.gift-environment::before{
-  background:linear-gradient(126deg,transparent 8%,#00000015 15%,#b47e5113 20%,transparent 31%,#0000000e 51%,#fff0c307 57%,transparent 62%),
-    radial-gradient(ellipse at 51% 46%,transparent 5%,#10080e21 62%,#0b090f94 100%);
-}
-.gift-environment::after,.gift-cover::after{
-  background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 160 160' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.77' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
-  background-size:142px 142px;mix-blend-mode:soft-light;opacity:.175;
-}
-.gift-top{
-  position:absolute;z-index:6;top:max(16px,env(safe-area-inset-top));left:4.7%;right:4.7%;
-  display:flex;justify-content:space-between;align-items:center;
-}
-.gift-identity{display:flex;align-items:center;gap:12px;opacity:.8;font:600 13px/1.2 var(--sans);letter-spacing:.13em}
-.gift-identity i,.gift-stamp i{display:inline-block;width:20px;height:17px;transform:skew(-18deg);background:linear-gradient(90deg,currentColor 0 22%,transparent 22% 36%,currentColor 36% 58%,transparent 58% 72%,currentColor 72% 94%,transparent 94%);clip-path:polygon(0 0,100% 24%,100% 78%,0 100%)}
-#gift-entrance .gift-skip{display:inline-flex;gap:9px;align-items:center;min-height:44px;border:0;background:transparent;padding:0 4px;color:#edddcb;font-size:13px;cursor:pointer}
-.gift-skip span{font:16px Georgia,serif;color:#e9c79a}
-.gift-stage{position:absolute;inset:0;display:grid;place-content:center;pointer-events:none}
-#gift-entrance .gift-open{
-  display:grid;justify-items:center;position:relative;pointer-events:auto;
-  padding:20px 5px 10px;background:none;cursor:pointer;border:0;outline:0;
-}
-.gift-package{width:var(--gift-w);aspect-ratio:1.58;position:relative;display:block;perspective:1000px;margin-bottom:clamp(49px,8vh,87px)}
-.gift-ground{
-  position:absolute;inset:10% 4% -5% -1%;border-radius:6%;
-  background:#16090cdc;filter:blur(20px);transform:translate(6%,14%) rotate(-6deg);
-}
-.gift-box{
-  position:absolute;inset:0;transform:rotate(-7deg) skewX(-1deg);
-  transition:transform .45s cubic-bezier(.2,.6,.2,1);
-}
-@media(hover:hover) and (prefers-reduced-motion:no-preference){
-  .gift-open:hover .gift-box{transform:translateY(-3px) rotate(-5.5deg) skewX(-1deg)}
-}
-.gift-bed{position:absolute;inset:2px 0 -10px;border-radius:4px;background:linear-gradient(8deg,#501b28 0%,#401220 45%,#78313b 78%,#a55855);box-shadow:0 2px 0 #431522,1px 10px 10px #27091291,1px 20px 32px #1e071b66,0 0 1px 2px #4b1923}
-.gift-door{
-  position:absolute;display:block;inset:0;transform-style:preserve-3d;
-  --paper-edge:#e4b78383;--paper-line:#e5ae8e42;
-}
-.gift-door-left{clip-path:inset(-2px 49.9% -2px -2px);transform-origin:left center}
-.gift-door-right{clip-path:inset(-2px -2px -2px 49.9%);transform-origin:right center}
-.gift-cover{
-  display:block;position:absolute;inset:0;border:1px solid #e5877997;border-radius:3px;
-  background:
-    radial-gradient(ellipse at 8% 3%,#d77e6938,transparent 68%),
-    repeating-radial-gradient(ellipse at 108% 137%,transparent 0 9px,#e6ac938e 9.25px,transparent 9.65px 13px),
-    linear-gradient(115deg,#993f46 0%,#83303c 32%,#722230 65%,#5c1b2a 100%);
-  box-shadow:inset 0 -2px 3px #2c101c88,inset 2px 2px 4px #dd89804d;
-}
-.gift-cover::before{content:"";position:absolute;inset:4.6% 3%;border:1px solid var(--paper-edge);outline:.5px solid var(--paper-line);outline-offset:3px}
-.gift-cover::after{content:"";position:absolute;inset:0;opacity:.29}
-.gift-stamp{
-  position:absolute;bottom:12%;right:8.5%;display:flex;flex-direction:column;align-items:flex-end;gap:5px;
-  color:#e7bd8c;text-shadow:0 1px 1px #3c1425;font:500 clamp(19px,2.35vw,34px)/1.26 var(--display,Georgia,serif);letter-spacing:.09em;
-}
-.gift-stamp i{width:17px;height:11px;color:#e4b282}.gift-stamp b{font:inherit}
-.gift-strap{display:block;position:absolute;z-index:1;pointer-events:none}
-.gift-strap-h{left:-1px;right:-1px;top:36%;height:12%;background:linear-gradient(180deg,#be965e 0%,#edcf9b 7%,#b78c5b 10%,#ebcea0 18%,#dec293 39%,#f2dcb4 68%,#c59d6b 89%,#f5d8a6 93%,#aa7c52 100%);box-shadow:0 3px 4px #471b25a3}
-.gift-strap-v{left:31%;width:8.3%;top:-1px;bottom:-9px;border-radius:2px 0 3px 2px;background:linear-gradient(90deg,#b18b5e 0%,#f6deb3 7%,#b99160 10%,#e8cca2 18%,#f7e2bc 51%,#dab986 76%,#c09b64 90%,#f3dbae 94%,#b18a5e 100%);box-shadow:2px 0 5px #52232c99}
-.gift-strap::after{content:"";position:absolute;inset:0;opacity:.42;mix-blend-mode:multiply;background:repeating-linear-gradient(52deg,transparent 0 1px,#936d4345 1px 2px)}
-.gift-bow{position:absolute;z-index:3;left:7.5%;top:8%;width:56%;height:68%;overflow:visible;transform:rotate(-5deg);filter:drop-shadow(2px 5px 3px #4819209c)}
-.gift-bow-left,.gift-bow-right,.gift-knot{transform-box:fill-box;transform-origin:center}
-.gift-ticket{position:absolute;z-index:2;left:45.5%;top:49%;width:13%;height:17%;background:linear-gradient(115deg,#e9d5aa,#f6e9c9 55%,#c6a77d);clip-path:polygon(9% 0,100% 0,100% 100%,9% 100%,0 52%);transform:rotate(19deg);box-shadow:inset 0 0 0 2px #dab783}
-.gift-ticket::before{content:"";position:absolute;height:3px;width:3px;top:48%;left:10%;background:#71533d;border-radius:50%}
-.gift-ticket i{position:absolute;inset:24% 22% 23% 33%;border:1px solid #a07d56;transform:rotate(-2deg)}
-.gift-ticket i::after{content:"";position:absolute;left:38%;top:28%;border-left:5px solid #a07d56;border-top:4px solid transparent;border-bottom:4px solid transparent}
-.gift-films{position:absolute;inset:0;pointer-events:none}
-.gift-film{
-  position:absolute;display:block;left:50%;top:50%;width:27%;aspect-ratio:8/11;height:auto;object-fit:cover;
-  border:2px solid #e9c89b;border-radius:1px;box-shadow:3px 10px 19px #10091080;
-  transform:translate(-50%,-50%);--fan-x:0%;--fan-y:-15%;--fan-rot:0deg;opacity:0;
-}
-.gift-film-0{--fan-x:-91%;--fan-rot:-13deg;--fan-y:-5%}
-.gift-film-1{z-index:1}
-.gift-film-2{--fan-x:91%;--fan-rot:13deg;--fan-y:-6%}
-.gift-invite{
-  display:inline-flex;align-items:center;justify-content:center;min-height:50px;gap:18px;padding:0 24px;border-radius:2px;
-  border:1px solid #fff0c5a8;background:linear-gradient(115deg,#f4e2c7,#e6c99f);color:#472832;
-  box-shadow:inset 0 1px 0 #fff0d5,0 7px 18px #160e153e;font:650 15px/1.15 var(--sans);
-}
-.gift-invite i{font:20px Georgia,serif;transition:transform .2s}
-.gift-open:hover .gift-invite i{transform:translate(2px,-2px)}
-#gift-entrance .gift-skip:focus-visible,.gift-open:focus-visible .gift-invite{outline:2px solid #fcedc1;outline-offset:5px}
-@media(max-width:620px){
- #gift-entrance{--gift-w:min(79vw,72vh)}
- .gift-top{top:max(11px,env(safe-area-inset-top));left:6%;right:6%}
- .gift-identity{font-size:12px}.gift-package{margin-bottom:56px}
- .gift-invite{min-height:47px;font-size:14px;padding:0 21px}
-}
-@media(max-height:450px) and (orientation:landscape){
- #gift-entrance{--gift-w:min(47vw,79vh)}.gift-package{margin-bottom:20px}
- .gift-open{padding:6px}.gift-invite{min-height:39px}
-}
-@media(prefers-reduced-motion:no-preference){
- .gift-entrance.is-unwrapping .gift-top,.gift-entrance.is-unwrapping .gift-invite{animation:gift-label-away .36s ease-out forwards}
- .gift-entrance.is-unwrapping .gift-bow-left{animation:gift-bow-l .53s cubic-bezier(.55,.04,.9,.48) forwards}
- .gift-entrance.is-unwrapping .gift-bow-right{animation:gift-bow-r .58s cubic-bezier(.55,.04,.9,.48) forwards}
- .gift-entrance.is-unwrapping .gift-knot,.gift-entrance.is-unwrapping .gift-ticket{animation:gift-tag-away .42s ease-in forwards}
- .gift-entrance.is-unwrapping .gift-strap-h{animation:gift-silk-h .53s .09s cubic-bezier(.52,.01,.85,.46) forwards}
- .gift-entrance.is-unwrapping .gift-strap-v{animation:gift-silk-v .54s .09s cubic-bezier(.52,.01,.85,.46) forwards}
- .gift-entrance.is-unwrapping .gift-door-left{animation:gift-left-open .72s .37s cubic-bezier(.55,.01,.68,.85) forwards}
- .gift-entrance.is-unwrapping .gift-door-right{animation:gift-right-open .72s .37s cubic-bezier(.55,.01,.68,.85) forwards}
- .gift-entrance.is-unwrapping .gift-film{animation:gift-films 1.07s .51s ease-out forwards}
- .gift-entrance.is-unwrapping .gift-bed,.gift-entrance.is-unwrapping .gift-ground{animation:gift-base-away .6s .49s ease-in forwards}
- .gift-entrance.is-unwrapping .gift-environment{animation:gift-aperture .72s 1.01s cubic-bezier(.63,.01,.4,1) forwards}
-}
-@keyframes gift-label-away{to{opacity:0;transform:translateY(6px)}}
-@keyframes gift-bow-l{20%{transform:translate(4%,-3%) rotate(3deg)}to{transform:translate(-78%,-68%) rotate(-30deg);opacity:0}}
-@keyframes gift-bow-r{20%{transform:translate(-4%,-3%) rotate(-4deg)}to{transform:translate(74%,-59%) rotate(29deg);opacity:0}}
-@keyframes gift-tag-away{to{transform:translate(29%,-86%) rotate(43deg);opacity:0}}
-@keyframes gift-silk-h{60%{opacity:.92}to{transform:translateX(-71%) scaleX(.3) rotate(-7deg);opacity:0}}
-@keyframes gift-silk-v{60%{opacity:.92}to{transform:translateY(-83%) scaleY(.35) rotate(9deg);opacity:0}}
-@keyframes gift-left-open{to{transform:perspective(820px) translateX(-36%) rotateY(-71deg) rotate(-7deg);opacity:0}}
-@keyframes gift-right-open{to{transform:perspective(820px) translateX(36%) rotateY(71deg) rotate(7deg);opacity:0}}
-@keyframes gift-films{
- 0%{opacity:0;transform:translate(-50%,-50%) scale(.75)}
- 24%{opacity:1}54%,76%{opacity:1;transform:translate(calc(-50% + var(--fan-x)),calc(-50% + var(--fan-y))) rotate(var(--fan-rot)) scale(1.24)}
- 100%{opacity:0;transform:translate(calc(-50% + var(--fan-x)),calc(-90% + var(--fan-y))) rotate(var(--fan-rot)) scale(1.45)}
-}
-@keyframes gift-base-away{to{opacity:0;transform:scale(.88)}}
-@keyframes gift-aperture{
- 0%{opacity:1;clip-path:polygon(evenodd,0 0,100% 0,100% 100%,0 100%,0 0,50% 45%,50% 45%,50% 45%,50% 45%,50% 45%)}
- 75%{opacity:.95}
- 100%{opacity:0;clip-path:polygon(evenodd,0 0,100% 0,100% 100%,0 100%,0 0,-15% -22%,115% -22%,115% 117%,-15% 117%,-15% -22%)}
-}
 </style></head><body>
   <header class="mast"><div class="mast-inner wrap">
     <a id="home-link" class="brand" href="./"><span class="brand-mark" aria-hidden="true"><i></i><i></i><i></i></span><span>短剧放映厅</span></a>
-    <nav class="mast-nav"><button class="gift-replay" type="button" data-open-gift aria-label="重播拆礼盒开场" title="重播拆礼盒开场"><span class="gift-symbol" aria-hidden="true"></span><span class="gift-replay-text">重拆礼盒</span></button><a href="#films" class="index-jump">作品目录</a><a id="language-link" class="language" href="./en/" aria-label="切换至英文"><b>中</b><i>/</i>EN</a></nav>
+    <nav class="mast-nav"><a href="#films" class="index-jump">作品目录</a><a id="language-link" href="./en/" aria-label="切换至英文"><b>中</b><i>/</i>EN</a></nav>
   </div></header>
   <main><section id="catalogue" class="wrap">
     <section class="feature" aria-label="焦点放映" aria-roledescription="轮播">
@@ -933,4 +661,4 @@ html.gift-is-open{overflow:hidden}
       <div class="watch-transport"><button id="previous" type="button"><span aria-hidden="true" class="arrow-icon left"></span>上一集</button><button id="next" type="button">下一集<span aria-hidden="true" class="arrow-icon right"></span></button></div>
       <a id="classic-link" href="./classic.html">用放映机观看本集 ↗</a></div></div></section></main>
   <script id="library-data" type="application/json">{"lang":"zh","base":"./","series":[{"id":"deaf-no-more","title":"他在掌心写爱，我在耳边听谎","otherTitle":"Deaf No More, She Uncovers His Lies","description":"结婚纪念日那晚，刚恢复听力的伊莲娜看着丈夫用手语说爱她，却听见他压低声音，问起了另一个女人。","poster":"media/palm-poster-v2.jpg","feature":"media/feature-deaf-no-more.jpg","gallery":"media/gallery-deaf-no-more.jpg","episodes":[{"id":"palm-ep02","title":"第 2 集","cover":"media/palm-poster-v2.jpg","source":{"kind":"video","provider":"file","src":"media/palm-ep02.mp4"}},{"id":"palm-ep03","title":"第 3 集","cover":"media/palm-still-03.jpg","source":{"kind":"video","provider":"file","src":"media/palm-ep03.mp4"}},{"id":"palm-ep04","title":"第 4 集","cover":"media/palm-still-04.jpg","source":{"kind":"video","provider":"file","src":"media/palm-ep04.mp4"}},{"id":"palm-ep08","title":"第 8 集","cover":"media/palm-still-08.jpg","source":{"kind":"video","provider":"file","src":"media/palm-ep08.mp4"}},{"id":"palm-ep15","title":"第 15 集","cover":"media/palm-still-15.jpg","source":{"kind":"video","provider":"file","src":"media/palm-ep15.mp4"}},{"id":"palm-ep16","title":"第 16 集","cover":"media/palm-still-16.jpg","source":{"kind":"video","provider":"file","src":"media/palm-ep16.mp4"}},{"id":"palm-ep17","title":"第 17 集","cover":"media/palm-still-17.jpg","source":{"kind":"video","provider":"file","src":"media/palm-ep17.mp4"}},{"id":"palm-ep18","title":"第 18 集","cover":"media/palm-still-18.jpg","source":{"kind":"video","provider":"file","src":"media/palm-ep18.mp4"}},{"id":"palm-ep19","title":"第 19 集","cover":"media/palm-still-19.jpg","source":{"kind":"video","provider":"file","src":"media/palm-ep19.mp4"}}]},{"id":"marriage-partner","title":"我的老公不讨厌我","otherTitle":"My Marriage Partner Sucks at Pretending to Hate Me","description":"为了搅黄和死对头格兰特的婚事，她故意在两家人面前出糗。准新郎却站了起来，为她鼓掌。","poster":"media/partner-poster.png","feature":"media/feature-marriage-partner.jpg","gallery":"media/gallery-marriage-partner.jpg","episodes":[{"id":"partner-ep01","title":"第 1 集","cover":"media/partner-poster-screen.jpg","source":{"kind":"video","provider":"file","src":"media/partner-ep01.mp4"}},{"id":"partner-ep02","title":"第 2 集","cover":"media/partner-still-02.jpg","source":{"kind":"video","provider":"file","src":"media/partner-ep02.mp4"}},{"id":"partner-ep05","title":"第 5 集","cover":"media/partner-still-05.jpg","source":{"kind":"video","provider":"file","src":"media/partner-ep05.mp4"}},{"id":"partner-ep06","title":"第 6 集","cover":"media/partner-still-06.jpg","source":{"kind":"video","provider":"file","src":"media/partner-ep06.mp4"}},{"id":"partner-ep07","title":"第 7 集","cover":"media/partner-still-07.jpg","source":{"kind":"video","provider":"file","src":"media/partner-ep07.mp4"}}]},{"id":"serpent-king","title":"重生为蛇王的禁忌伴侣","otherTitle":"Reborn as the Serpent King’s Forbidden Mate","description":"被妹妹毒害后，西耶娜重回择偶大典。这一次，妹妹抢先救下了西耶娜前世的伴侣凤凰领主，而西耶娜遇见了蛇王。","poster":"media/serpent-poster.jpg","feature":"media/feature-serpent-king.jpg","gallery":"media/gallery-serpent-king.jpg","episodes":[{"id":"serpent-ep01","title":"第 1 集","cover":"media/serpent-poster.jpg","source":{"kind":"video","provider":"file","src":"media/serpent-ep01.mp4"}},{"id":"serpent-ep03","title":"第 3 集","cover":"media/serpent-still-03.jpg","source":{"kind":"video","provider":"file","src":"media/serpent-ep03.mp4"}},{"id":"serpent-ep04","title":"第 4 集","cover":"media/serpent-still-04.jpg","source":{"kind":"video","provider":"file","src":"media/serpent-ep04.mp4"}}]}],"labels":{"library":"短剧作品集","collection":"回到放映厅","libraryCount":"{s} 部剧集 · {n} 集","kind":"短剧","booth":"放映厅","programme":"作品简介","watchSeries":"放映此剧","project":"放映","previousWork":"上一部剧","nextWork":"下一部剧","introJump":"下滑看作品简介","dragHint":"横向拖动胶片换剧","episodeCount":"收录 {n} 集","episodeList":"选集","watch":"观看","progress":"正在播放","prev":"上一集","next":"下一集","finished":"已播完本剧收录的最后一集。","open":"在原平台观看","unavailable":"视频未能加载。","retry":"重新加载","classic":"用放映机观看本集","playSeries":"放映《{title}》"},"siteTitle":"短剧放映厅"}</script>
-  <script type="module" src="./assets/library-CJR2PNLH.js"></script></body></html>
+  <script type="module" src="./assets/library-MARKVL7P.js"></script></body></html>
