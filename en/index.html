@@ -1,0 +1,403 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="color-scheme" content="dark"><meta name="theme-color" content="#151311">
+  <title>Drama portfolio · Short Drama Screening Room</title>
+  <meta name="description" content="Fourteen selected episodes from two short dramas, grouped by series in original episode order.">
+  <meta property="og:type" content="website"><meta property="og:title" content="Drama portfolio · Short Drama Screening Room">
+  <meta property="og:image" content="../media/palm-poster-h1.jpg">
+  <link rel="alternate" hreflang="zh-CN" href="../">
+  <link rel="alternate" hreflang="en" href="../en/">
+  <style>:root {
+  color-scheme: dark;
+  --ink: #f1eadd;
+  --muted: #b2a99d;
+  --brass: #dfba80;
+  --line: #393630;
+  --page: #151412;
+  --serif: "Songti SC", "STSong", "Noto Serif SC", "Source Han Serif SC", "SimSun", Georgia, serif;
+  --sans: "Inter", "PingFang SC", "Microsoft YaHei", system-ui, sans-serif;
+}
+
+* { box-sizing: border-box; }
+[hidden] { display: none !important; }
+html { min-height: 100%; background: var(--page); }
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: radial-gradient(ellipse at 50% 18%, #221e19 0%, #171614 49%, #131311 100%);
+  color: var(--ink);
+  font: 15px/1.55 var(--sans);
+  -webkit-font-smoothing: antialiased;
+}
+h1, h2, p { margin: 0; }
+a { color: inherit; text-decoration: none; }
+button { color: inherit; font: inherit; cursor: pointer; }
+svg { display: block; flex-shrink: 0; }
+:focus-visible { outline: 2px solid var(--brass); outline-offset: 4px; }
+
+.masthead { position: relative; z-index: 8; background: #171614; border-bottom: 1px solid var(--line); }
+body:has(#collection:not([hidden])) .masthead { position: absolute; inset: 0 0 auto; background: transparent; border: 0; }
+.mast-inner, #watch { width: min(calc(100% - 56px), 1136px); margin-inline: auto; }
+body:has(#collection:not([hidden])) .mast-inner { width: auto; margin-inline: var(--booth-gutter); }
+.mast-inner { display: flex; align-items: center; justify-content: space-between; gap: 16px; min-height: 66px; }
+.brand, .mast-nav, .language { display: inline-flex; align-items: center; }
+.brand { min-height: 44px; gap: 9px; }
+.brand-mark { display: inline-grid; place-items: center; color: var(--brass); }
+.brand-mark svg, svg.brand-mark { width: 25px; height: 25px; }
+.brand-name { font: 600 18px/1.2 var(--serif); letter-spacing: .04em; }
+.brand-sub { color: #c8bcaa; font-size: 13px; letter-spacing: .05em; }
+.mast-nav { gap: 16px; }
+.language { min-height: 44px; color: #e2d8c8; font-size: 13px; letter-spacing: .04em; }
+.language svg { width: 16px; height: 16px; }
+.category-chip { display: inline-flex; align-items: center; gap: 7px; padding: 6px 13px; border-radius: 20px; color: #20170b; background: #ebbc69; font-size: 13px; white-space: nowrap; }
+.category-chip small { font-size: 11px; }
+
+:root {
+  --booth-gutter: clamp(18px, 3vw, 44px);
+  --film-w: clamp(94px, 9vw, 140px);
+  --film-h: calc(var(--film-w) * .72);
+  --rail: 17px;
+}
+.booth-stage {
+  position: relative;
+  isolation: isolate;
+  height: 100vh;
+  height: 100svh;
+  min-height: 535px;
+  overflow: hidden;
+  background: #090605;
+}
+.booth-scene, .booth-fallback, .booth-vignette { position: absolute; inset: 0; }
+.booth-scene { z-index: 1; opacity: 0; pointer-events: none; touch-action: pan-y; }
+.booth-scene canvas { display: block; width: 100%; height: 100%; }
+.has-scene .booth-scene { opacity: 1; pointer-events: auto; }
+.has-scene .booth-fallback { visibility: hidden; }
+.booth-vignette {
+  z-index: 2; pointer-events: none;
+  background:
+    linear-gradient(0deg, #070504f2 0, #08060480 18%, transparent 44%, transparent 85%, #0906048a),
+    linear-gradient(90deg, #05030288, transparent 50%);
+}
+.booth-fallback {
+  overflow: hidden;
+  background:
+    linear-gradient(90deg, transparent 0 9%, #090706fa 23% 63%, transparent 84%),
+    linear-gradient(180deg, #0805034d 0%, transparent 34%, #130805 80%, #090706 100%),
+    repeating-linear-gradient(90deg, #110804 0, #31110d 15px, #130707 35px, #070505 57px, #180908 75px);
+}
+.booth-fallback::before {
+  content: ""; position: absolute; inset: 0 0 0 26%; pointer-events: none;
+  background: linear-gradient(82deg, #ffe0a84d, #ffeacd0f 40%, #fff0bd81 70%, transparent 88%);
+  clip-path: polygon(4% 17%, 74% 58%, 74% 61%, 4% 64%);
+}
+.booth-fallback::after {
+  content: ""; position: absolute; pointer-events: none; inset: 70% -1% -2%;
+  border-top: 3px solid #745130;
+  background:
+    linear-gradient(180deg, transparent, #0c0809cf 90%),
+    radial-gradient(ellipse 85px 80% at 50% 95%, #571b20 13%, #3d1017 53%, #1a0e11 56%, transparent 61%) 50% 0 / 116px 100% repeat-x;
+}
+#booth-screen {
+  position: absolute; top: 13%; left: 20%; width: 31%; height: 43%;
+  padding: 0; border: 0; background: transparent;
+  filter: drop-shadow(0 0 28px #e9bd7c1f);
+}
+#booth-poster { display: block; width: 100%; height: 100%; object-fit: contain; }
+.fallback-projector {
+  position: absolute; z-index: 1; right: 11%; top: 48%; width: 20%; height: 25%;
+  border: 1px solid #8f765c; border-radius: 12% 16% 10% 8%; transform: skewY(4deg);
+  background:
+    linear-gradient(90deg, #40372b 0 12%, transparent 13%),
+    repeating-linear-gradient(0deg, #211b15 0 12px, #784b2e 13px 17px, #211a14 19px 25px) 18% 57% / 35% 50% no-repeat,
+    linear-gradient(125deg, #655645, #29241e 35%, #171613 80%, #3c3326);
+  box-shadow: inset 6px 3px 10px #e4bd8425, 12px 20px 20px #08050490;
+}
+.fallback-projector::before, .fallback-projector::after {
+  content: ""; position: absolute; bottom: 92%; width: 64%; aspect-ratio: .86;
+  border: 2px solid #8b7662; border-radius: 50%;
+  background:
+    radial-gradient(ellipse at 50% 50%, #b99f77 0 3%, #513c2b 4% 7%, transparent 8%),
+    radial-gradient(ellipse at 50% 22%, #100c0a 0 10%, transparent 11%),
+    radial-gradient(ellipse at 23% 47%, #100d0c 0 10%, transparent 11%),
+    radial-gradient(ellipse at 80% 47%, #0e0c0a 0 10%, transparent 11%),
+    radial-gradient(ellipse at 36% 74%, #110e0b 0 10%, transparent 11%),
+    radial-gradient(ellipse at 68% 75%, #100d0b 0 10%, transparent 11%),
+    linear-gradient(120deg, #463e35, #897760 32%, #342d27 62%, #685a49);
+  box-shadow: inset 3px 1px 8px #eed4a94f, 4px 2px #29211b;
+}
+.fallback-projector::before { left: -7%; }
+.fallback-projector::after { right: -8%; bottom: 94%; width: 66%; }
+.booth-hud {
+  position: absolute; z-index: 3; left: var(--booth-gutter);
+  bottom: calc(var(--film-h) + 2 * var(--rail) + 74px + env(safe-area-inset-bottom));
+  width: min(560px, 46vw); text-shadow: 0 2px 24px #000c;
+  pointer-events: none;
+}
+.booth-hud a { pointer-events: auto; }
+.booth-counter { color: #dfba80; font: 600 12px/1.3 ui-monospace, Consolas, monospace; letter-spacing: .13em; }
+#booth-name { margin: 7px 0 0; color: #fcf4e7; font: 650 clamp(32px, 4.2vw, 62px)/1.13 var(--serif); letter-spacing: .025em; text-wrap: balance; }
+html[lang="en"] #booth-name { font-size: clamp(29px, 3.5vw, 52px); }
+#booth-meta { margin-top: 10px; color: #edc27c; font-size: 14px; letter-spacing: .06em; }
+#booth-play, .programme-play {
+  display: inline-flex; align-items: center; justify-content: center; gap: 7px;
+  min-height: 42px; width: fit-content; padding: 9px 18px; border: 1px solid #c29b65;
+  border-radius: 999px; color: #ffecd0; background: #372716bf; font-size: 14px; letter-spacing: .04em;
+}
+#booth-play { margin-top: 17px; }
+#booth-play svg, .programme-play svg { width: 15px; height: 15px; }
+.booth-controls { position: absolute; z-index: 4; bottom: 0; inset-inline: 0; padding-bottom: max(7px, env(safe-area-inset-bottom)); }
+.film-navigation { position: relative; display: flex; justify-content: center; align-items: center; min-height: calc(var(--film-h) + 2 * var(--rail)); }
+.film-window { max-width: calc(100% - 122px); overflow-x: auto; overflow-y: hidden; scrollbar-width: none; overscroll-behavior-x: contain; scroll-snap-type: x proximity; touch-action: pan-y; }
+.film-window::-webkit-scrollbar { display: none; }
+#booth-frames {
+  position: relative; display: flex; align-items: center; gap: 8px; margin: 0; width: max-content;
+  padding: var(--rail) 10px; list-style: none; background: #211a12e8;
+  border-block: 1px solid #534739;
+}
+#booth-frames::before, #booth-frames::after, .programme-art::before, .programme-art::after {
+  content: ""; position: absolute; z-index: 1; left: 5px; right: 5px; height: 5px; pointer-events: none;
+  background: repeating-linear-gradient(90deg, #a79c8a99 0 8px, transparent 8px 21px);
+}
+#booth-frames::before, .programme-art::before { top: 4px; }
+#booth-frames::after, .programme-art::after { bottom: 4px; }
+#booth-frames li { flex: none; scroll-snap-align: center; }
+.booth-frame {
+  display: block; position: relative; width: var(--film-w); height: var(--film-h); padding: 0;
+  border: 1px solid #423326; border-radius: 2px; background: #100e0c; color: #fff6e6;
+}
+.booth-frame img { width: 100%; height: 100%; display: block; object-fit: cover; object-position: center 26%; opacity: .67; }
+.booth-frame[aria-current="true"], .booth-frame[aria-pressed="true"] { border-color: #edbb67; box-shadow: 0 0 0 2px #c193475c, 0 0 15px #dfac5b48; }
+.booth-frame:is([aria-current="true"], [aria-pressed="true"], :hover) img { opacity: 1; }
+.frame-count { position: absolute; inset: auto auto 3px 4px; padding: 1px 3px; border-radius: 2px; background: #0b0907ad; color: #f0cc8e; font: 10px/1.2 ui-monospace, Consolas, monospace; }
+#booth-prev, #booth-next {
+  position: absolute; display: grid; place-items: center; width: 40px; height: 40px;
+  border: 1px solid #baab944f; border-radius: 50%; background: #17120dd9; color: #f2e5cd;
+}
+#booth-prev { left: var(--booth-gutter); }
+#booth-next { right: var(--booth-gutter); }
+#booth-prev:disabled, #booth-next:disabled { opacity: .4; cursor: default; }
+#booth-prev svg, #booth-next svg { width: 17px; height: 17px; }
+.booth-hint { display: flex; justify-content: center; align-items: center; gap: 12px; min-height: 34px; color: #c2b6a7; font-size: 12px; text-align: center; }
+#read-intro { display: inline-flex; align-items: center; gap: 5px; min-height: 34px; color: #ecc88c; }
+#read-intro svg { width: 14px; height: 14px; }
+
+.programme { color: var(--ink); background: radial-gradient(ellipse at 13% 10%, #292016, transparent 56%), #12110f; }
+.programme-inner { max-width: 1192px; margin: 0 auto; padding: clamp(44px, 6vw, 90px) 40px clamp(48px, 6vw, 90px); }
+.programme-head { display: flex; justify-content: space-between; align-items: center; gap: 18px; padding-bottom: clamp(22px, 3.4vw, 48px); }
+.programme-head h2 { scroll-margin-top: 24px; font: 500 clamp(32px, 4.1vw, 61px)/1.17 var(--serif); }
+#back-to-booth { display: inline-flex; align-items: center; gap: 6px; color: var(--brass); font-size: 13px; min-height: 40px; border-bottom: 1px solid #7e674b; }
+#back-to-booth svg { width: 16px; height: 16px; }
+.programme-entry {
+  display: grid; grid-template-columns: minmax(0, 1.29fr) minmax(0, 1fr); align-items: center;
+  gap: clamp(32px, 6.5vw, 92px); padding: clamp(30px, 4.5vw, 65px) 0; border-top: 1px solid #514639;
+}
+.programme-art {
+  position: relative; display: block; min-width: 0; aspect-ratio: 1.64; padding-block: 14px;
+  overflow: hidden; border: 1px solid #514638; background: #090806;
+}
+.programme-art img { display: block; width: 100%; height: 100%; object-fit: contain; }
+.programme-art::before, .programme-art::after { height: 4px; }
+.programme-copy { min-width: 0; }
+.programme-kind { color: #dfb67a; font-size: 13px; letter-spacing: .08em; }
+.programme-copy h3 { margin: 11px 0 0; font: 600 clamp(27px, 3vw, 47px)/1.2 var(--serif); text-wrap: balance; }
+.programme-title-en { margin-top: 8px; font: italic 16px/1.45 Georgia, var(--serif); color: #c4b7a0; }
+.programme-description { margin-top: 18px; font-size: 16px; color: #ded5c8; }
+.programme-play { margin-top: 20px; min-height: 40px; background: #2c2419; }
+
+#watch { padding-bottom: 34px; }
+.back-row { display: flex; align-items: center; min-height: 64px; }
+#return-link, .classic-link { display: inline-flex; align-items: center; gap: 8px; min-height: 44px; color: var(--muted); font-size: 14px; }
+#return-link svg, .classic-link svg { width: 16px; height: 16px; }
+.watch-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.42fr) minmax(270px, 1fr);
+  gap: clamp(28px, 4.4vw, 64px);
+  align-items: start;
+}
+.stage {
+  display: grid;
+  place-items: center;
+  width: 100%;
+  height: clamp(400px, calc(100vh - 164px), 760px);
+  height: clamp(400px, calc(100svh - 164px), 760px);
+  overflow: hidden;
+  border: 1px solid #38342e;
+  border-radius: 6px;
+  background: #070707;
+  box-shadow: 0 14px 44px #0003;
+}
+.stage video, .stage iframe { display: block; width: 100%; height: 100%; min-height: 0; border: 0; }
+.stage video { object-fit: contain; }
+#external { padding: 12px 22px; border: 1px solid var(--brass); border-radius: 4px; color: var(--brass); }
+.stage:has(iframe:not([hidden])) { grid-template-rows: minmax(0, 1fr) auto; }
+.stage iframe:not([hidden]) ~ #external { margin: 8px; padding-block: 6px; }
+.watch-details { min-width: 0; padding-top: clamp(10px, 3.8vh, 40px); }
+.alt-title { color: var(--brass); font: italic 16px/1.45 Georgia, var(--serif); }
+#series-name { margin: 10px 0; font: 600 clamp(29px, 3.2vw, 45px)/1.24 var(--serif); text-wrap: balance; }
+#series-name:focus:not(:focus-visible) { outline: 0; }
+.detail-meta { margin-top: 10px; color: var(--muted); font-size: 13px; }
+.episodes-block { margin-top: clamp(24px, 5vh, 48px); padding-top: 22px; border-top: 1px solid var(--line); }
+.episodes-block h2 { margin-bottom: 14px; font-size: 17px; line-height: 1.4; font-weight: 600; }
+.episodes {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(70px, 1fr));
+  gap: 8px;
+}
+.episodes :is(a, button), .transport button {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  gap: 6px;
+  min-height: 44px;
+  padding: 7px 8px;
+  border: 1px solid #454039;
+  border-radius: 4px;
+  color: #e7dfd3;
+  background: #25231f;
+  font: 500 13px/1.4 var(--sans);
+  text-align: center;
+  font-variant-numeric: tabular-nums;
+}
+.episodes [aria-current]:not([aria-current="false"]) { border-color: var(--brass); background: #e3c18e; color: #211a11; }
+.playing-line { margin-top: 24px; color: var(--muted); font-size: 14px; }
+#now-playing { color: var(--ink); }
+.transport { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 10px; }
+.transport button { min-width: 88px; padding-inline: 16px; background: transparent; }
+.transport button:disabled { opacity: .38; cursor: default; }
+.transport button svg { width: 14px; height: 14px; }
+#notice { margin-top: 14px; color: var(--brass); font-size: 14px; }
+.classic-link { margin-top: 12px; width: fit-content; text-underline-offset: 3px; }
+
+@media (hover: hover) {
+  :is(.brand, .language, #return-link, .classic-link, #back-to-booth, #read-intro):hover { color: #ffe0a4; }
+  :is(#booth-play, .programme-play):hover { background: #e9bb72; color: #20170c; }
+  .programme-art:hover, .booth-frame:hover, .episodes :is(a, button):hover, .transport button:enabled:hover { border-color: var(--brass); }
+}
+@media (prefers-reduced-motion: no-preference) {
+  .booth-scene { transition: opacity .45s ease; }
+  .booth-frame img, #booth-play, .programme-play { transition: opacity .18s ease, color .18s ease, background .18s ease; }
+}
+@media (max-width: 700px) {
+  :root { --film-w: clamp(76px, 22vw, 111px); --rail: 12px; }
+  .mast-inner, #watch { width: calc(100% - 36px); }
+  .mast-inner { min-height: 58px; }
+  .mast-nav { gap: 12px; }
+  .brand-name { font-size: 17px; }
+  .brand-sub { display: none; }
+  .category-chip { padding: 4px 10px; font-size: 12px; }
+  .booth-stage { min-height: 520px; }
+  .booth-hud { bottom: calc(var(--film-h) + 2 * var(--rail) + 66px + env(safe-area-inset-bottom)); width: min(78vw, 390px); }
+  #booth-name, html[lang="en"] #booth-name { font-size: clamp(27px, 6.8vw, 40px); }
+  #booth-meta { margin-top: 7px; font-size: 13px; }
+  #booth-play { margin-top: 13px; }
+  #booth-screen { top: 16%; left: 9%; width: 48%; height: 35%; }
+  .fallback-projector { top: 45%; right: 4%; width: 26%; height: 18%; }
+  #booth-prev, #booth-next { width: 36px; height: 36px; }
+  .booth-hint { gap: 8px; font-size: 11px; }
+  .programme-inner { padding-inline: 20px; }
+  .programme-entry { grid-template-columns: minmax(0, 1fr); gap: 22px; }
+  .programme-copy h3 { margin-top: 9px; }
+  .programme-description { margin-top: 12px; }
+  .back-row { min-height: 50px; }
+  .watch-grid { grid-template-columns: minmax(0, 1fr); gap: 20px; }
+  .stage { height: min(60vh, 560px); height: min(60svh, 560px); }
+  .watch-details { padding: 0; }
+  #series-name { margin: 5px 0; font-size: 28px; }
+  .alt-title { font-size: 14px; }
+  .detail-meta { margin-top: 6px; }
+  .episodes-block { margin-top: 18px; padding-top: 16px; }
+  .playing-line { margin-top: 16px; }
+}
+@media (max-height: 560px) and (min-width: 701px) {
+  :root { --film-w: 86px; --rail: 10px; }
+  .booth-stage { min-height: 400px; }
+  #booth-name, html[lang="en"] #booth-name { font-size: 31px; }
+  .booth-hud { bottom: calc(var(--film-h) + 2 * var(--rail) + 52px); }
+}
+@media (max-width: 340px) {
+  .mast-inner, #watch { width: calc(100% - 28px); }
+  .mast-nav { gap: 8px; }
+  .brand-mark { display: none; }
+}
+</style>
+</head>
+<body>
+  <header class="masthead"><div class="mast-inner">
+    <a id="home-link" class="brand" href="../en/"><span class="brand-name">Short Drama Screening Room</span><span class="brand-sub">Selected Episodes</span></a>
+    <nav class="mast-nav"><span class="category-chip">Short drama <small>2</small></span>
+      <a id="language-link" class="language" href="../" lang="zh" aria-label="切换到中文">中文</a></nav>
+  </div></header>
+  <main class="shell">
+    <section id="collection" aria-label="Drama portfolio">
+      <section id="booth-stage" class="booth-stage" aria-label="Screening room" tabindex="-1">
+        <div id="booth-scene" class="booth-scene" aria-hidden="true"></div>
+        <div class="booth-fallback">
+          <button id="booth-screen" type="button" aria-label="Play Deaf No More, She Uncovers His Lies"><img src="../media/palm-poster-v2.jpg" alt="" width="800" height="1100" decoding="async" id="booth-poster" fetchpriority="high"></button>
+          <button class="fallback-projector" id="booth-select" type="button" aria-label="Play Deaf No More, She Uncovers His Lies"></button>
+        </div><div class="booth-vignette" aria-hidden="true"></div>
+        <div class="booth-hud">
+          <p class="booth-counter" id="booth-count">01 / 02</p>
+          <h1 id="booth-name">Deaf No More, She Uncovers His Lies</h1><p id="booth-meta">9 episodes</p>
+          <a id="booth-play" class="series-card" href="#deaf-no-more" aria-label="Play Deaf No More, She Uncovers His Lies"><svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="m8 5 11 7-11 7z" fill="currentColor" stroke="none"/></svg>Play</a>
+        </div>
+        <div class="booth-controls">
+          <nav class="film-navigation" aria-label="Drama portfolio">
+            <button id="booth-prev" type="button" aria-label="Previous series" disabled><svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 12H5m6-6-6 6 6 6"/></svg></button>
+            <div class="film-window"><ol id="booth-frames"><li>
+    <button class="booth-frame" type="button" data-series="deaf-no-more" aria-label="Play Deaf No More, She Uncovers His Lies" aria-current="true">
+      <img src="../media/palm-poster-v2.jpg" alt="" width="800" height="1100" decoding="async" ><span class="frame-count" aria-hidden="true">01</span>
+    </button></li><li>
+    <button class="booth-frame" type="button" data-series="marriage-partner" aria-label="Play My Marriage Partner Sucks at Pretending to Hate Me">
+      <img src="../media/partner-poster.png" alt="" width="800" height="1100" decoding="async" ><span class="frame-count" aria-hidden="true">02</span>
+    </button></li></ol></div>
+            <button id="booth-next" type="button" aria-label="Next series"><svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h15m-6-6 6 6-6 6"/></svg></button>
+          </nav>
+          <div class="booth-hint"><span>Drag the filmstrip to browse</span><a href="#programme-title" id="read-intro">Read the programme <span aria-hidden="true">⌄</span></a></div>
+        </div>
+      </section>
+      <section class="programme" aria-labelledby="programme-title"><div class="programme-inner">
+        <header class="programme-head"><h2 id="programme-title" tabindex="-1">Programme</h2><a id="back-to-booth" href="#booth-stage">Back to the booth</a></header>
+        <div class="programme-list"><article class="programme-entry">
+    <a class="programme-art series-card" href="#deaf-no-more" aria-label="Play Deaf No More, She Uncovers His Lies"><img src="../media/palm-poster-v2.jpg" alt="" width="800" height="1100" decoding="async" loading="lazy"></a>
+    <div class="programme-copy"><p class="programme-kind">Short drama · 9 episodes</p>
+      <h3>Deaf No More, She Uncovers His Lies</h3>
+      <p class="programme-title-en" lang="zh">他在掌心写爱，我在耳边听谎</p>
+      <p class="programme-description">Elena keeps her restored hearing a surprise for her anniversary. At dinner, her husband signs that he loves her while quietly asking about another woman.</p>
+      <a class="series-card programme-play" href="#deaf-no-more" aria-label="Play Deaf No More, She Uncovers His Lies"><svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="m8 5 11 7-11 7z" fill="currentColor" stroke="none"/></svg>Watch this series</a>
+    </div></article><article class="programme-entry">
+    <a class="programme-art series-card" href="#marriage-partner" aria-label="Play My Marriage Partner Sucks at Pretending to Hate Me"><img src="../media/partner-poster.png" alt="" width="800" height="1100" decoding="async" loading="lazy"></a>
+    <div class="programme-copy"><p class="programme-kind">Short drama · 5 episodes</p>
+      <h3>My Marriage Partner Sucks at Pretending to Hate Me</h3>
+      <p class="programme-title-en" lang="zh">我的老公不讨厌我</p>
+      <p class="programme-description">To get out of marrying her longtime rival Grant, she makes a scene in front of both families. Her groom-to-be stands up and applauds.</p>
+      <a class="series-card programme-play" href="#marriage-partner" aria-label="Play My Marriage Partner Sucks at Pretending to Hate Me"><svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="m8 5 11 7-11 7z" fill="currentColor" stroke="none"/></svg>Watch this series</a>
+    </div></article></div>
+      </div></section>
+      <noscript><h2>Deaf No More, She Uncovers His Lies</h2><ul><li><a href="../media/palm-ep02.mp4">Episode 2</a></li><li><a href="../media/palm-ep03.mp4">Episode 3</a></li><li><a href="../media/palm-ep04.mp4">Episode 4</a></li><li><a href="../media/palm-ep08.mp4">Episode 8</a></li><li><a href="../media/palm-ep15.mp4">Episode 15</a></li><li><a href="../media/palm-ep16.mp4">Episode 16</a></li><li><a href="../media/palm-ep17.mp4">Episode 17</a></li><li><a href="../media/palm-ep18.mp4">Episode 18</a></li><li><a href="../media/palm-ep19.mp4">Episode 19</a></li></ul><h2>My Marriage Partner Sucks at Pretending to Hate Me</h2><ul><li><a href="../media/partner-ep01.mp4">Episode 1</a></li><li><a href="../media/partner-ep02.mp4">Episode 2</a></li><li><a href="../media/partner-ep05.mp4">Episode 5</a></li><li><a href="../media/partner-ep06.mp4">Episode 6</a></li><li><a href="../media/partner-ep07.mp4">Episode 7</a></li></ul></noscript>
+    </section>
+    <section id="watch" aria-labelledby="series-name" hidden>
+      <div class="back-row"><a id="return-link" href="../en/"><svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 12H5m6-6-6 6 6 6"/></svg>Back to the booth</a></div>
+      <div class="watch-grid"><div class="stage">
+        <video id="video" controls playsinline preload="metadata" aria-label="Video player" hidden></video>
+        <iframe id="embed" title="Video player" allow="autoplay; fullscreen; picture-in-picture; encrypted-media" allowfullscreen hidden></iframe>
+        <a id="external" target="_blank" rel="noopener" hidden>Watch on the original platform</a>
+      </div><div class="watch-details">
+        <p id="other-name" class="alt-title" lang="zh"></p>
+        <h1 id="series-name" tabindex="-1"></h1><p id="episode-count" class="detail-meta"></p>
+        <div class="episodes-block"><h2 id="episode-heading">Episodes</h2>
+          <div id="episode-list" class="episodes" role="group" aria-labelledby="episode-heading"></div>
+        </div>
+        <p class="playing-line" aria-live="polite">Now playing · <span id="now-playing"></span></p>
+        <div class="transport"><button id="previous" type="button"><svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 12H5m6-6-6 6 6 6"/></svg>Previous</button>
+          <button id="next" type="button">Next<svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h15m-6-6 6 6-6 6"/></svg></button></div>
+        <p id="notice" role="status" hidden></p>
+        <a id="classic-link" class="classic-link" href="./classic.html"><svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="2.5" y="4.5" width="19" height="13" rx="2"/><path d="M7 21h10m-5-3v3"/></svg>Watch this episode in 3D</a>
+      </div></div>
+    </section>
+  </main>
+  <script id="library-data" type="application/json">{"lang":"en","base":"../","series":[{"id":"deaf-no-more","title":"Deaf No More, She Uncovers His Lies","otherTitle":"他在掌心写爱，我在耳边听谎","description":"Elena keeps her restored hearing a surprise for her anniversary. At dinner, her husband signs that he loves her while quietly asking about another woman.","poster":"media/palm-poster-v2.jpg","episodes":[{"id":"palm-ep02","title":"Episode 2","cover":"media/palm-poster-v2.jpg","source":{"kind":"video","provider":"file","src":"media/palm-ep02.mp4"}},{"id":"palm-ep03","title":"Episode 3","cover":"media/palm-still-03.jpg","source":{"kind":"video","provider":"file","src":"media/palm-ep03.mp4"}},{"id":"palm-ep04","title":"Episode 4","cover":"media/palm-still-04.jpg","source":{"kind":"video","provider":"file","src":"media/palm-ep04.mp4"}},{"id":"palm-ep08","title":"Episode 8","cover":"media/palm-still-08.jpg","source":{"kind":"video","provider":"file","src":"media/palm-ep08.mp4"}},{"id":"palm-ep15","title":"Episode 15","cover":"media/palm-still-15.jpg","source":{"kind":"video","provider":"file","src":"media/palm-ep15.mp4"}},{"id":"palm-ep16","title":"Episode 16","cover":"media/palm-still-16.jpg","source":{"kind":"video","provider":"file","src":"media/palm-ep16.mp4"}},{"id":"palm-ep17","title":"Episode 17","cover":"media/palm-still-17.jpg","source":{"kind":"video","provider":"file","src":"media/palm-ep17.mp4"}},{"id":"palm-ep18","title":"Episode 18","cover":"media/palm-still-18.jpg","source":{"kind":"video","provider":"file","src":"media/palm-ep18.mp4"}},{"id":"palm-ep19","title":"Episode 19","cover":"media/palm-still-19.jpg","source":{"kind":"video","provider":"file","src":"media/palm-ep19.mp4"}}]},{"id":"marriage-partner","title":"My Marriage Partner Sucks at Pretending to Hate Me","otherTitle":"我的老公不讨厌我","description":"To get out of marrying her longtime rival Grant, she makes a scene in front of both families. Her groom-to-be stands up and applauds.","poster":"media/partner-poster.png","episodes":[{"id":"partner-ep01","title":"Episode 1","cover":"media/partner-poster-screen.jpg","source":{"kind":"video","provider":"file","src":"media/partner-ep01.mp4"}},{"id":"partner-ep02","title":"Episode 2","cover":"media/partner-still-02.jpg","source":{"kind":"video","provider":"file","src":"media/partner-ep02.mp4"}},{"id":"partner-ep05","title":"Episode 5","cover":"media/partner-still-05.jpg","source":{"kind":"video","provider":"file","src":"media/partner-ep05.mp4"}},{"id":"partner-ep06","title":"Episode 6","cover":"media/partner-still-06.jpg","source":{"kind":"video","provider":"file","src":"media/partner-ep06.mp4"}},{"id":"partner-ep07","title":"Episode 7","cover":"media/partner-still-07.jpg","source":{"kind":"video","provider":"file","src":"media/partner-ep07.mp4"}}]}],"labels":{"library":"Drama portfolio","collection":"Back to the booth","libraryCount":"{s} series · {n} episodes","kind":"Short drama","booth":"Screening room","programme":"Programme","watchSeries":"Watch this series","project":"Play","previousWork":"Previous series","nextWork":"Next series","introJump":"Read the programme","dragHint":"Drag the filmstrip to browse","episodeCount":"{n} episodes","episodeList":"Episodes","watch":"Watch","progress":"Now playing","prev":"Previous","next":"Next","finished":"You’ve reached the last available episode.","open":"Watch on the original platform","unavailable":"The video could not be loaded.","retry":"Reload","classic":"Watch this episode in 3D","playSeries":"Play {title}"},"siteTitle":"Short Drama Screening Room"}</script>
+  <script type="module" src="../assets/library-J622DN67.js"></script>
+</body>
+</html>
